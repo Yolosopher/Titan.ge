@@ -17,9 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
       let shopCart = '.svg-shopping-cart';
       let checkCircle = '.svg-check-circle';
 
+      btn.querySelector('div').style.display = 'none';
+
       if (btn.querySelector('div').innerText === 'დამატება') {
         btn.classList.toggle('pressed');
-        btn.querySelector('div').style.display = 'none';
+        
         setTimeout(() => {
           btn.querySelector(shopCart).classList.toggle('hidden');
         }, 1000);
@@ -29,11 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           if (btn.querySelector('div').innerText === 'დამატება') {
             btn.querySelector('div').innerHTML = 'დამატებულია';
-            btn.querySelector('div').style.display = 'unset';
           } else {
             btn.querySelector('div').innerHTML = 'დამატება';
-            btn.querySelector('div').style.display = 'unset';
           }
+          btn.querySelector('div').style.display = 'unset';
         }, 3000);
         setTimeout(() => {
           btn.classList.remove('pressed');
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
       } else { // ELSE
         btn.classList.toggle('pressed');
-        btn.querySelector('div').style.display = 'none';
+        
         setTimeout(() => {
           btn.querySelector(checkCircle).classList.toggle('hidden');
         }, 1000);
@@ -51,11 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           if (btn.querySelector('div').innerText === 'დამატება') {
             btn.querySelector('div').innerHTML = 'დამატებულია';
-            btn.querySelector('div').style.display = 'unset';
           } else {
             btn.querySelector('div').innerHTML = 'დამატება';
-            btn.querySelector('div').style.display = 'unset';
+            
           }
+          btn.querySelector('div').style.display = 'unset';
         }, 3000);
         setTimeout(() => {
           btn.classList.remove('pressed');

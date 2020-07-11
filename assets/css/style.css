@@ -374,7 +374,7 @@ a:any-link {
                         .top-prod-add-btn.pressed-out {
                             width: 100%;
                             padding: 0;
-                            justify-content: center;
+                            justify-content: space-evenly;
                             transition: all 1s ease-in-out;
                         }
 
@@ -382,6 +382,13 @@ a:any-link {
                                 font-size: 12px;
                                 line-height: 15px;
                             }
+                            .top-prod-add-btn div.div-hidden {
+                                display: none;     
+                            }
+                            .top-prod-add-btn div.div-shown {
+                                display: unset;
+                            }
+
     .slider-arrows {
         position: absolute;
         top: 58px;
