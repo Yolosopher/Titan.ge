@@ -359,12 +359,25 @@ a:any-link {
                             height: 50px;
                             border-radius: 10px;
                             background-color: var(--orange);
-                            padding: 0 34px 0 22.5px;
+                            padding: 0 40px 0 22.5px;
                             color: white;
                             font-family: Bold75;
                             font-size: 12px;
                             line-height: 15px;
                         }
+                        .top-prod-add-btn.pressed {
+                            width: 80px;
+                            transition: all 1s ease-in-out;
+                        }
+                        .top-prod-add-btn.pressed-out {
+                            width: 100%;
+                            transition: all 1s ease-in-out;
+                        }
+
+                            .top-prod-add-btn div {
+                                font-size: 12px;
+                                line-height: 15px;
+                            }
     .slider-arrows {
         position: absolute;
         top: 58px;
@@ -545,3 +558,13 @@ a:any-link {
 
 
 /* FOOTER END */
+
+/* JS helpers */
+.svg-shopping-cart.hidden {
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
+.svg-check-circle.hidden {
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
