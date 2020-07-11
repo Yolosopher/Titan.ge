@@ -366,11 +366,15 @@ a:any-link {
                             line-height: 15px;
                         }
                         .top-prod-add-btn.pressed {
-                            width: 80px;
+                            width: 65px;
+                            padding: 0;
+                            justify-content: center;
                             transition: all 1s ease-in-out;
                         }
                         .top-prod-add-btn.pressed-out {
                             width: 100%;
+                            padding: 0;
+                            justify-content: center;
                             transition: all 1s ease-in-out;
                         }
 
