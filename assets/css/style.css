@@ -586,35 +586,81 @@ a:any-link {
 /* INDEX.HTML END */
 
 /* PRODUCT.HTML START */
-
-.pm-products-ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.products-main {
+    margin-top: 25px;
+    background-color: white;
+    padding: 32px 30px 40px;
 }
-@media only screen and (max-width: 685px) {
-    .pm-products-ul {
-        justify-content: space-around;
+    .products-main h1 {
+        font-family: Regular;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 12px;
     }
-}
-.pm-products-li {
-    margin-bottom: 52px;
-    display: block;
-}
-
-.page-numbers {
-    display: flex;
-}
-    .page-numbers li {
-        margin-left: 5px;
+    .pm-category-titles {
+        margin-bottom: 49px;
+        color: var(--unactive-grey);
+        font-family: Roman;
     }
-        .page-numbers li a {
+        .category-title {
+            font-size: 14px;
+            line-height: 19px;
+            position: relative;
+            padding-right: 20.5px;
+            margin-right: 13.5px;
+        }
+        .category-title::after {
+            content: url('../images/angle-right-little.svg');
+            position: absolute;
+            right: 0;
+        }
+        .category-title.category-title-active {
+            color: var(--orange);
+        }
+        .category-title.category-title-active::after {
+            display: none;
+        }
+    .pm-products-ul {        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    @media only screen and (max-width: 685px) {
+        .pm-products-ul {
+            justify-content: space-around;
+        }
+    }
+    .pm-products-li {
+        margin-bottom: 52px;
+        display: block;
+    }
+
+    .page-numbers {
+        display: flex;
+    }
+        .page-numbers li {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: #F2F4F7;
-            border-radius: 6px;
         }
+            .page-numbers li a:any-link {
+                margin-left: 5px;
+                color: var(--u-color-000000);
+                
+            }
+            .page-numbers li a.active:any-link {
+                color: white;
+                background-color: var(--orange);
+            }
+            .page-numbers li a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                background-color: #F2F4F7;
+                border-radius: 6px;
+                font-size: 18px;
+                line-height: 27px;
+            }
 /* PRODUCT.HTML END */
