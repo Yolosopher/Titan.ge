@@ -7,6 +7,24 @@ var topProductsSlider = new Swiper('.top-prod-slider', {
   },
 });
 
+var coverSlider = new Swiper('.home-main-container', {
+  slidesPerView: 1,
+  direction: 'horizontal',
+  loop: true,
+  pagination: {
+    el: '.coverPagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.coverSlideNext',
+    prevEl: '.coverSlidePrev'
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   let btns = document.querySelectorAll('.top-prod-add-btn');
 

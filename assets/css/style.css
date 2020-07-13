@@ -56,12 +56,18 @@ body {
     padding: 0 10px;
     margin: 0 auto;
     max-width: var(--container-size);
+    position: relative;
 }
 
 .container {
 
 }
-
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* INDEX.HTML START */
 
@@ -188,6 +194,7 @@ body {
     margin-top: 51px;
     height: 394px;
     margin-bottom: 90px;
+    position: relative;
 }
     aside {
         min-width: 287px;
@@ -230,22 +237,86 @@ body {
                     right: 0;
                     z-index: 3;
                 }
-    .home-main main {
+    .home-main-container {
         flex-shrink: 1;
         height: 100%;
         border-radius: 10px;
         overflow: hidden;
+        position: relative;
     }
         .wrappa {
             width: 100%;
             height: 100%;
-        }
+            display: flex;
+        }   
             .wrappa img {
-                width: 100%;
                 height: 100%;
                 object-fit: cover;
-                object-position: bottom;
+                object-position: center;                
             }
+        .coverSlideNext, .coverSlidePrev {
+            position: absolute;
+            background-color: white;            
+            bottom: 172px;
+            width: 50px;
+            height: 50px;
+            z-index: 3;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .coverSlideNext {
+            right: 50px;
+        }
+        .coverSlidePrev {
+            left: 50px;
+        }
+        .csp svg {
+            /* width: 50%;
+            height: 50%; */
+        }
+        .csp svg path.a {
+            fill: var(--active-grey)
+        }
+        .csp.swiper-button-disabled svg path.a {
+            fill: var(--unactive-grey);
+        }
+        .csp.swiper-button-disabled {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .coverPagination {
+            /* display: none; */
+            position: absolute;
+            display: flex;
+            width: 55px;
+            justify-content: space-between;
+            margin: 0 auto;
+            z-index: 3;
+            bottom: 15px;
+        }
+        .pagination-outter {
+            display: none;
+            width: 100%;          
+            justify-content: center;
+        }
+            html body .swiper-pagination-bullet {
+                width: 13px;
+                height: 13px;
+                background-color: #FEC0B0;
+            }
+            html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                background-color: var(--orange);
+            }
+        @media only screen and (max-width: 800px) {
+            .home-main-container .csp {
+                display: none;
+            }
+            .pagination-outter {
+                display: flex;
+            }
+        }
 /* HOME-MAIN END */
 
 /* TOP-PRODUCTION START */
@@ -411,7 +482,7 @@ body {
         padding: 3px;
         fill: #ff613b;
     }
-    .swiper-button-disabled svg .a {        
+    .tpsp.swiper-button-disabled svg .a {        
         fill: #fec0b0;
     }
         .top-prod-slider-prev {
@@ -419,7 +490,7 @@ body {
         }
 /* TOP-PRODUCTION MEDIA QUERIES START */
 
-@media only screen and (max-width: 1225px) {
+@media only screen and (max-width: 1225px) and (min-width: 801px) {
     .top-prod-slider {
         overflow: hidden;
     }
@@ -591,6 +662,46 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
+/* media queries */
+@media only screen and (max-width: 800px) {
+    html body .home-header {
+        display: none;
+    }
+    .home-main aside {
+        display: none;
+    }
+    .home-main {
+        margin: 30px 0;
+    }
+    .home-top-production h1 {
+        font-size: 18px;
+        line-height: 27px;
+    }
+    body .tp-a {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .top-prod-img-h2 h2 {
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .top-prod-img-a {
+        width: 165px;
+        height: 165px;
+    }
+    .top-prod-li-inside:hover {
+        top: unset;
+        left: unset;
+        width: 216px;
+        height: 418px;
+        padding: unset;
+        position: unset;
+        border-radius: unset;
+        border: unset;
+    }
+}
+
+
 /* INDEX.HTML END */
 
 /* PRODUCT.HTML START */
@@ -671,5 +782,5 @@ body {
                 font-size: 18px;
                 line-height: 27px;
             }
-            
+
 /* PRODUCT.HTML END */
