@@ -45,6 +45,9 @@
 a:any-link {
     color: inherit;
     box-sizing: border-box;
+    font-size: inherit;
+    font-family: Regular;
+    text-decoration: none;
 }
 body {
     background-color: var(--main-bg-color);
@@ -59,10 +62,6 @@ body {
 
 }
 
-a:any-link {
-    font-family: Bold75;
-    text-decoration: none;
-}
 
 /* INDEX.HTML START */
 
@@ -210,7 +209,13 @@ a:any-link {
         }
             .ctgr-ul li {
                 position: relative;
+                font-size: 14px;
             }
+                .ctgr-ul li a {
+                    font-size: inherit;
+                    line-height: 18px;
+                    letter-spacing: 0;
+                }
                 .ctgr-ul li a:hover {
                     color: #FF613B;
                 }
@@ -463,6 +468,7 @@ a:any-link {
         font-family: Roman;
     }
         .delivery-right h1 {
+            font-family: Regular;
             margin-top: 49px;
             font-size: 32px;
             line-height: 40px;
@@ -471,6 +477,8 @@ a:any-link {
         .delivery-right p {
             font-size: 14px;
             line-height: 22px;
+            font-family: Light;
+            color: var(--u-color-000000);
         }
 
 
@@ -514,7 +522,7 @@ a:any-link {
 
                 }
                     .footer-li a:any-link {
-                        font-family: Roman75;
+                        font-family: Regular;
                         color: var(--u-color-000000);
                         font-size: 14px;
                         line-height: 18px;
@@ -663,4 +671,5 @@ a:any-link {
                 font-size: 18px;
                 line-height: 27px;
             }
+            
 /* PRODUCT.HTML END */
