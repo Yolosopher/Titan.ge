@@ -71,8 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (btn.querySelector('div').innerText === 'დამატება') {
             btn.querySelector('div').innerHTML = 'დამატებულია';
           } else {
-            btn.querySelector('div').innerHTML = 'დამატება';
-            
+            btn.querySelector('div').innerHTML = 'დამატება';            
           }
           btn.querySelector('div').style.display = 'unset';
         }, 3000);
@@ -89,3 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// burger menu
+const burger = document.getElementById('burger');
