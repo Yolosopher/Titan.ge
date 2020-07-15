@@ -87,7 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 3001);
     });
   }
+// burger menu
+  const burgerButton = document.getElementById('header-nav');
+  const burger = document.getElementById('burger-header');
+
+  burgerButton.addEventListener('click', () => {
+    document.querySelector('body').classList.toggle('overflow-hidden');
+    
+    burger.classList.toggle('burger-header-fadeout');
+    burger.classList.toggle('burger-header-active');
+  })
 });
 
-// burger menu
-const burger = document.getElementById('burger');
+
