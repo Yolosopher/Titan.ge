@@ -41,12 +41,13 @@
     padding: 0;
     list-style: none;
     box-sizing: border-box;
+    /* font-weight: normal; */
 }
 a:any-link {
     color: inherit;
     box-sizing: border-box;
     font-size: inherit;
-    font-family: Regular;
+    font-family: inherit;
     text-decoration: none;
 }
 body {
@@ -185,7 +186,8 @@ body::-webkit-scrollbar {
                     align-items: center;
                     justify-content: center;
                     color: var(--orange);
-                    font: 14px/19px;
+                    font-size: 14px;
+                    line-height: 19px;
                     width: 21px;
                     height: 21px;
                     background-color: white;
@@ -207,10 +209,11 @@ body::-webkit-scrollbar {
 
 .burger-header {
     width: 100%;
+    height: 455px;
     padding: 40px 80px;
     /* statics */
     display: none;
-    position: fixed;
+    position: absolute;
     top: 110px;
     left: 0;
     background-color: white;
@@ -221,40 +224,6 @@ body::-webkit-scrollbar {
     line-height: 18px;
     color: var(--u-color-000000);
     overflow: hidden;
-}
-.burger-header-fadeout {
-    animation: anime-backwards 1s ease forwards;
-    display: flex;
-    height: 0;
-}
-.burger-header.burger-header-active {
-    display: flex;
-    height: 455px;
-    animation: anime 1s ease forwards;
-}
-@keyframes anime-backwards {
-    0% {
-        display: flex;
-        transform: translateY(0);
-        height: 455px;
-    }
-    100% {
-        transform: translateY(-191px);
-        height: 0;
-        display: none;
-    }
-}
-@keyframes anime {
-    0% {
-        transform: translateY(-191px);
-        height: 0;
-        display: none;
-    }
-    100% {
-        display: flex;
-        transform: translateY(0);
-        height: 455px;
-    }
 }
 .overflow-hidden {
     overflow: hidden;
@@ -528,9 +497,6 @@ body::-webkit-scrollbar {
                                 margin-bottom: 15px;
                                 min-height: 46px;
                             }
-                                .tp-img-h2-id {
-                                    display: none;
-                                }
                         .prices {
                             margin-bottom: 31px;
                             font-family: Roman;
@@ -910,6 +876,10 @@ body::-webkit-scrollbar {
     .respo-nav-inside {
         display: flex;
     }
+    /* fadsf */
+    .top-prod-li-inside:hover {
+        width: unset;
+    }
 }
 
 
@@ -930,7 +900,7 @@ body::-webkit-scrollbar {
     .pm-category-titles {
         margin-bottom: 49px;
         color: var(--unactive-grey);
-        font-family: Roman;
+        font-family: Bold75;
         font-size: 14px;            
     }
         .category-title {
@@ -949,6 +919,9 @@ body::-webkit-scrollbar {
         }
         .category-title.category-title-active::after {
             display: none;
+        }
+        .pm-category-titles a {
+            font-family: inherit;
         }
     .pm-products-ul {        
         display: flex;
@@ -1034,3 +1007,71 @@ body::-webkit-scrollbar {
     }
         
 /* PRODUCT.HTML END */
+
+/* ABOUT US START */
+.aboutus-main {
+    margin-top: 25px;
+    margin-bottom: 91px;
+    background: white;
+    min-height: 588px;
+    padding: 40px 30px;
+    border-radius: 10px;
+}   
+.aboutus-main h1 {
+    margin-bottom: 13px;
+}
+.aboutus-main p {
+    color: var(--active-grey);
+    position: relative;
+    z-index: 2;
+    font-family: Roman;
+    font-size: 14px;
+    line-height: 21px;
+    background: white;
+    width: 75%;
+    border-radius: 10px;
+    padding-top: 20px;
+    margin-left: 71px;
+    padding-right: 20px;
+    /* max-height: 404px; */
+    flex-grow: 1;
+    overflow: hidden;
+    max-width: 797px;
+}
+.aboutus-main article {
+    position: relative;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.aboutus-main .pm-category-titles {
+    margin-bottom: 30px;
+}
+.aboutus-main img {
+    object-fit: contain;
+    position: absolute;
+    width: 50%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    transform: translate(10px, -20px);
+}
+
+/* media */
+@media only screen and (max-width: 800px) {
+    .aboutus-main {
+        margin-top: 30px;
+    }
+    .aboutus-main img {
+        position: unset;
+        transform: none;
+        width: 100%;
+        margin-bottom: 31px;
+    }
+    .aboutus-main p {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+/* ABOUT US END */
