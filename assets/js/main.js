@@ -113,11 +113,23 @@ var swiper4 = new Swiper('.product-image-slider-outer', {
   },
 });
 
+// first-image active
+window.addEventListener('DOMContentLoaded', (event) => {
+  let firstImg = document.querySelector('.pr-i-s-img');
+  firstImg.classList.add('marked')
+});
+
+// onclick main photo change
 $('.pr-i-s-img').click(function(){
+  $('.pr-i-s-img').removeClass('marked');
+  $(this).addClass('marked');
   let src = $(this).find('img').attr('src');
-  console.log(src);
   let mainChsnPhoto = $('.product-main-image');
   mainChsnPhoto.fadeOut(400, function () {
-    $(this).attr('src', src).fadeIn(400)
+    let viewPortWidth = window.innerWidth;
+    if (viewPortWidth > 580) {
+      $(this).attr('src', src).fadeIn(400)
+    }
   });
 });
+
