@@ -98,7 +98,26 @@ $("#header-nav").click(function () {
   });
 });
 
-// $('.burger-header-left li').hover(function() {
-//   $('.burger-header-right').
-// })
+$('.decrement').click(function(){
+  const nah = $('.product-name').html();
+  console.log(nah);
+})
 
+// single-product-page slider
+var swiper4 = new Swiper('.product-image-slider-outer', {
+  spaceBetween: 20,
+  slidesPerView: 'auto',
+  navigation: {
+    nextEl: '.sg-next',
+    prevEl: '.sg-prev',
+  },
+});
+
+$('.pr-i-s-img').click(function(){
+  let src = $(this).find('img').attr('src');
+  console.log(src);
+  let mainChsnPhoto = $('.product-main-image');
+  mainChsnPhoto.fadeOut(400, function () {
+    $(this).attr('src', src).fadeIn(400)
+  });
+});
