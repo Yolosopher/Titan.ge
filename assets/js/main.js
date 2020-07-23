@@ -1,4 +1,4 @@
-var topProductsSlider = new Swiper('.top-prod-slider', {
+const topProductsSlider = new Swiper('.top-prod-slider', {
   slidesPerView: 'auto',
   direction: 'horizontal',
   navigation: {
@@ -7,7 +7,7 @@ var topProductsSlider = new Swiper('.top-prod-slider', {
   },
 });
 
-var coverSlider = new Swiper('.home-main-container', {
+const coverSlider = new Swiper('.home-main-container', {
   slidesPerView: 1,
   direction: 'horizontal',
   loop: true,
@@ -104,7 +104,7 @@ $('.decrement').click(function(){
 })
 
 // single-product-page slider
-var swiper4 = new Swiper('.product-image-slider-outer', {
+const swiper4 = new Swiper('.product-image-slider-outer', {
   spaceBetween: 20,
   slidesPerView: 'auto',
   navigation: {
