@@ -113,23 +113,34 @@ var swiper4 = new Swiper('.product-image-slider-outer', {
   },
 });
 
-// first-image active
+
 window.addEventListener('DOMContentLoaded', (event) => {
+  // single-product.html first-image active
   let firstImg = document.querySelector('.pr-i-s-img');
   firstImg.classList.add('marked')
-});
-
-// onclick main photo change
-$('.pr-i-s-img').click(function(){
-  $('.pr-i-s-img').removeClass('marked');
-  $(this).addClass('marked');
-  let src = $(this).find('img').attr('src');
-  let mainChsnPhoto = $('.product-main-image');
-  mainChsnPhoto.fadeOut(400, function () {
-    let viewPortWidth = window.innerWidth;
-    if (viewPortWidth > 580) {
-      $(this).attr('src', src).fadeIn(400)
-    }
+  // single-product.html onclick main photo change
+  $('.pr-i-s-img').click(function(){
+    $('.pr-i-s-img').removeClass('marked');
+    $(this).addClass('marked');
+    let src = $(this).find('img').attr('src');
+    let mainChsnPhoto = $('.product-main-image');
+    mainChsnPhoto.fadeOut(400, function () {
+      let viewPortWidth = window.innerWidth;
+      if (viewPortWidth > 580) {
+        $(this).attr('src', src).fadeIn(400)
+      } else {
+        $(this).attr('src', src)
+      }
+    });
   });
 });
+
+  // profile.html profile-nav-li-active
+  let profNavLi = $('.profile-nav-li');
+  $('.profile-nav-li').click(function(){
+
+    $('.profile-nav-li').removeClass('profile-nav-li-active');
+    $(this).addClass('profile-nav-li-active');
+  });
+
 
