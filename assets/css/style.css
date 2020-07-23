@@ -1358,7 +1358,20 @@ body::-webkit-scrollbar {
         width: 130px;
         height: 130px;
         object-fit: contain;
-        margin-bottom: 56px;
+        margin-bottom: 20px;
+    }
+    .profile-image {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        padding-bottom: 56px;
+    }
+    .profile-image a {
+        color: var(--orange);
+        font-size: 14px;
+        line-height: 18px;
+        font-family: Light;
+        /* font-weight: 600; */
     }
     .profile-ul {
         flex-grow: 1;
@@ -1371,6 +1384,7 @@ body::-webkit-scrollbar {
             font-weight: 600;
             font-size: 14px;
             line-height: 18px;
+            text-align: right;
         }
         .profile-nav-li.profile-nav-li-active::before {
             content: '';
