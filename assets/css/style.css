@@ -1403,7 +1403,7 @@ body::-webkit-scrollbar {
 }
     /* personal info */
     .personal-info {
-        height: 393px;
+        min-height: 393px;
         width: 100%;
     }
         .home-profile h1 {
@@ -1484,7 +1484,6 @@ body::-webkit-scrollbar {
         .pass-change-succes-div {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             width: 50%;
         }
@@ -1506,4 +1505,45 @@ body::-webkit-scrollbar {
                 font-size: 14px;
                 line-height: 20px;
             }
+/* profile.html media queries */
+@media only screen and (max-width: 800px) {
+    .home-profile {
+        flex-flow: column nowrap;
+        margin-top: 0;
+        align-items: center;
+        margin-bottom: 0;
+    }
+    .profile {
+        margin-bottom: 30px;
+        max-width: unset;   
+    }
+    .profile-nav-li.profile-nav-li-active::before {
+        display: none;
+    }
+}
+@media only screen and (max-width: 580px) {
+    .form-divs {
+        flex-flow: column nowrap;
+    }
+    .form-div {
+        width: 100%;
+        max-width: unset;
+    }
+    .ps-change-form-and-success-img {
+        /* flex-direction: column; */
+    }
+    .pass-change-succes-div {
+        display: none;
+    }
+    .profile-ps-pc {
+        width: 100%;
+    }
+    .password-change {
+        margin-bottom: 0;
+    }
+    .home-profile h1 {
+        font-size: 18px;
+        line-height: 32px;
+    }
+}
 /* PROFILE END */
