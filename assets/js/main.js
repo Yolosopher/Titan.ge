@@ -143,4 +143,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
     $(this).addClass('profile-nav-li-active');
   });
 
+// check title and chane the respo-menu color
+const burgerRespo = document.getElementById('burger-respo');
+const srchbarRespo = document.querySelector('.srchbar-respo');
+const shopRespo = document.querySelector('.respo-shop');
+const loginRespo = document.querySelector('.respo-login');
+const allRespo = [burgerRespo, srchbarRespo, shopRespo, loginRespo];
+
+function checkPage() {
+  allRespo.forEach(el => el.classList.remove('respo-active'));
+  let title = document.title;
+  if (title == 'Home') {
+    burgerRespo.classList.add('respo-active');
+  } else if (title == 'Profile') {
+    loginRespo.classList.add('respo-active');
+  } else if (title == 'Card') {
+    shopRespo.classList.add('respo-active');
+  }
+};
+
+checkPage();
+
 

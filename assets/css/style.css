@@ -60,6 +60,9 @@ body {
     max-width: var(--container-size);
     box-sizing: content-box;
 }
+h1 {
+    font-weight: 500;
+}
 svg .a {
     fill: white;
 }
@@ -81,6 +84,7 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     align-items: center;
     height: var(--hdr-height);
+    border-bottom: 1px solid #F2F4F7;
 }
 
 .home-header::before {
@@ -656,6 +660,7 @@ body::-webkit-scrollbar {
     height: 236px;
     display: flex;
     flex-direction: column;
+    border-top: 1px solid #F2F4F7;
 }
 .home-footer::after {
     content: '';
@@ -1222,7 +1227,6 @@ body::-webkit-scrollbar {
                 margin-bottom: 50px;
             }
                 .product-amount {
-                    position: relative;
                     margin-right: 10px;
                     width: calc(50% - 10px);
                     display: flex;
@@ -1560,4 +1564,193 @@ body::-webkit-scrollbar {
         line-height: 32px;
     }
 }
+
 /* PROFILE END */
+
+/* CARD START */
+
+.card-main {
+    margin-top: 25px;
+    margin-bottom: 91px;
+    padding: 40px 30px;
+}
+    .card-main-first-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--orange);
+    }
+        .basketNdelivery {
+            font-size: 24px;
+            line-height: 32px;
+            display: flex;
+            color: var(--unactive-grey);
+            margin-bottom: 13px;
+        }
+            .bNd-icon {
+                display: flex;
+                margin: 0 25px 0 25px;
+                align-items: center;
+                
+            } 
+                .basketNdelivery a.active {
+                    color: var(--u-color-000000);
+                }
+                .bNd-icon span {
+                    width: 40px;
+                    height: 1px;
+                    border-radius: 4px;
+                    background: var(--unactive-grey);
+                }
+                .bNd-icon span:nth-child(2) {
+                    width: 12px;
+                    height: 12px;
+                    margin: 0 4px 0 4px;
+                    border-radius: 2px;
+                }
+    .pm-category-titles.card {
+        margin-bottom: 13px;
+    }
+    .delivery-warning {
+        font-size: 14px;
+        line-height: 20px;   
+        font-family: Bold75;     
+        max-width: 373px;
+        margin-bottom: 39px;
+    }
+        .delivery-warning a {
+            color: var(--orange);
+        }
+        .delivery-warning span {
+            display: block;
+            margin-top: 15px;
+            color: var(--purple);
+        }
+    /* card-ul */
+    .basket-ul {
+
+    }
+        .basket-li {
+            border: 1px solid #E2E7ED;
+            height: 135px;
+            border-radius: 10px;
+            margin: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+            .basket-li-left,
+            .basket-li-right {
+                display: flex; 
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                width: 45%;
+            }
+                .basket-item-id {
+                    font-family: Regular;
+                    font-size: 18px;
+                    line-height: 27px;
+                    color: var(--active-grey);
+                }
+                .basket-item-img {
+                    height: 75px;
+                    width: 75px;
+                    object-fit: contain;
+                }
+                .basket-item-name {
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: var(--active-grey);
+                    font-family: Roman;
+                }
+            .basket-li-right .product-amount.card {
+                width: 163px;
+                height: 50px;
+                font-size: 24px;
+                line-height: 28px;
+                margin-right: 0;
+            }
+            .basket-li-right .price {
+                margin-right: 0;
+                font-family: Roman;
+                font-weight: 600;
+                line-height: 22px;
+            }
+            .basket-item-remove {
+                width: 49px;
+                height: 49px;
+                background-color: var(--orange);
+                border-radius: 6px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    .basket-control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        height: 54px;
+        padding: 0 10px;
+    }
+        .basket-control .basket-ctrl-left {
+            font-family: Bold75;
+            font-size: 14px;
+            line-height: 17px;
+            color: var(--purple);
+        }
+        .basket-ctrl-right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+            .basket-ctrl-right-grand-price {
+                font-family: Bold75;
+                font-size: 14px;
+                line-height: 17px;
+            }
+                .basket-ctrl-right-grand-price span {
+                    color: var(--orange);
+                    margin-left: ;
+                }
+            .basket-ctrl-right .basket-ctrl-next-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 50px;
+                border-radius: 10px;
+                width: 170px;
+                height: 100%;     
+                color: white;
+                font-size: 12px;
+                line-height: 15px;
+                font-weight: 600;
+                background: var(--orange);
+            }
+/* CARD END */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ENDEND */
+.burger-respo g rect {
+    fill: #D0D0D0;
+}
+.respo-nav-inside .burger-respo.respo-active g rect {
+    fill: var(--active-grey);
+}
+.respo-nav-inside a.respo-active .a {
+    fill: var(--active-grey);
+}
+
