@@ -1576,6 +1576,10 @@ body::-webkit-scrollbar {
         justify-content: space-between;
         align-items: center;
         color: var(--orange);
+        font-size: 14px;
+        line-height: 20px;
+        font-family: Roman;
+        font-weight: 900;
     }
         .basketNdelivery {
             font-size: 24px;
@@ -1753,6 +1757,51 @@ body::-webkit-scrollbar {
                 font-family: Roman;
                 font-weight: 600;
             }
+            /* custom checkmark */
+
+
+            input[type=checkbox] {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+            .checkmark {
+                order: -1;
+                left: 0;
+                height: 19px;
+                width: 19px;
+                border-radius: 4px;
+                background-color: white;
+                border: 1px solid var(--orange);
+                margin-right: 15px;
+            }
+            input[type=checkbox]:checked ~ .checkmark {
+                background-color: var(--orange);
+            }
+            
+            .agree-terms-div {
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
+            .agree-terms-div label {
+                font-family: Roma;
+                font-weight: 900;
+                color: black;
+                font-size: 12px;
+                line-height: 15px;
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+            }
+            .agree-terms-div .orange {
+                color: var(--orange);
+            }
+
+            /* end custom checkmark */
+
             .select-div, .form-inside-div {
                 display: flex;
                 width: 100%;
