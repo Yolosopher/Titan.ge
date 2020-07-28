@@ -114,7 +114,6 @@ body::-webkit-scrollbar {
             font-size: 13px;
             width: 167px;
             justify-content: flex-end;
-            position: relative;
         }
         .header-nav span {
             font-size: 12px;
@@ -124,14 +123,12 @@ body::-webkit-scrollbar {
             position: relative;
         }
         .header-nav span::before {
-            content: '';
-            display: inline-block;
-            background-image: url('../images/Component\ 2\ –\ 1.svg');
+            content: url('../images/Component\ 2\ –\ 1.svg');
             position: absolute;
             left: -30px;
-            top: -5.05px;
-            background-size: contain;
-            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 22px;
             height: 22px;
             margin-right: 10px;
