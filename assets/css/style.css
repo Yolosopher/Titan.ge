@@ -1030,8 +1030,6 @@ body::-webkit-scrollbar {
 
 /* ABOUT US START */
 .aboutus-main {
-    margin-top: 25px;
-    margin-bottom: 91px;
     background: white;
     min-height: 588px;
     padding: 40px 30px;
@@ -1080,9 +1078,6 @@ body::-webkit-scrollbar {
 
 /* media */
 @media only screen and (max-width: 1000px) {
-    .aboutus-main {
-        margin-top: 30px;
-    }
     .aboutus-main img {
         position: unset;
         transform: none;
