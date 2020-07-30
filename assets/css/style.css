@@ -2076,7 +2076,8 @@ input[type=checkbox]:checked~.checkmark {
     position: relative;
 }
 
-.form-inside-div input[type=text] {
+.form-inside-div input[type=text],
+.form-inside-div input[type=email] {
     border: none;
     outline: none;
     flex-grow: 1;
@@ -2478,7 +2479,10 @@ address {
         width: 100%;
     }
 }
-/* ENDEND */
+
+
+/* burger-respo-fills START */
+
 .burger-respo g rect {
     fill: #D0D0D0;
 }
@@ -2490,3 +2494,110 @@ address {
 .respo-nav-inside a.respo-active .a {
     fill: var(--active-grey);
 }
+
+/* burger-respo-fills END*/
+#auth-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 572px;
+    background: white;
+    height: 100vh;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 81px 20px 102px;
+}
+                html body #auth-toggle.dispnone {
+                    display: none;
+                }
+#auth-toggle.auth-toggle {
+    display: flex;
+    animation: auth-anime 600ms ease-out;
+}
+#auth-toggle.auth-toggle-off {
+    display: flex;
+    overflow: hidden;
+    width: 0;
+    animation: auth-back 600ms ease-out;
+}
+#auth-toggle.auth-toggle-off::after {
+    animation: off-after 600ms ease-out;
+}
+@keyframes off-after{
+    0% {
+        right: 572px;
+    }
+    100% {
+        right: 0;
+    }
+}
+@keyframes auth-back {
+    0% {
+        width: 572px;
+        padding: 0;
+    }
+    100% {
+        width: 0;
+        padding: 20px 0 20px 0;
+    }
+}
+#auth-toggle::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    right: 572px;
+    content: '';
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    background: black;
+    z-index: 999;
+    opacity: .8;
+    overflow: hidden;
+    z-index: 99;
+    animation: auth-after-anime 600ms ease-out;
+}
+@keyframes auth-after-anime {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: 572px;
+    }
+}
+@keyframes auth-anime {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 572px;
+    }
+}
+    .auth-toggle-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+        .exit-auth-toggle {
+            width: 44px;
+            height: 44px;
+            border: 1px solid #E2E7ED;
+            border-radius: 6px;
+            align-self: flex-end;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .auth-toggle-form h2 {
+            margin-top: 46px;
+            margin-bottom: 30px;
+            font-size: 24px;
+            line-height: 32px;
+            
+        }
+    .register {
+        justify-self: center;
+    }
