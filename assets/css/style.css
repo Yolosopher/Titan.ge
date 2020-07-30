@@ -2533,6 +2533,20 @@ address {
         right: 0;
     }
 }
+/* animation blablabla */
+/* 
+    0% {
+        max-width: 572px;
+        padding-right: 81px;
+        padding-left: 102px;
+    }
+
+    100% {
+        max-width: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+*/
 @keyframes auth-back {
     0% {
         width: 572px;
