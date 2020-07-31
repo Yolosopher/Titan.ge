@@ -62,7 +62,7 @@
         </svg>
         <p class="shop-notification-number">4</p>
       </a>
-      <a class="login" href="#">
+      <a class="login" href="javascript:void(0)">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
           <defs>
             <style>
@@ -108,17 +108,17 @@
       </ul>
       <div class="burger-header-bot">
         <ul class="burger-header-left">
-          <li><a href="#">თაბაშირ-მუყაო</a></li>
-          <li><a href="#">კერამიკული ფილები</a></li>
-          <li><a href="#">იატაკი</a></li>
-          <li><a href="#">სამღებრო</a></li>
-          <li><a href="#">ელექტროობა</a></li>
-          <li><a href="#">შპალერი და დაკორი</a></li>
-          <li><a href="#">სანტექნიკა</a></li>
-          <li><a href="#">სამონტაჟო ჭერი</a></li>
-          <li><a href="#">ხელსაწყოები</a></li>
-          <li><a href="#">კარი</a></li>
-          <li><a href="#">მშენებლობა</a></li>
+          <li><a href="javascript:void(0)">თაბაშირ-მუყაო</a></li>
+          <li><a href="javascript:void(0)">კერამიკული ფილები</a></li>
+          <li><a href="javascript:void(0)">იატაკი</a></li>
+          <li><a href="javascript:void(0)">სამღებრო</a></li>
+          <li><a href="javascript:void(0)">ელექტროობა</a></li>
+          <li><a href="javascript:void(0)">შპალერი და დაკორი</a></li>
+          <li><a href="javascript:void(0)">სანტექნიკა</a></li>
+          <li><a href="javascript:void(0)">სამონტაჟო ჭერი</a></li>
+          <li><a href="javascript:void(0)">ხელსაწყოები</a></li>
+          <li><a href="javascript:void(0)">კარი</a></li>
+          <li><a href="javascript:void(0)">მშენებლობა</a></li>
         </ul>
         <ul class="burger-header-right">
 
@@ -127,7 +127,7 @@
     </div>
   </header>
   <!-- AUTH TOGGLE-->
-  <div id="auth-toggle" class="dispnone">
+  <div id="auth-toggle">
     <form class="auth-toggle-form" id="auth-toggle-form">
       <div id="exit-auth-toggle" class="exit-auth-toggle">
         <svg xmlns="http://www.w3.org/2000/svg" width="31.113" height="31.113" viewBox="0 0 31.113 31.113">
@@ -149,32 +149,50 @@
       <label for="auth-mail">ელ. ფოსტა</label>
       <div class="auth-div form-inside-div">
         <div class="form-svg-div">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 15 18">
-            <path
-              d="M13.2,9.919a2.791,2.791,0,0,0-.382-3.679,2.7,2.7,0,0,0-3.648,0,2.791,2.791,0,0,0-.382,3.679,4.14,4.14,0,0,0-.988.895.93.93,0,0,0,.163,1.293.9.9,0,0,0,1.275-.165,2.3,2.3,0,0,1,1.809-.895h0a2.3,2.3,0,0,1,1.809.895.875.875,0,0,0,1.479-.175.9.9,0,0,0-.1-.943,4.137,4.137,0,0,0-1.032-.9ZM11,9.266h0a.975.975,0,1,1,.962-1.011.983.983,0,0,1-.269.713.955.955,0,0,1-.693.3Zm7.464-.447a7.6,7.6,0,0,0-4.24-6.137,7.412,7.412,0,0,0-7.372.528A7.667,7.667,0,0,0,5.706,14.929l4.676,4.75a.874.874,0,0,0,1.253,0l4.659-4.75A7.629,7.629,0,0,0,18.464,8.819Zm-3.406,4.848L11,17.782,6.941,13.667a5.9,5.9,0,0,1,.9-8.99,5.644,5.644,0,0,1,6.317,0,5.893,5.893,0,0,1,.9,8.99Z"
-              transform="translate(-3.5 -1.943)" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14">
+            <defs>
+            </defs>
+            <path class="a"
+              d="M17.3,4H4.7A2.663,2.663,0,0,0,2,6.625v8.75A2.663,2.663,0,0,0,4.7,18H17.3A2.663,2.663,0,0,0,20,15.375V6.625A2.663,2.663,0,0,0,17.3,4Zm-.369,1.75-5.292,5.145a.918.918,0,0,1-1.278,0L5.069,5.75ZM18.2,15.375a.888.888,0,0,1-.9.875H4.7a.888.888,0,0,1-.9-.875V6.984l5.292,5.145a2.755,2.755,0,0,0,3.816,0L18.2,6.984Z"
+              transform="translate(-2 -4)" />
           </svg>
         </div>
         <input type="email" name="auth-mail" id="auth-mail">
+        <div class="auth-succ-or-error"></div>
+      </div>
+      <label for="auth-pass">ელ. ფოსტა</label>
+      <div class="auth-div form-inside-div">
+        <div class="form-svg-div">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18">
+            <path id="lock"
+              d="M15.375,8.3V6.5A4.439,4.439,0,0,0,11,2,4.439,4.439,0,0,0,6.625,6.5V8.3A2.663,2.663,0,0,0,4,11v6.3A2.663,2.663,0,0,0,6.625,20h8.75A2.663,2.663,0,0,0,18,17.3V11A2.663,2.663,0,0,0,15.375,8.3Zm-7-1.8a2.626,2.626,0,1,1,5.25,0V8.3H8.375ZM16.25,17.3a.888.888,0,0,1-.875.9H6.625a.888.888,0,0,1-.875-.9V11a.888.888,0,0,1,.875-.9h8.75a.888.888,0,0,1,.875.9Z"
+              transform="translate(-4 -2)" fill="#d0d0d0" />
+          </svg>
+        </div>
+        <input type="password" name="auth-pass" id="auth-pass">
+        <div class="auth-succ-or-error"></div>
       </div>
     </form>
-    <a class="register" href="#">რეგისტრაცია</a>
+    <a class="register" href="javascript:void(0)">რეგისტრაცია</a>
+  </div>
+  <div class="auth-toggle-black-screen">
+
   </div>
   <!-- MAIN -->
   <div class="home-main container">
     <aside>
       <ul class="ctgr-ul">
-        <li><a href="#">თაბაშირ-მუყაო</a></li>
-        <li><a href="#">კერამიკული ფილები</a></li>
-        <li><a href="#">იატაკი</a></li>
-        <li><a href="#">სამღებრო</a></li>
-        <li><a href="#">ელექტროობა</a></li>
-        <li><a href="#">შპალერი და დაკორი</a></li>
-        <li><a href="#">სანტექნიკა</a></li>
-        <li><a href="#">სამონტაჟო ჭერი</a></li>
-        <li><a href="#">ხელსაწყოები</a></li>
-        <li><a href="#">კარი</a></li>
-        <li><a href="#">მშენებლობა</a></li>
+        <li><a href="javascript:void(0)">თაბაშირ-მუყაო</a></li>
+        <li><a href="javascript:void(0)">კერამიკული ფილები</a></li>
+        <li><a href="javascript:void(0)">იატაკი</a></li>
+        <li><a href="javascript:void(0)">სამღებრო</a></li>
+        <li><a href="javascript:void(0)">ელექტროობა</a></li>
+        <li><a href="javascript:void(0)">შპალერი და დაკორი</a></li>
+        <li><a href="javascript:void(0)">სანტექნიკა</a></li>
+        <li><a href="javascript:void(0)">სამონტაჟო ჭერი</a></li>
+        <li><a href="javascript:void(0)">ხელსაწყოები</a></li>
+        <li><a href="javascript:void(0)">კარი</a></li>
+        <li><a href="javascript:void(0)">მშენებლობა</a></li>
       </ul>
     </aside>
     <main class="home-main-container swiper-container">
@@ -230,7 +248,7 @@
                 <span class="price">22.50 ₾</span>
                 <span class="discounted-from">22.50 ₾</span>
               </p>
-              <a class="top-prod-add-btn" href="#">
+              <a class="top-prod-add-btn" href="javascript:void(0)">
                 <svg class="svg-shopping-cart" xmlns="http://www.w3.org/2000/svg" width="17" height="18"
                   viewBox="0 0 17 18">
                   <defs>
@@ -278,7 +296,7 @@
                 <span class="price">22.50 ₾</span>
                 <span class="discounted-from">22.50 ₾</span>
               </p>
-              <a class="top-prod-add-btn" href="#">
+              <a class="top-prod-add-btn" href="javascript:void(0)">
                 <svg class="svg-shopping-cart" xmlns="http://www.w3.org/2000/svg" width="17" height="18"
                   viewBox="0 0 17 18">
                   <defs>
@@ -326,7 +344,7 @@
                 <span class="price">22.50 ₾</span>
                 <span class="discounted-from">22.50 ₾</span>
               </p>
-              <a class="top-prod-add-btn" href="#">
+              <a class="top-prod-add-btn" href="javascript:void(0)">
                 <svg class="svg-shopping-cart" xmlns="http://www.w3.org/2000/svg" width="17" height="18"
                   viewBox="0 0 17 18">
                   <defs>
@@ -374,7 +392,7 @@
                 <span class="price">22.50 ₾</span>
                 <span class="discounted-from">22.50 ₾</span>
               </p>
-              <a class="top-prod-add-btn" href="#">
+              <a class="top-prod-add-btn" href="javascript:void(0)">
                 <svg class="svg-shopping-cart" xmlns="http://www.w3.org/2000/svg" width="17" height="18"
                   viewBox="0 0 17 18">
                   <defs>
@@ -422,7 +440,7 @@
                 <span class="price">22.50 ₾</span>
                 <span class="discounted-from">22.50 ₾</span>
               </p>
-              <a class="top-prod-add-btn" href="#">
+              <a class="top-prod-add-btn" href="javascript:void(0)">
                 <svg class="svg-shopping-cart" xmlns="http://www.w3.org/2000/svg" width="17" height="18"
                   viewBox="0 0 17 18">
                   <defs>
@@ -531,7 +549,7 @@
       </div>
       <ul class="socials">
         <li>
-          <a href="#" alt="facebook">
+          <a href="javascript:void(0)" alt="facebook">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
               <defs></defs>
               <path class="a"
@@ -541,7 +559,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="javascript:void(0)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
               <defs></defs>
               <path class="a"
@@ -551,7 +569,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="javascript:void(0)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15">
               <defs></defs>
               <path class="a"
@@ -574,7 +592,7 @@
         <img src="assets/images/Logo.svg" alt="ტიტანის ლოგო" title="ტიტანი-ლოგო" />
       </a>
       <hr>
-      <a id="burger-respo" class="burger-respo" href="#">
+      <a id="burger-respo" class="burger-respo" href="javascript:void(0)">
         <svg id="Component_2_1" data-name="Component 2 – 1" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
           viewBox="0 0 22 22">
           <rect id="Rectangle_213" data-name="Rectangle 213" width="22" height="22" fill="rgba(255,255,255,0)" />
@@ -632,25 +650,7 @@
   <script src="assets/js/jquery/jquery-3.2.1.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    const authTog = document.getElementById('auth-toggle');
-    const loginBtn = document.querySelector('.login');
-    const exitAuthTog = document.getElementById('exit-auth-toggle');
-
-    loginBtn.addEventListener('click', () => {
-      authTog.classList.remove('auth-toggle-off');
-      authTog.classList.remove('dispnone');
-      authTog.classList.add('auth-toggle');
-      document.getElementById('html-root').style.overflow = 'hidden';
-    });
-    exitAuthTog.addEventListener('click', () => {
-      authTog.classList.remove('auth-toggle');
-      
-      authTog.classList.add('auth-toggle-off');
-      setTimeout(() => {
-        authTog.classList.add('dispnone');
-        document.getElementById('html-root').style.overflow = 'unset';
-      }, 1200);
-    });
+    $('.auth-succ-or-error').addClass('success')
   </script>
 </body>
 

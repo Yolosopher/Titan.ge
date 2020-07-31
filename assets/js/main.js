@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let btns = document.querySelectorAll('.top-prod-add-btn');
 
   for (let btn of btns) {
-    // console.log(btn);
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       let shopCart = '.svg-shopping-cart';
@@ -163,4 +162,30 @@ function checkPage() {
 };
 checkPage();
 
+// auth-toggle
+$('.login').click(function () {
+  $('#auth-toggle').addClass('after');
+  $('#auth-toggle').animate({
+    'padding': '20px 81px 20px 102px',
+    'width': '572px'
+  }, 700, 'swing');
+  $('.auth-toggle-black-screen').addClass('on');
+  $('html').css({
+    "overflow": "hidden"
+  });
+});
+$('#exit-auth-toggle').click(function () {
+  $('#auth-toggle').removeClass('after');
+  $('#auth-toggle').animate({
+    'padding': '20px 0 20px 0',
+    'width': '0'
+  }, 700, 'swing');
+  setTimeout(() => {
+    $('.auth-toggle-black-screen').removeClass('on');
+    $('html').css({
+      "overflow": "unset"
+    });
+  }, 700);
+
+});
 

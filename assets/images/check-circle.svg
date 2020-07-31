@@ -7,8 +7,9 @@
                     <defs>
                       <style>
                         .a {
-                          fill: #fff;
+                          fill: green;
                         }
+                        
                       </style>
                     </defs>
                     <path

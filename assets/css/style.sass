@@ -1,0 +1,109 @@
+@import 'vars', url(styleraw.css)
+
+@mixin fontline($fontsize, $lineheight)
+    font-size: $fontsize
+    line-height: $lineheight
+
+@mixin vertCentering($dir, $just-cont)
+    display: flex
+    justify-content: $just-cont
+    align-content: center
+    flex-direction: $dir
+    
+
+#auth-toggle 
+    position: fixed
+    top: 0
+    right: 0
+    width: 0
+    width: 572px
+    background: white
+    display: flex
+    height: 100vh
+    z-index: 100
+    overflow: hidden
+    justify-content: space-between
+    align-items: center
+    flex-direction: column
+    padding: 20px 0
+    padding: 20px 81px 20px 102px
+
+.auth-toggle-black-screen.on 
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    width: 100vw
+    background: black
+    opacity: .8
+    z-index: 99
+
+.auth-toggle-form 
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    .exit-auth-toggle 
+        width: 44px
+        height: 44px
+        border: 1px solid #E2E7ED
+        border-radius: 6px
+        align-self: flex-end
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+    h2 
+        margin-top: 46px
+        margin-bottom: 30px
+        @include fontline(24px, 32px)
+    label
+        margin-bottom: 12px
+        display: block
+        width: 100%
+        &[for=auth-pass]
+            margin-top: 10px
+
+.form-svg-div
+    svg
+        .a
+            fill: $black17
+    #lock
+        fill: $black17
+.auth-succ-or-error
+    display: none
+    &.success
+        display: block
+        &::after
+            @include vertCentering(row, center) 
+            content: '' 
+            background: url(../images/check-circle-green.svg) no-repeat
+            background-size: contain
+            position: absolute
+            right: 20px
+            top: 50%
+            display: block
+            transform: translateY(-50%)
+            height: 22px
+            width: 22px
+            padding: auto
+            object-fit: contain
+
+    &.error
+        display: block
+        &::after
+            @include vertCentering(row, center) 
+            content: '' 
+            background-size: contain
+            position: absolute
+            right: 20px
+            top: 50%
+            display: block
+            transform: translateY(-50%)
+            height: 22px
+            width: 22px
+            padding: auto
+            object-fit: contain
+            background: url(../images/exclamation-circle.svg)
+        
+
