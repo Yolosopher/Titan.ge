@@ -63,7 +63,7 @@
         width: 100%
         &[for=auth-pass]
             margin-top: 10px
-
+            
 .form-svg-div
     svg
         .a
@@ -79,11 +79,9 @@
             content: '' 
             background: url(../images/check-circle-green.svg) no-repeat center
             background-size: contain
-            position: absolute
+            position: relative
             right: 20px
-            top: 50%
             display: block
-            transform: translateY(-50%)
             height: 22px
             width: 22px
             padding: auto
@@ -95,11 +93,10 @@
             @include vertCentering(row, center) 
             content: '' 
             background-size: contain
-            position: absolute
+            position: relative
             right: 20px
             top: 50%
             display: block
-            transform: translateY(-50%)
             height: 22px
             width: 22px
             padding: auto
@@ -107,3 +104,7 @@
             background: url(../images/exclamation-circle.svg) no-repeat center
         
 
+.form-inside-div
+    &:nth-child(1)
+        background: red 
+            
