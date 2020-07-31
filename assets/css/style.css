@@ -117,7 +117,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   content: '';
-  background: url(../images/check-circle-green.svg) no-repeat;
+  background: url(../images/check-circle-green.svg) no-repeat center;
   background-size: contain;
   position: absolute;
   right: 20px;
@@ -162,6 +162,6 @@
   padding: auto;
   -o-object-fit: contain;
      object-fit: contain;
-  background: url(../images/exclamation-circle.svg);
+  background: url(../images/exclamation-circle.svg) no-repeat center;
 }
 /*# sourceMappingURL=style.css.map */
