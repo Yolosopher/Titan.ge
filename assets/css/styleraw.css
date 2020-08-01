@@ -2078,7 +2078,12 @@ input[type=checkbox]:checked~.checkmark {
 
 .form-inside-div input[type=text],
 .form-inside-div input[type=email],
-.form-inside-div input[type=password] {
+.form-inside-div input[type=password],
+.form-inside-div input[type=tel],
+.regis-toggle-form input[type=text],
+.regis-toggle-form input[type=email],
+.regis-toggle-form input[type=password],
+.regis-toggle-form input[type=tel] {
     border: none;
     outline: none;
     flex-grow: 1;

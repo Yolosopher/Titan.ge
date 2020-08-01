@@ -1,0 +1,180 @@
+@import 'vars'
+
+@mixin font($fontname, $fontsize, $lineheight)
+    font-family: $fontname
+    font-size: $fontsize
+    line-height: $lineheight
+
+@mixin vertCentering($dir, $just-cont)
+    display: flex
+    justify-content: $just-cont
+    align-items: center
+    flex-direction: $dir
+    
+
+#auth-toggle 
+    position: fixed
+    top: 0
+    right: 0
+    width: 0
+    // width: 572px
+    background: white
+    display: flex
+    height: 100vh
+    z-index: 100
+    overflow: hidden
+    justify-content: space-between
+    align-items: center
+    flex-direction: column
+    padding: 20px 0
+    // padding: 20px 81px 20px 102px
+    .register
+        @include font(Regular, 12px, 15px)
+        color: black
+        font-weight: 900
+        border-radius: 10px
+        border: 1px solid #E2E7ED
+        width: 100%
+        height: 54px
+        @include vertCentering(row, center)
+        font-weight: 900
+        cursor: pointer
+    .auth-toggle-top
+        width: 100%
+        @include vertCentering(column, flex-start)
+        h2 
+            margin-top: 46px
+            margin-bottom: 30px
+            @include font(Regular, 24px, 32px)
+            font-weight: 500
+        label
+            margin-top: 10px
+            margin-bottom: 12px
+            display: block
+            width: 100%
+            &[for=regis-name],
+            &[for=auth-mail]
+                margin-top: 0
+        input
+            &[type=submit]
+                border: none
+                outline: none
+                background: $orange
+                height: 54px
+                margin-top: 30px
+                width: 100%
+                border-radius: 10px
+                @include font(Regular, 12px, 15px)
+                color: white
+                font-weight: 600    
+                cursor: pointer     
+        .pass-reset
+            margin-top: 30px
+            @include font(Regular, 12px, 15px)
+            color: $black17
+            font-weight: 900
+
+label
+    &[for=auth-pass],
+    &[for=regis-pass]
+        margin-top: 10px
+
+.register
+    &.register-active
+        visibility: hidden
+
+.auth-toggle-black-screen.on 
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    width: 100vw
+    background: black
+    opacity: .8
+    z-index: 99
+
+.exit-auth-toggle,
+.back-to-auth
+    width: 44px
+    height: 44px
+    border: 1px solid #E2E7ED
+    border-radius: 6px
+    align-self: flex-end
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+
+#back-to-auth
+    visibility: hidden   
+    .a
+        fill: $unactive-grey
+    &.register-active
+        visibility: unset
+
+.auth-reg-navs
+    width: 100%
+    @include vertCentering(row, space-between)
+    
+        
+.auth-toggle-form,
+.regis-toggle-form 
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.none
+    display: none
+#auth-toggle-form,
+#regis-toggle-form
+    &.none
+        display: none
+
+
+
+
+.form-svg-div
+    svg
+        .a
+            fill: $black17
+    #lock
+        fill: $black17
+.auth-succ-or-error
+    display: none
+    &.success
+        display: block
+        &::after
+            @include vertCentering(row, center) 
+            content: '' 
+            background: url(../images/check-circle-green.svg) no-repeat center
+            background-size: contain
+            position: relative
+            right: 20px
+            display: block
+            height: 22px
+            width: 22px
+            padding: auto
+            object-fit: contain
+
+    &.error
+        display: block
+        &::after
+            @include vertCentering(row, center) 
+            content: '' 
+            background-size: contain
+            position: relative
+            right: 20px
+            top: 50%
+            display: block
+            height: 22px
+            width: 22px
+            padding: auto
+            object-fit: contain
+            background: url(../images/exclamation-circle.svg) no-repeat center
+        
+
+.form-inside-div
+    &:nth-child(1)
+        background: red 
+            

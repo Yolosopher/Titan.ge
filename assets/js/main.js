@@ -189,3 +189,48 @@ $('#exit-auth-toggle').click(function () {
 
 });
 
+
+let authMail = $('input[type=email]');
+
+authMail.change(function() {
+  let checkPass = $(this).parent().find('.auth-succ-or-error');
+  let val = $(this).val();
+  let dz = val.split('@')[1];
+  if (!dz) checkPass.addClass('error');
+  if (/\./.test(dz)) {
+    checkPass.removeClass('error').addClass('success');
+  } else {
+    checkPass.removeClass('success').addClass('error');
+  }
+});
+
+let authPass = $('input[type=password]');
+
+authPass.change(function() {
+  let checkPass = $(this).parent().find('.auth-succ-or-error');
+  let val = $(this).val();
+  let w, d;  
+  w = /[a-zA-Z]/.test(val);
+  d = /\d/.test(val);
+  console.log(w + ' ' + d);
+  if (w && d && val.length >= 8) {
+    checkPass.removeClass('error').addClass('success');
+  } else {
+    checkPass.removeClass('success').addClass('error');
+  }
+});
+
+
+// auth & register switching
+$('.register').click(function () {
+  $('#back-to-auth').addClass('register-active');
+  $('#auth-toggle-form').addClass('none');
+  $('#regis-toggle-form').removeClass('none');
+  $('.register').addClass('register-active');
+});
+$('#back-to-auth').click(function () {
+  $(this).removeClass('register-active');
+  $('#regis-toggle-form').addClass('none');
+  $('#auth-toggle-form').removeClass('none');
+  $('.register').removeClass('register-active');
+});
