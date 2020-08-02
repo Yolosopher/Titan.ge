@@ -250,5 +250,4 @@ $('input[value="პაროლის აღდგენა"]').click(function(e
   setTimeout(() => {
     $('#passreset-form').addClass('sent');
   }, 300);
-
 });
