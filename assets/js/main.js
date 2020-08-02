@@ -197,7 +197,7 @@ authMail.change(function() {
   let val = $(this).val();
   let dz = val.split('@')[1];
   if (!dz) checkPass.addClass('error');
-  if (/\./.test(dz)) {
+  if (/\./.test(dz) && val.length >= 8) {
     checkPass.removeClass('error').addClass('success');
   } else {
     checkPass.removeClass('success').addClass('error');
@@ -237,9 +237,18 @@ $('#back-to-auth').click(function () {
   $('.register').removeClass('register-active');
 });
 $('#pass-reset').click(function() {
+  $('#passreset-form').removeClass('sent');
   $('#back-to-auth').addClass('register-active');
   $('#passreset-form').removeClass('none');
   $('#auth-toggle-form').addClass('none');
   $('#regis-toggle-form').addClass('none');
   $('.register').addClass('register-active');
+  $('#passreset-form').removeClass('sent');
+});
+$('input[value="პაროლის აღდგენა"]').click(function(e) {
+  e.preventDefault();
+  setTimeout(() => {
+    $('#passreset-form').addClass('sent');
+  }, 300);
+
 });

@@ -54,7 +54,8 @@
             display: block
             width: 100%            
             &[for=regis-name],
-            &[for=auth-mail]
+            &[for=auth-mail],
+            &[for=passreset-mail]
                 margin-top: 0
         input
             &[type=submit]
@@ -67,8 +68,8 @@
                 border-radius: 10px
                 @include font(Regular, 12px, 15px)
                 color: white
-                font-weight: 600    
-                cursor: pointer     
+                font-weight: 600
+                cursor: pointer
         .pass-reset
             margin-top: 30px
             @include font(Regular, 12px, 15px)
@@ -127,13 +128,24 @@ label
     flex-direction: column
     align-items: center
 
-.none
-    display: none
 #auth-toggle-form,
 #regis-toggle-form,
-#auth-passreset-form
+#passreset-form
     &.none
         display: none
+
+// .passreset-form.sent > *
+//     opacity: 0       
+// .passreset-form.sent
+//     position: relative
+//     .passreset-sent-div
+//         margin-top: 
+//         opacity: 1
+
+// .passreset-sent-div
+//     // @include vertCentering(column, center)
+
+        
 
 
 
@@ -150,7 +162,7 @@ label
         display: block
         &::after
             @include vertCentering(row, center) 
-            content: '' 
+            content: ''
             background: url(../images/check-circle-green.svg) no-repeat center
             background-size: contain
             position: relative
@@ -165,7 +177,7 @@ label
         display: block
         &::after
             @include vertCentering(row, center) 
-            content: '' 
+            content: ''
             background-size: contain
             position: relative
             right: 20px
@@ -176,12 +188,38 @@ label
             padding: auto
             object-fit: contain
             background: url(../images/exclamation-circle.svg) no-repeat center
-        
+
 
 .form-inside-div
     &:nth-child(1)
         background: red 
-            
+
+.passreset-sent-div
+    opacity: 0    
+.passreset-form.sent > *
+    opacity: 0
+.passreset-form.sent  
+    // position: relative  
+    .passreset-sent-div
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        @include vertCentering(column, center)
+        opacity: 1
+    p
+        @include font(Roman, 14px, 20px)
+        text-align: center
+        width: 100%
+        max-width: 246px
+        span
+            font-family: Bold75
+            color: $orange
+            font-weight: 900
+        
+
+
+
 @media only screen and (max-width: 1000px)
     #auth-toggle
-        width: 360px
+        // width: 360px

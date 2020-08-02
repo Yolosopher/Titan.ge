@@ -1,1 +1,21 @@
-/* No CSS *//*# sourceMappingURL=vars.css.map */
+/* fonts */
+@font-face {
+  font-family: 'Light';
+  src: url("../fonts/45-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Roman';
+  src: url("../fonts/55-Roman.ttf");
+}
+
+@font-face {
+  font-family: 'Bold75';
+  src: url("../fonts/75-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url("../fonts/bpg-le-studio-04-caps-webfont.ttf");
+}
+/*# sourceMappingURL=vars.css.map */

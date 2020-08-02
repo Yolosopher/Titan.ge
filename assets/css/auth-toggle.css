@@ -1,3 +1,24 @@
+/* fonts */
+@font-face {
+  font-family: 'Light';
+  src: url("../fonts/45-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Roman';
+  src: url("../fonts/55-Roman.ttf");
+}
+
+@font-face {
+  font-family: 'Bold75';
+  src: url("../fonts/75-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url("../fonts/bpg-le-studio-04-caps-webfont.ttf");
+}
+
 #auth-toggle {
   position: fixed;
   top: 0;
@@ -84,7 +105,7 @@
   width: 100%;
 }
 
-#auth-toggle .auth-toggle-top label[for=regis-name], #auth-toggle .auth-toggle-top label[for=auth-mail] {
+#auth-toggle .auth-toggle-top label[for=regis-name], #auth-toggle .auth-toggle-top label[for=auth-mail], #auth-toggle .auth-toggle-top label[for=passreset-mail] {
   margin-top: 0;
 }
 
@@ -203,13 +224,9 @@ label[for=auth-pass], label[for=regis-pass] {
           align-items: center;
 }
 
-.none {
-  display: none;
-}
-
 #auth-toggle-form.none,
 #regis-toggle-form.none,
-#auth-passreset-form.none {
+#passreset-form.none {
   display: none;
 }
 
@@ -292,9 +309,48 @@ label[for=auth-pass], label[for=regis-pass] {
   background: red;
 }
 
-@media only screen and (max-width: 1000px) {
-  #auth-toggle {
-    width: 360px;
-  }
+.passreset-sent-div {
+  opacity: 0;
+}
+
+.passreset-form.sent > * {
+  opacity: 0;
+}
+
+.passreset-form.sent .passreset-sent-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 1;
+}
+
+.passreset-form.sent p {
+  font-family: Roman;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 246px;
+}
+
+.passreset-form.sent p span {
+  font-family: Bold75;
+  color: #FF613B;
+  font-weight: 900;
 }
 /*# sourceMappingURL=auth-toggle.css.map */
