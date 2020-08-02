@@ -881,8 +881,8 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
 .respo-nav-inside {
     display: none;
     position: fixed;
-    width: calc(100% - 20px);
-    left: 10px;
+    width: calc(100% - 30px);
+    left: 15px;
     bottom: 15px;
     background: white 0% no-repeat padding-box;
     border-radius: 10px;

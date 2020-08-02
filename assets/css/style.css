@@ -29,7 +29,7 @@
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
-  z-index: 100;
+  z-index: 101;
   overflow: hidden;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
