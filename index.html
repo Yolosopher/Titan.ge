@@ -17,7 +17,7 @@
       property="og:description"
       content="საბეჭდი და ტიპოგრაფიული ინდუსტრიის უშინაარსო ტექსტია. იგი სტანდარტად 1500-იანი წლებიდან იქცა, როდესაც უცნობმა მბეჭდავმა ამწყობ დაზგაზე წიგნის საცდელი ეგზემპლარი დაბეჭდა. მისი ტექსტი არამარტო 5 საუკუნის მანძილზე შემორჩა, არამედ მან დღემდე, ელექტრონული ტიპოგრაფიის დრომდეც უცვლელად მოაღწია. განსაკუთრებული პოპულარობა მას 1960-იან წლებში გამოსულმა Letraset-ის ცნობილმა ტრაფარეტებმა მოუტანა, უფრო მოგვიანებით კი — Aldus PageMaker-ის ტიპის საგამომცემლო პროგრამებმა, რომლებშიც Lorem Ipsum-ის სხვადასხვა ვერსიები იყო ჩაშენებული"
     />
-    <link rel="stylesheet" href="assets/css/styleraw.css">
+    <link rel="stylesheet" href="assets/css/styleraw.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
@@ -164,7 +164,19 @@
       <div class="auth-toggle-top">
         <div class="auth-reg-navs">
           <div id="back-to-auth" class="back-to-auth">
-            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="13" viewBox="0 0 8 13"><defs></defs><path class="a" d="M9.258,12.378l5.43-5.257a1.311,1.311,0,0,1,1.819,0,1.212,1.212,0,0,1,0,1.748l-4.534,4.389,4.534,4.389a1.212,1.212,0,0,1,0,1.748,1.33,1.33,0,0,1-1.819,0l-5.43-5.257a1.212,1.212,0,0,1,0-1.76Z" transform="translate(-8.879 -6.754)"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="31"
+              height="13"
+              viewBox="0 0 8 13"
+            >
+              <defs></defs>
+              <path
+                class="a"
+                d="M9.258,12.378l5.43-5.257a1.311,1.311,0,0,1,1.819,0,1.212,1.212,0,0,1,0,1.748l-4.534,4.389,4.534,4.389a1.212,1.212,0,0,1,0,1.748,1.33,1.33,0,0,1-1.819,0l-5.43-5.257a1.212,1.212,0,0,1,0-1.76Z"
+                transform="translate(-8.879 -6.754)"
+              />
+            </svg>
           </div>
           <div id="exit-auth-toggle" class="exit-auth-toggle">
             <svg
@@ -248,7 +260,9 @@
             <div class="auth-succ-or-error"></div>
           </div>
           <input type="submit" value="ავტორიზაცია" />
-          <a href="javascript:void(0)" class="pass-reset">პაროლის აღდგენა</a>
+          <a href="javascript:void(0)" id="pass-reset" class="pass-reset"
+            >პაროლის აღდგენა</a
+          >
         </form>
         <form class="regis-toggle-form none" id="regis-toggle-form">
           <h2>რეგისტრაცია</h2>
@@ -258,14 +272,20 @@
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
-                height="14"
-                viewBox="0 0 18 14"
+                height="18"
+                viewBox="0 0 18 18"
               >
-                <defs></defs>
+                <defs>
+                  <style>
+                    .a {
+                      fill: #fff;
+                    }
+                  </style>
+                </defs>
                 <path
                   class="a"
-                  d="M17.3,4H4.7A2.663,2.663,0,0,0,2,6.625v8.75A2.663,2.663,0,0,0,4.7,18H17.3A2.663,2.663,0,0,0,20,15.375V6.625A2.663,2.663,0,0,0,17.3,4Zm-.369,1.75-5.292,5.145a.918.918,0,0,1-1.278,0L5.069,5.75ZM18.2,15.375a.888.888,0,0,1-.9.875H4.7a.888.888,0,0,1-.9-.875V6.984l5.292,5.145a2.755,2.755,0,0,0,3.816,0L18.2,6.984Z"
-                  transform="translate(-2 -4)"
+                  d="M14.406,11.633a5.419,5.419,0,1,0-6.711,0,9,9,0,0,0-5.626,7.358.91.91,0,0,0,1.809.2,7.24,7.24,0,0,1,14.381,0,.9.9,0,0,0,.9.8h.1a.9.9,0,0,0,.8-.989,9,9,0,0,0-5.653-7.367Zm-3.355-.639a3.6,3.6,0,1,1,3.618-3.6A3.608,3.608,0,0,1,11.05,10.994Z"
+                  transform="translate(-2.064 -1.995)"
                 />
               </svg>
             </div>
@@ -283,14 +303,20 @@
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
-                height="14"
-                viewBox="0 0 18 14"
+                height="18"
+                viewBox="0 0 18 18"
               >
-                <defs></defs>
+                <defs>
+                  <style>
+                    .a {
+                      fill: #fff;
+                    }
+                  </style>
+                </defs>
                 <path
                   class="a"
-                  d="M17.3,4H4.7A2.663,2.663,0,0,0,2,6.625v8.75A2.663,2.663,0,0,0,4.7,18H17.3A2.663,2.663,0,0,0,20,15.375V6.625A2.663,2.663,0,0,0,17.3,4Zm-.369,1.75-5.292,5.145a.918.918,0,0,1-1.278,0L5.069,5.75ZM18.2,15.375a.888.888,0,0,1-.9.875H4.7a.888.888,0,0,1-.9-.875V6.984l5.292,5.145a2.755,2.755,0,0,0,3.816,0L18.2,6.984Z"
-                  transform="translate(-2 -4)"
+                  d="M14.406,11.633a5.419,5.419,0,1,0-6.711,0,9,9,0,0,0-5.626,7.358.91.91,0,0,0,1.809.2,7.24,7.24,0,0,1,14.381,0,.9.9,0,0,0,.9.8h.1a.9.9,0,0,0,.8-.989,9,9,0,0,0-5.653-7.367Zm-3.355-.639a3.6,3.6,0,1,1,3.618-3.6A3.608,3.608,0,0,1,11.05,10.994Z"
+                  transform="translate(-2.064 -1.995)"
                 />
               </svg>
             </div>
@@ -333,23 +359,24 @@
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
-                height="14"
-                viewBox="0 0 18 14"
+                height="18"
+                viewBox="0 0 18 18"
               >
-                <defs></defs>
+                <defs>
+                  <style>
+                    .a {
+                      fill: #fff;
+                    }
+                  </style>
+                </defs>
                 <path
                   class="a"
-                  d="M17.3,4H4.7A2.663,2.663,0,0,0,2,6.625v8.75A2.663,2.663,0,0,0,4.7,18H17.3A2.663,2.663,0,0,0,20,15.375V6.625A2.663,2.663,0,0,0,17.3,4Zm-.369,1.75-5.292,5.145a.918.918,0,0,1-1.278,0L5.069,5.75ZM18.2,15.375a.888.888,0,0,1-.9.875H4.7a.888.888,0,0,1-.9-.875V6.984l5.292,5.145a2.755,2.755,0,0,0,3.816,0L18.2,6.984Z"
-                  transform="translate(-2 -4)"
+                  d="M14.406,11.633a5.419,5.419,0,1,0-6.711,0,9,9,0,0,0-5.626,7.358.91.91,0,0,0,1.809.2,7.24,7.24,0,0,1,14.381,0,.9.9,0,0,0,.9.8h.1a.9.9,0,0,0,.8-.989,9,9,0,0,0-5.653-7.367Zm-3.355-.639a3.6,3.6,0,1,1,3.618-3.6A3.608,3.608,0,0,1,11.05,10.994Z"
+                  transform="translate(-2.064 -1.995)"
                 />
               </svg>
             </div>
-            <input
-              type="tel"
-              name="regis-tel"
-              id="regis-tel"
-              required="true"
-            />
+            <input type="tel" name="regis-tel" id="regis-tel" required="true" />
             <div class="auth-succ-or-error"></div>
           </div>
           <label for="regis-pass">პაროლი</label>
@@ -403,6 +430,35 @@
             <div class="auth-succ-or-error"></div>
           </div>
           <input type="submit" value="რეგისტრაცია" />
+        </form>
+        <form class="passreset-form none" id="passreset-form">
+          <h2>აპაროლის აღდგენა</h2>
+          <label for="passreset-mail">ელ. ფოსტა</label>
+          <div class="auth-div form-inside-div">
+            <div class="form-svg-div">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="14"
+                viewBox="0 0 18 14"
+              >
+                <defs></defs>
+                <path
+                  class="a"
+                  d="M17.3,4H4.7A2.663,2.663,0,0,0,2,6.625v8.75A2.663,2.663,0,0,0,4.7,18H17.3A2.663,2.663,0,0,0,20,15.375V6.625A2.663,2.663,0,0,0,17.3,4Zm-.369,1.75-5.292,5.145a.918.918,0,0,1-1.278,0L5.069,5.75ZM18.2,15.375a.888.888,0,0,1-.9.875H4.7a.888.888,0,0,1-.9-.875V6.984l5.292,5.145a2.755,2.755,0,0,0,3.816,0L18.2,6.984Z"
+                  transform="translate(-2 -4)"
+                />
+              </svg>
+            </div>
+            <input
+              type="email"
+              name="passreset-mail"
+              id="passreset-mail"
+              required="true"
+            />
+            <div class="auth-succ-or-error"></div>
+          </div>
+          <input type="submit" value="პაროლის აღდგენა" />
         </form>
       </div>
       <a class="register" href="javascript:void(0)">რეგისტრაცია</a>

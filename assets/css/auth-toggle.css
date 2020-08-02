@@ -68,6 +68,7 @@
 }
 
 #auth-toggle .auth-toggle-top h2 {
+  width: 100%;
   margin-top: 46px;
   margin-bottom: 30px;
   font-family: Regular;
@@ -110,6 +111,12 @@
   line-height: 15px;
   color: #171717;
   font-weight: 900;
+}
+
+label {
+  font-family: Roman;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 label[for=auth-pass], label[for=regis-pass] {
@@ -181,7 +188,8 @@ label[for=auth-pass], label[for=regis-pass] {
 }
 
 .auth-toggle-form,
-.regis-toggle-form {
+.regis-toggle-form,
+.passreset-form {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -200,7 +208,8 @@ label[for=auth-pass], label[for=regis-pass] {
 }
 
 #auth-toggle-form.none,
-#regis-toggle-form.none {
+#regis-toggle-form.none,
+#auth-passreset-form.none {
   display: none;
 }
 
@@ -281,5 +290,11 @@ label[for=auth-pass], label[for=regis-pass] {
 
 .form-inside-div:nth-child(1) {
   background: red;
+}
+
+@media only screen and (max-width: 1000px) {
+  #auth-toggle {
+    width: 360px;
+  }
 }
 /*# sourceMappingURL=auth-toggle.css.map */

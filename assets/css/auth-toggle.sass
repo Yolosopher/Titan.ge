@@ -43,6 +43,7 @@
         width: 100%
         @include vertCentering(column, flex-start)
         h2 
+            width: 100%
             margin-top: 46px
             margin-bottom: 30px
             @include font(Regular, 24px, 32px)
@@ -51,7 +52,7 @@
             margin-top: 10px
             margin-bottom: 12px
             display: block
-            width: 100%
+            width: 100%            
             &[for=regis-name],
             &[for=auth-mail]
                 margin-top: 0
@@ -75,6 +76,7 @@
             font-weight: 900
 
 label
+    @include font(Roman, 14px, 17px)
     &[for=auth-pass],
     &[for=regis-pass]
         margin-top: 10px
@@ -118,7 +120,8 @@ label
     
         
 .auth-toggle-form,
-.regis-toggle-form 
+.regis-toggle-form,
+.passreset-form
     width: 100%
     display: flex
     flex-direction: column
@@ -127,7 +130,8 @@ label
 .none
     display: none
 #auth-toggle-form,
-#regis-toggle-form
+#regis-toggle-form,
+#auth-passreset-form
     &.none
         display: none
 
@@ -178,3 +182,6 @@ label
     &:nth-child(1)
         background: red 
             
+@media only screen and (max-width: 1000px)
+    #auth-toggle
+        width: 360px

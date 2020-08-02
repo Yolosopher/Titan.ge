@@ -221,16 +221,25 @@ authPass.change(function() {
 });
 
 
-// auth & register switching
+// auth & register & passReset switching
 $('.register').click(function () {
   $('#back-to-auth').addClass('register-active');
   $('#auth-toggle-form').addClass('none');
+  $('#passreset-form').addClass('none');
   $('#regis-toggle-form').removeClass('none');
   $('.register').addClass('register-active');
 });
 $('#back-to-auth').click(function () {
   $(this).removeClass('register-active');
   $('#regis-toggle-form').addClass('none');
+  $('#passreset-form').addClass('none');
   $('#auth-toggle-form').removeClass('none');
   $('.register').removeClass('register-active');
+});
+$('#pass-reset').click(function() {
+  $('#back-to-auth').addClass('register-active');
+  $('#passreset-form').removeClass('none');
+  $('#auth-toggle-form').addClass('none');
+  $('#regis-toggle-form').addClass('none');
+  $('.register').addClass('register-active');
 });
