@@ -90,13 +90,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // burger menu
 $("#header-nav").click(function () {
-  $("#burger-header").slideToggle(200, function() {
+  clientWidth = window.innerWidth;
+  if (clientWidth > 1000) {
+    $("#burger-header").slideToggle(700, function() {
+      if ($(this).is(':visible')) {
+        $(this).css('display', 'flex')
+      }
+    });
+  }
+});
+
+
+
+// burger menu when clientWidth < 1000
+$('#burger-respo').click(function() {
+  respoBurgerToggleRunner();
+  $("#burger-header-clone").slideToggle(700, function() {
+    $('.auth-toggle-black-screen').toggleClass('on');
     if ($(this).is(':visible')) {
-      $(this).css('display', 'flex')
-    }
+      $(this).css("display", "flex");
+    };
   });
 });
 
+function respoBurgerToggleRunner() {
+  clientWidth = window.innerWidth;
+  respoBurgerToggle()
+};
+
+function respoBurgerToggle() {
+  let copy = document.getElementById('burger-header').cloneNode(true);
+  copy.id = 'burger-header-clone';
+  let bodyEl = document.querySelector('body');
+  if (clientWidth < 1000 & !bodyEl.classList.contains('has-cloned-burger')) {
+    bodyEl.appendChild(copy);
+    $('#burger-header-clone').css({
+      "top": "unset",
+      "bottom": "90px",
+      "left": "10px",
+      "padding": 0,
+      "padding-left": "15px",
+      "position": "fixed",
+      "max-width": `${clientWidth - 105}px`,
+    });
+    $('#burger-header-clone').find('.burger-header-bot').find('ul').addClass('founded');
+    bodyEl.classList.add('has-cloned-burger');
+  };
+};
+
+// decrement function
 $('.decrement').click(function(){
   const nah = $('.product-name').html();
   console.log(nah);
@@ -160,7 +202,6 @@ function checkPage() {
     shopRespo.classList.add('respo-active');
   }
 };
-checkPage();
 
 
 
@@ -184,6 +225,7 @@ function resizeNorientation() {
     }); 
   };
   controlHeight();
+  respoBurgerToggle()
 };
 
 // auth-toggle height auto On orientation change and On resize
@@ -204,6 +246,7 @@ $( window ).resize(function() {
 $( window ).on( "orientationchange", function( event ){
   resizeNorientation();
   controlHeight();
+  respoBurgerToggle()
 });
 
 function authToggle(clWidth) {

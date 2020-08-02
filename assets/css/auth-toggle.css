@@ -376,4 +376,10 @@ label[for=auth-pass], label[for=regis-pass] {
 .footer-bottom p a:any-link {
   color: #FF613B;
 }
+
+@media only screen and (max-width: 1000px) {
+  .burger-header-top li:first-child {
+    margin-top: 16px;
+  }
+}
 /*# sourceMappingURL=auth-toggle.css.map */
