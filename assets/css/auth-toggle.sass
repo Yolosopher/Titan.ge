@@ -35,10 +35,11 @@
         border-radius: 10px
         border: 1px solid #E2E7ED
         width: 100%
-        height: 54px
+        padding: 19.5px 0
         @include vertCentering(row, center)
         font-weight: 900
         cursor: pointer
+        margin-top: 30px
     .auth-toggle-top
         width: 100%
         @include vertCentering(column, flex-start)
@@ -75,6 +76,8 @@
             @include font(Regular, 12px, 15px)
             color: $black17
             font-weight: 900
+    &.after
+        overflow: auto
 
 label
     @include font(Roman, 14px, 17px)
@@ -90,7 +93,7 @@ label
     position: absolute
     top: 0
     right: 0
-    height: 100%
+    height: 1000%
     width: 100vw
     background: black
     opacity: .8
@@ -218,7 +221,14 @@ label
             font-weight: 900
         
 
-
+// adds in styleraw
+.footer-bottom
+    p
+        &:first-child
+            @include font(Roman, 12px, 18px)
+            
+        a:any-link
+            color: $orange
 
 @media only screen and (max-width: 1000px)
     #auth-toggle

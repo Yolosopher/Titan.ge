@@ -162,18 +162,88 @@ function checkPage() {
 };
 checkPage();
 
+
+
 // auth-toggle
-$('.login').click(function () {
+let clientWidth = window.innerWidth;
+let clientHeight = window.innerHeight;
+
+
+// on resize and on orientationchange function
+function resizeNorientation() {
+  let resizedWidth = window.innerWidth;
+  let authTogWidth = $('#auth-toggle');
+  let comparable = authTogWidth.width() + 15;
+  if (resizedWidth < comparable) {
+    $('#auth-toggle').css({
+      'max-width': `${resizedWidth - 15}px`
+    }); 
+  } else {
+    $('#auth-toggle').css({
+      'max-width': `${resizedWidth - 15}px`
+    }); 
+  };
+  controlHeight();
+};
+
+// auth-toggle height auto On orientation change and On resize
+function controlHeight() {
+  if (clientHeight < 550){
+    $('#auth-div.after').css({
+      "height": "auto"
+    });
+  }
+};
+
+// on resize
+$( window ).resize(function() {
+  resizeNorientation();
+  controlHeight();
+});
+// on orientation change
+$( window ).on( "orientationchange", function( event ){
+  resizeNorientation();
+  controlHeight();
+});
+
+function authToggle(clWidth) {
   $('#auth-toggle').addClass('after');
-  $('#auth-toggle').animate({
-    'padding': '20px 81px 20px 102px',
-    'width': '572px'
-  }, 700, 'swing');
+  if (clWidth < 700) {
+    $('#auth-toggle').animate({
+      'padding': '20px 15px 20px 35px',
+      'max-width': `${clWidth - 15}px`,
+      'width': `572px`
+    }, 700, 'swing');
+  } else {
+    $('#auth-toggle').animate({
+      'padding': '20px 81px 20px 102px',
+      'max-width': `${clWidth - 15}px`,
+      'width': '572px'
+    }, 700, 'swing');
+  }
+  // black screen on auth-toggle click
   $('.auth-toggle-black-screen').addClass('on');
   $('html').css({
     "overflow": "hidden"
   });
+  controlHeight();
+}
+// respo.click() triggers auth-toggle
+$('.login').click(function() {
+  clientHeight = window.innerHeight;
+  clientWidth = window.innerWidth;
+  authToggle(clientWidth);
 });
+
+$('.respo-login').click(function() {
+  clientHeight = window.innerHeight;
+  clientWidth = window.innerWidth;
+  authToggle(clientWidth);
+});
+
+
+
+// exit auth-toggle
 $('#exit-auth-toggle').click(function () {
   $('#auth-toggle').removeClass('after');
   $('#auth-toggle').animate({
@@ -189,7 +259,7 @@ $('#exit-auth-toggle').click(function () {
 
 });
 
-
+// auth input controls
 let authMail = $('input[type=email]');
 
 authMail.change(function() {
@@ -250,4 +320,10 @@ $('input[value="პაროლის აღდგენა"]').click(function(e
   setTimeout(() => {
     $('#passreset-form').addClass('sent');
   }, 300);
+});
+
+// respo-shop onclick
+
+$('.respo-shop').click(function() {
+  window.location = 'pages/card.html';
 });

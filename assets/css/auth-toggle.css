@@ -53,7 +53,7 @@
   border-radius: 10px;
   border: 1px solid #E2E7ED;
   width: 100%;
-  height: 54px;
+  padding: 19.5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,6 +69,7 @@
           flex-direction: row;
   font-weight: 900;
   cursor: pointer;
+  margin-top: 30px;
 }
 
 #auth-toggle .auth-toggle-top {
@@ -134,6 +135,10 @@
   font-weight: 900;
 }
 
+#auth-toggle.after {
+  overflow: auto;
+}
+
 label {
   font-family: Roman;
   font-size: 14px;
@@ -152,7 +157,7 @@ label[for=auth-pass], label[for=regis-pass] {
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;
+  height: 1000%;
   width: 100vw;
   background: black;
   opacity: .8;
@@ -352,5 +357,23 @@ label[for=auth-pass], label[for=regis-pass] {
   font-family: Bold75;
   color: #FF613B;
   font-weight: 900;
+}
+
+.footer-bottom p:first-child {
+  font-family: Roman;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.footer-bottom p a:-webkit-any-link {
+  color: #FF613B;
+}
+
+.footer-bottom p a:-moz-any-link {
+  color: #FF613B;
+}
+
+.footer-bottom p a:any-link {
+  color: #FF613B;
 }
 /*# sourceMappingURL=auth-toggle.css.map */
