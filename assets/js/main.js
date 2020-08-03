@@ -104,12 +104,24 @@ $("#header-nav").click(function () {
 
 // burger menu when clientWidth < 1000
 $('#burger-respo').click(function() {
+  $('.auth-toggle-black-screen').addClass('on');
+
   respoBurgerToggleRunner();
-  $("#burger-header-clone").slideToggle(700, function() {
-    $('.auth-toggle-black-screen').toggleClass('on');
+  $("#burger-header-clone").toggle(function() {
+    $('html').toggleClass('overflown')
     if ($(this).is(':visible')) {
-      $(this).css("display", "flex");
-    };
+      $(this).animate({
+        "display": "flex",
+        "left": 0
+      }, 700);
+    } else {
+      clientWidth = window.innerWidth;
+      $(this).animate({
+        "display": "flex",
+        "left": `${105-clientWidth}px`
+      }, 700);
+      $('.auth-toggle-black-screen').removeClass('on');
+    };      
   });
 });
 
@@ -126,11 +138,12 @@ function respoBurgerToggle() {
     bodyEl.appendChild(copy);
     $('#burger-header-clone').css({
       "top": "unset",
-      "bottom": "90px",
-      "left": "10px",
+      "bottom": "105px",
+      "left": `${105-clientWidth}px`,
       "padding": 0,
       "padding-left": "15px",
       "position": "fixed",
+      "width": `${clientWidth - 105}px`,
       "max-width": `${clientWidth - 105}px`,
     });
     $('#burger-header-clone').find('.burger-header-bot').find('ul').addClass('founded');

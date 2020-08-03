@@ -6,6 +6,8 @@
     height: calc(100vh - 90px)
     overflow: scroll
     border-radius: 10px
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
 
 .founded
     li
@@ -16,3 +18,15 @@
 .home-main.container
     margin-bottom: 90px
 
+nav.respo-nav-outside.container
+    position: fixed
+    bottom: 0
+    left: 0
+    height: 100px
+    width: 100%
+    background: $fa
+    z-index: 101
+
+html
+    &.overflown
+        overflow: hidden
