@@ -384,6 +384,6 @@ $('input[value="პაროლის აღდგენა"]').click(function(e
 
 // respo-shop onclick
 
-$('.respo-shop').click(function() {
-  window.location = 'pages/card.html';
-});
+// $('.respo-shop').click(function() {
+//   window.location = 'pages/card.html';
+// });
