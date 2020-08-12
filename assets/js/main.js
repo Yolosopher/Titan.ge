@@ -25,58 +25,7 @@ const coverSlider = new Swiper('.home-main-container', {
   },
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  // let btns = document.querySelectorAll('.top-prod-add-btn');
-  $('.top-prod-add-btn').click(function (e) {
-    e.preventDefault();
-    if ($(this).find('div').text() === "დამატება") {
-      $(this).animate({
-        "width": "62px"
-      }, 400, "linear", function () {
-        setTimeout(() => {
-          $(this).find('div').text('დამატებულია');
-          $(this).animate({
-            "width": "100%"
-          }, 400)
-        }, 800);
-      });
 
-      let svgFirst = $(this).find('svg:first-child');
-
-      svgFirst.addClass('rotate').delay(800).queue(function (next) {
-        svgFirst.removeClass('rotate');
-        svgFirst.addClass('hidden');
-        svgFirst.next().removeClass('hidden').animate({
-          "right": "0"
-        }, 400, "linear");
-        next();
-      });
-    } else {
-          $(this).animate({
-            "width": "62px"
-          }, 400, "linear", function () {
-            setTimeout(() => {
-              $(this).find('div').text('დამატება');
-              $(this).animate({
-                "width": "100%"
-              }, 400)
-            }, 800);
-          });
-
-          let svgFirst = $(this).find('svg:nth-child(2)');
-
-          svgFirst.addClass('rotate').delay(800).queue(function (next) {
-            svgFirst.toggleClass('rotate');
-            svgFirst.toggleClass('hidden');
-            svgFirst.prev().toggleClass('hidden').animate({
-              "right": "0"
-            }, 800, "linear");
-            next();
-          });
-    }
-
-  });
-});
 
 // burger menu
 $("#header-nav").click(function () {
