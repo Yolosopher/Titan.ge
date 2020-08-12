@@ -1529,6 +1529,9 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
 .respo-nav-inside svg .a {
     fill: var(--unactive-grey);
 }
+.respo-nav-inside .active svg .a {
+    fill: var(--active-grey);
+}
 
 /* PROFILE START */
 .home-profile {

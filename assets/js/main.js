@@ -237,6 +237,7 @@ $('.login').click(function() {
 });
 
 $('.respo-login').click(function() {
+  $(this).addClass('active');
   clientHeight = window.innerHeight;
   clientWidth = window.innerWidth;
   authToggle(clientWidth);
@@ -246,6 +247,7 @@ $('.respo-login').click(function() {
 
 // exit auth-toggle
 $('#exit-auth-toggle').click(function () {
+  $('.respo-login').removeClass('active');
   $('#auth-toggle').removeClass('after');
   $('#auth-toggle').animate({
     'padding': '20px 0 20px 0',
