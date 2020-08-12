@@ -488,4 +488,11 @@ nav.respo-nav-outside.container {
 html.overflown {
   overflow: hidden;
 }
+
+svg.rotate {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  -webkit-transition: 600ms;
+  transition: 600ms;
+}
 /*# sourceMappingURL=style.css.map */

@@ -26,66 +26,56 @@ const coverSlider = new Swiper('.home-main-container', {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  let btns = document.querySelectorAll('.top-prod-add-btn');
+  // let btns = document.querySelectorAll('.top-prod-add-btn');
+  $('.top-prod-add-btn').click(function (e) {
+    e.preventDefault();
+    if ($(this).find('div').text() === "დამატება") {
+      $(this).animate({
+        "width": "62px"
+      }, 400, "linear", function () {
+        setTimeout(() => {
+          $(this).find('div').text('დამატებულია');
+          $(this).animate({
+            "width": "100%"
+          }, 400)
+        }, 800);
+      });
 
-  for (let btn of btns) {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      let shopCart = '.svg-shopping-cart';
-      let checkCircle = '.svg-check-circle';
+      let svgFirst = $(this).find('svg:first-child');
 
-      btn.querySelector('div').style.display = 'none';
+      svgFirst.addClass('rotate').delay(800).queue(function (next) {
+        svgFirst.removeClass('rotate');
+        svgFirst.addClass('hidden');
+        svgFirst.next().removeClass('hidden').animate({
+          "right": "0"
+        }, 400, "linear");
+        next();
+      });
+    } else {
+          $(this).animate({
+            "width": "62px"
+          }, 400, "linear", function () {
+            setTimeout(() => {
+              $(this).find('div').text('დამატება');
+              $(this).animate({
+                "width": "100%"
+              }, 400)
+            }, 800);
+          });
 
-      if (btn.querySelector('div').innerText === 'დამატება') {
-        btn.classList.toggle('pressed');
-        
-        setTimeout(() => {
-          btn.querySelector(shopCart).classList.toggle('hidden');
-        }, 1000);
-        setTimeout(() => {
-          btn.querySelector(checkCircle).classList.toggle('hidden');
-        }, 1500);
-        setTimeout(() => {
-          if (btn.querySelector('div').innerText === 'დამატება') {
-            btn.querySelector('div').innerHTML = 'დამატებულია';
-          } else {
-            btn.querySelector('div').innerHTML = 'დამატება';
-          }
-          btn.querySelector('div').style.display = 'unset';
-        }, 3000);
-        setTimeout(() => {
-          btn.classList.remove('pressed');
-          btn.classList.toggle('pressed-out');
-        }, 2000);
-      } else { // ELSE
-        btn.classList.toggle('pressed');
-        
-        setTimeout(() => {
-          btn.querySelector(checkCircle).classList.toggle('hidden');
-        }, 1000);
-        setTimeout(() => {
-          btn.querySelector(shopCart).classList.toggle('hidden');
-        }, 1500);
-        setTimeout(() => {
-          if (btn.querySelector('div').innerText === 'დამატება') {
-            btn.querySelector('div').innerHTML = 'დამატებულია';
-          } else {
-            btn.querySelector('div').innerHTML = 'დამატება';            
-          }
-          btn.querySelector('div').style.display = 'unset';
-        }, 3000);
-        setTimeout(() => {
-          btn.classList.remove('pressed');
-          btn.classList.toggle('pressed-out');
-        }, 2000);
-      }
-    //   OUT OF IF-ELSE
-      setTimeout(() => {
-        btn.classList.remove('pressed');
-        btn.classList.remove('pressed-out');
-      }, 3001);
-    });
-  }
+          let svgFirst = $(this).find('svg:nth-child(2)');
+
+          svgFirst.addClass('rotate').delay(800).queue(function (next) {
+            svgFirst.toggleClass('rotate');
+            svgFirst.toggleClass('hidden');
+            svgFirst.prev().toggleClass('hidden').animate({
+              "right": "0"
+            }, 800, "linear");
+            next();
+          });
+    }
+
+  });
 });
 
 // burger menu
@@ -104,6 +94,7 @@ $("#header-nav").click(function () {
 
 // burger menu when clientWidth < 1000
 $('#burger-respo').click(function() {
+  $(this).toggleClass('respo-active');
   $('.auth-toggle-black-screen').addClass('on');
 
   respoBurgerToggleRunner();
@@ -153,8 +144,13 @@ function respoBurgerToggle() {
 
 // decrement function
 $('.decrement').click(function(){
-  const nah = $('.product-name').html();
-  console.log(nah);
+  let number = $(this).next();
+  number.text(number.text() - 1)
+})
+// increment function
+$('.increment').click(function(){
+  let number = $(this).prev();
+  number.text(Number(number.text()) + 1)
 })
 
 // single-product-page slider
@@ -323,6 +319,10 @@ authMail.change(function() {
   let val = $(this).val();
   let dz = val.split('@')[1];
   if (!dz) checkPass.addClass('error');
+  if (val.length === 0) {
+    checkPass.removeClass('error').removeClass('success');
+    return;
+  }
   if (/\./.test(dz) && val.length >= 8) {
     checkPass.removeClass('error').addClass('success');
   } else {
@@ -338,6 +338,10 @@ authPass.change(function() {
   let w, d;  
   w = /[a-zA-Z]/.test(val);
   d = /\d/.test(val);
+  if (val.length === 0) {
+    checkPass.removeClass('error').removeClass('success');
+    return;
+  }
   console.log(w + ' ' + d);
   if (w && d && val.length >= 8) {
     checkPass.removeClass('error').addClass('success');

@@ -619,11 +619,16 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     height: 50px;
     border-radius: 10px;
     background-color: var(--orange);
-    padding: 0 40px 0 22.5px;
+    /* padding-right: 40px; */
     color: white;
     font-family: Bold75;
     font-size: 12px;
     line-height: 15px;
+    align-self: center;
+}
+.top-prod-add-btn svg {
+    overflow: visible;
+    margin: 0 20px;
 }
 
 .top-prod-add-btn.pressed {
@@ -641,8 +646,12 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
 }
 
 .top-prod-add-btn div {
+    margin-left: 5px;
+    margin-right: 20px;
+    font-family: Regular;
     font-size: 12px;
-    line-height: 15px;
+    line-height: 12px;
+    overflow: hidden;
 }
 
 .top-prod-add-btn div.div-hidden {
@@ -920,9 +929,15 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     transition: all 0.5s ease-in-out;
 }
 
+.svg-check-circle {
+    position: relative;
+    right: -57px;
+}
 .svg-check-circle.hidden {
-    display: none;
-    transition: all 0.5s ease-in-out;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    /* transition: all 0.5s ease-in-out; */
 }
 
 /* media queries */
@@ -1844,13 +1859,22 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     margin-bottom: 13px;
 }
 
+
 .bNd-icon {
     display: flex;
     margin: 0 25px 0 25px;
     align-items: center;
 
 }
-
+@media screen and (max-width: 410px) {
+    .basketNdelivery {
+        font-size: 18px;
+        line-height: 27px;
+    }
+    .bNd-icon {
+        margin: 0 20px 0 20px;
+    }
+}
 .basketNdelivery a.active {
     color: var(--u-color-000000);
 }
@@ -2512,7 +2536,7 @@ address {
     fill: #D0D0D0;
 }
 
-.respo-nav-inside .burger-respo.respo-active g rect {
+.burger-respo.respo-active g rect {
     fill: var(--active-grey);
 }
 
