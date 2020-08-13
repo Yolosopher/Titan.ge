@@ -517,6 +517,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     line-height: 19px;
     color: var(--orange);
     margin-bottom: 39px;
+    font-weight: 600;
 }
 
 .top-prod-slider {
@@ -664,7 +665,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 .slider-arrows {
     position: absolute;
-    top: 58px;
+    top: 56px;
     right: 38px;
     display: flex;
 }
@@ -1816,7 +1817,6 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     html body main.container,
     html body section.container,
     html body article.container[class=container] {
-        /* margin-top: 30px; */
         padding-left: 5px;
         padding-right: 5px;
     }
@@ -1827,7 +1827,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
 
     .slider-arrows {
         position: absolute;
-        top: 58px;
+        top: 74px;
         right: 18px;
         display: flex;
     }
