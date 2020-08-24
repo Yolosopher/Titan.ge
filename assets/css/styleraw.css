@@ -653,10 +653,12 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     font-size: 12px;
     line-height: 12px;
     overflow: hidden;
+
 }
 
 .top-prod-add-btn div.div-hidden {
     display: none;
+
 }
 
 .top-prod-add-btn div.div-shown {
@@ -947,6 +949,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     position: absolute;
     z-index: -1;
     overflow: hidden;
+    display: none;
     /* transition: all 0.5s ease-in-out; */
 }
 
