@@ -333,8 +333,29 @@ $('input[value="პაროლის აღდგენა"]').click(function(e
   }, 300);
 });
 
-// respo-shop onclick
+// RespoSearch Clicked
 
-// $('.respo-shop').click(function() {
-//   window.location = 'pages/card.html';
-// });
+function respoSearchClicked() {
+  $('.respo-nav-inside a').addClass('srch-on');
+  $('.srchbar-respo').addClass('clicked');
+};
+function respoSearchClickedReversed() {
+  $('.respo-nav-inside a').removeClass('srch-on');
+  $('.srchbar-respo').removeClass('clicked');
+};
+
+$('.searchbar-respo-form').submit(function(e){
+  e.preventDefault();
+});
+
+$('.srchbar-respo').click(function(){
+  respoSearchClicked();
+});
+
+
+
+$('.turn-off-searchbar-respo').click(function() {
+  setTimeout(() => {
+    respoSearchClickedReversed()
+  }, .1);
+});
