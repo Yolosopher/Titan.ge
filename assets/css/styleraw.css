@@ -140,14 +140,13 @@ body::-webkit-scrollbar {
 
 .header-nav span {
     font-size: 12px;
-    line-height: 15px;
     display: flex;
     align-items: center;
     position: relative;
 }
 
 .header-nav span::before {
-    content: url('../images/Component\ 2\ –\ 1.svg');
+    content: url('../images/Component2–1.svg');
     position: absolute;
     left: -30px;
     display: flex;
@@ -156,6 +155,9 @@ body::-webkit-scrollbar {
     width: 22px;
     height: 22px;
     margin-right: 10px;
+}
+.header-nav.on span::before {
+    content: url('../images/Group\ 1.svg');
 }
 
 .searchbar {
@@ -251,7 +253,6 @@ body::-webkit-scrollbar {
 
 .burger-header {
     width: 100%;
-    max-width: var(--container-size);
     margin: 0 auto;
     height: auto;
     padding: 40px 80px;
@@ -259,7 +260,7 @@ body::-webkit-scrollbar {
     display: none;
     position: absolute;
     top: 110px;
-    /* left: 0; */
+    left: 0;
     background-color: white;
     z-index: 100;
     border-top: 1px solid #F2F4F7;
@@ -269,6 +270,9 @@ body::-webkit-scrollbar {
     color: var(--u-color-000000);
     overflow: hidden;
 }
+.burger-header > div {
+    /* max-width: var(--container-size); */
+}
 
 .overflow-hidden {
     overflow: hidden;
@@ -276,7 +280,10 @@ body::-webkit-scrollbar {
 
 .burger-header-top {
     display: flex;
+    margin: 0 auto;
     margin-bottom: 40px;
+    width: 100%;
+    max-width: 1205px;    
 }
 
 .burger-header-top li {
@@ -299,7 +306,10 @@ body::-webkit-scrollbar {
 
 .burger-header-bot {
     display: flex;
+    margin: 0 auto;
     flex-grow: 1;
+    width: 100%;
+    max-width: 1205px
 }
 
 .burger-header-left {
@@ -332,7 +342,45 @@ body::-webkit-scrollbar {
     position: absolute;
     right: 0;
 }
+.second-level-li,
+.third-level-li {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+}
+.second-level-li:last-child,
+.third-level-li:last-child {
+    margin-bottom: 0;
+}
 
+
+/* burger-header-right */
+.burger-header-right {
+    /* max-width: 0; */
+    position: relative;
+    flex: 1;
+    transition: all 1s;
+}
+/* .burger-header-left:focus-within ~ .burger-header-right {
+    max-width: 100%;
+} */
+
+.third-level-ul {
+    max-width: 0;
+    top: 4px;
+    position: absolute;
+    left: 200px;
+    overflow: hidden;    
+}
+.active ~ .third-level-ul {
+    max-width: 200px;
+    transition:  1s ;
+}
+.third-level-li a {
+    display: block;
+    min-width: 200px;
+    height: 18px;
+}
 
 /* HEADER END */
 
@@ -512,14 +560,19 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
 }
 
 .tp-a:any-link {
-    font-family: Roman;
+    font-family: Bold75;
     font-size: 14px;
-    line-height: 19px;
+    line-height: 17px;
     color: var(--orange);
     margin-bottom: 39px;
     font-weight: 600;
 }
-
+@media screen and (max-width: 580px) {
+    .tp-a:any-link {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
 .top-prod-slider {
     width: 100%;
     /* overflow: hidden; */
@@ -1085,10 +1138,18 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     color: var(--unactive-grey);
     font-family: Bold75;
     font-size: 14px;
+    line-height: 17px;
+}
+
+@media screen and (max-width: 580px) {
+    .pm-category-titles {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
 }
 
 .category-title {
-    line-height: 19px;
     position: relative;
     padding-right: 20.5px;
     margin-right: 13.5px;
@@ -1862,7 +1923,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     color: var(--orange);
     font-size: 14px;
     line-height: 20px;
-    font-family: Roman;
+    font-family: Regular;
     font-weight: 900;
 }
 
@@ -1881,15 +1942,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     align-items: center;
 
 }
-@media screen and (max-width: 410px) {
-    .basketNdelivery {
-        font-size: 18px;
-        line-height: 27px;
-    }
-    .bNd-icon {
-        margin: 0 20px 0 20px;
-    }
-}
+
 .basketNdelivery a.active {
     color: var(--u-color-000000);
 }
@@ -1906,6 +1959,23 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     height: 12px;
     margin: 0 4px 0 4px;
     border-radius: 2px;
+}
+@media screen and (max-width: 580px) {
+    .basketNdelivery {
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    .bNd-icon {
+        margin: 0 20px 0 20px;
+    }
+    .bNd-icon span {
+        width: 20px;
+    }
+    .bNd-icon span:nth-child(2) {
+        width: 6px;
+        height: 6px;
+    }
 }
 
 .pm-category-titles.card {

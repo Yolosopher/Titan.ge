@@ -29,6 +29,7 @@ const coverSlider = new Swiper('.home-main-container', {
 
 // burger menu
 $("#header-nav").click(function () {
+  $(this).toggleClass('on');
   clientWidth = window.innerWidth;
   if (clientWidth > 1000) {
     $("#burger-header").slideToggle(700, function() {
@@ -39,7 +40,15 @@ $("#header-nav").click(function () {
   }
 });
 
+$('.second-level-li > a').click(function(){
+  if($(this).hasClass('active')) {
+    $('.second-level-li > a').removeClass('active');
 
+  } else {
+    $('.second-level-li > a').removeClass('active');
+    $(this).toggleClass('active');
+  };
+});
 
 // burger menu when clientWidth < 1000
 $('#burger-respo').click(function() {
@@ -116,7 +125,7 @@ const swiper4 = new Swiper('.product-image-slider-outer', {
 window.addEventListener('DOMContentLoaded', (event) => {
   // single-product.html first-image active
   let firstImg = document.querySelector('.pr-i-s-img');
-  firstImg.classList.add('marked')
+  if (firstImg) firstImg.classList.add('marked');
   // single-product.html onclick main photo change
   $('.pr-i-s-img').click(function(){
     $('.pr-i-s-img').removeClass('marked');
