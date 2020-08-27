@@ -146,7 +146,7 @@ body::-webkit-scrollbar {
 }
 
 .header-nav span::before {
-    content: url('../images/Component2–1.svg');
+    content: url('../images/burger.svg');
     position: absolute;
     left: -30px;
     display: flex;
@@ -706,12 +706,10 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     font-size: 12px;
     line-height: 12px;
     overflow: hidden;
-
 }
 
 .top-prod-add-btn div.div-hidden {
     display: none;
-
 }
 
 .top-prod-add-btn div.div-shown {
@@ -1472,7 +1470,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
 }
 
 .product-price {
-    font-family: Roman;
+    font-family: Bold75;
     font-size: 24px;
     line-height: 28px;
 }
