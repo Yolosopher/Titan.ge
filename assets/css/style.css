@@ -467,6 +467,10 @@ input[type=submit] {
   border-bottom-left-radius: 0;
 }
 
+#burger-header-clone .burger-header-right.founded {
+  display: none;
+}
+
 .founded li a::after {
   display: none;
 }
