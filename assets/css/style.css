@@ -368,14 +368,17 @@ label[for=auth-pass], label[for=regis-pass] {
 
 .footer-bottom p a:-webkit-any-link {
   color: #FF613B;
+  font-family: Bold75;
 }
 
 .footer-bottom p a:-moz-any-link {
   color: #FF613B;
+  font-family: Bold75;
 }
 
 .footer-bottom p a:any-link {
   color: #FF613B;
+  font-family: Bold75;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -459,16 +462,33 @@ input[type=submit] {
   margin: 0 auto;
 }
 
+/* fonts */
+@font-face {
+  font-family: 'Light';
+  src: url("../fonts/45-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Roman';
+  src: url("../fonts/55-Roman.ttf");
+}
+
+@font-face {
+  font-family: 'Bold75';
+  src: url("../fonts/75-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url("../fonts/bpg-le-studio-04-caps-webfont.ttf");
+}
+
 #burger-header-clone {
   height: calc(100vh - 90px);
   overflow: auto;
   border-radius: 10px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-}
-
-#burger-header-clone .burger-header-right.founded {
-  display: none;
 }
 
 .founded li a::after {
@@ -577,5 +597,11 @@ svg.rotate {
 
 .searchbar-respo-form-input::placeholder {
   color: #D0D0D0;
+}
+
+@media screen and (max-width: 450px) {
+  #product-add-btn div {
+    margin-left: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -27,12 +27,13 @@ const coverSlider = new Swiper('.home-main-container', {
 
 
 
+
 // burger menu
 $("#header-nav").click(function () {
   $(this).toggleClass('on');
   clientWidth = window.innerWidth;
   if (clientWidth > 1000) {
-    $("#burger-header").slideToggle(700, function () {
+    $("#burger-header").slideToggle(700, function() {
       if ($(this).is(':visible')) {
         $(this).css('display', 'flex')
       }
@@ -40,7 +41,25 @@ $("#header-nav").click(function () {
   }
 });
 
+$('.second-level-li > a').click(function(){
+  if($(this).hasClass('active')) {
+    $('.second-level-li > a').removeClass('active');
 
+  } else {
+    $('.second-level-li > a').removeClass('active');
+    $(this).toggleClass('active');
+  };
+});
+
+$('aside .ctgr-ul li a').click(function() {
+  if ($(this).hasClass('active')) {    
+    $('.burger-header-right').removeClass('active');
+  } else {
+    $('.burger-header-right').toggleClass('active');
+  };
+
+  $(this).toggleClass('active');
+});
 
 // burger menu when clientWidth < 1000
 $('#burger-respo').click(function () {

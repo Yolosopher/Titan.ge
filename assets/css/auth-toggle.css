@@ -367,14 +367,17 @@ label[for=auth-pass], label[for=regis-pass] {
 
 .footer-bottom p a:-webkit-any-link {
   color: #FF613B;
+  font-family: Bold75;
 }
 
 .footer-bottom p a:-moz-any-link {
   color: #FF613B;
+  font-family: Bold75;
 }
 
 .footer-bottom p a:any-link {
   color: #FF613B;
+  font-family: Bold75;
 }
 
 @media only screen and (max-width: 1000px) {
