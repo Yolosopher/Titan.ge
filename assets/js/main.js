@@ -25,11 +25,38 @@ const coverSlider = new Swiper('.home-main-container', {
   },
 });
 
+// last check down 
 
+// $("#header-nav").click(function () {
+//   if ($('.home-header').hasClass('on')) {
+    
+//     setTimeout(() => {
+//       $('.home-header').removeClass('on');
+//       $('.header-black-screen').removeClass('on');
+//       $('html').removeClass('overFlow');    
+//     }, 700);
+//     $(this).removeClass('on');
+//   } else {
+//     let widthd = window.innerWidth;
+//     $('.home-header').toggleClass('on');
+//     if (widthd > 1225) {
+//       let left = (widthd - 1225) / 2;
+//       console.log(left);
+//       $('.home-header').animate('padding-left', `${left}px`);
+//       $('.home-header').animate('padding-right', `${left}px`);
+//     }
+//     $('.header-black-screen').toggleClass('on');
+//     $('html').toggleClass('overFlow');
+//     $(this).toggleClass('on');
+//   }
 
 
 // burger menu
 $("#header-nav").click(function () {
+  // if 
+  // $('.home-header').toggleClass('on');
+  // $('.header-black-screen').toggleClass('on');
+  // $('html').toggleClass('overFlow');
   $(this).toggleClass('on');
   clientWidth = window.innerWidth;
   if (clientWidth > 1000) {

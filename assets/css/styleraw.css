@@ -96,18 +96,35 @@ body::-webkit-scrollbar {
 /* INDEX.HTML START */
 
 /* HEADER START */
-
+.header-black-screen.on {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1000%;
+    width: 100vw;
+    background: black;
+    opacity: .8;
+    z-index: 99;
+}
+html.overFlow {
+    overflow: hidden;
+}
 .home-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: var(--hdr-height);
     margin-bottom: 50px;
+    z-index: 101;
 }
-
+.home-header.on {
+    position: absolute;
+    z-index: 102;
+    width: 100%;
+    right: 0;
+}
 .home-header::before {
     content: '';
-    /* top: 0; */
     left: 0;
     width: 100%;
     position: absolute;
