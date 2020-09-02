@@ -99,13 +99,15 @@ $('#burger-respo').click(function () {
     if ($(this).is(':visible')) {
       $(this).animate({
         "display": "flex",
-        "left": 0
+        "left": 0,
+        "top": "30px"
       }, 700);
     } else {
       clientWidth = window.innerWidth;
       $(this).animate({
         "display": "flex",
-        "left": `${105-clientWidth}px`
+        "left": `${105-clientWidth}px`,
+        "top": "30px"    
       }, 700);
       $('.auth-toggle-black-screen').removeClass('on');
     };

@@ -2,16 +2,18 @@
 @import reset-password
 @import vars
 @import variables
-@import historyorde
+@import historyorder
 
 // correctings
 #burger-header-clone
-    height: calc(100vh - 90px)
     overflow: auto
     border-radius: 10px
     border-top-left-radius: 0
     border-bottom-left-radius: 0
-
+    z-index: 100
+    height: calc(100vh - 160px)
+    border-radius: 0px 10px 10px 0px
+    top: 30px
 .founded
     li
         a

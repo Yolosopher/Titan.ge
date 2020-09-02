@@ -5,18 +5,19 @@
 
 #auth-toggle 
     position: fixed
-    top: 0
+    top: 30px
     right: 0
     width: 0
     background: white
     display: flex
-    height: 100vh
+    height: calc(100vh - 160px)
     z-index: 101
     overflow: hidden
     justify-content: space-between
     align-items: center
     flex-direction: column
     padding: 20px 0
+    border-radius: 10px 0px 0px 10px
     .register
         @include font(Regular, 12px, 15px)
         color: black
