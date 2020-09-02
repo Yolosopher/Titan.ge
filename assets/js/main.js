@@ -93,6 +93,7 @@ function respoBurgerToggleRunner() {
 function respoBurgerToggle() {
   let copy = document.getElementById('burger-header').cloneNode(true);
   copy.id = 'burger-header-clone';
+  copy.children[0].children[1].children[1].remove();
   let bodyEl = document.querySelector('body');
   if (clientWidth < 1000 & !bodyEl.classList.contains('has-cloned-burger')) {
     bodyEl.appendChild(copy);
@@ -154,12 +155,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 });
 
+
 // profile.html profile-nav-li-active
+function navSwitcher() {
+  $('.profile-ps-pc').removeClass('active');
+  $('.historyOrder').removeClass('active');
+
+
+  if ($('.personal-info-nav').hasClass('profile-nav-li-active')) {
+    $('.profile-ps-pc').addClass('active');
+  } else if ($('.order-history-nav').hasClass('profile-nav-li-active')) {
+    $('.historyOrder').addClass('active');
+  }
+}
+
 let profNavLi = $('.profile-nav-li');
 $('.profile-nav-li').click(function () {
 
   $('.profile-nav-li').removeClass('profile-nav-li-active');
   $(this).addClass('profile-nav-li-active');
+  navSwitcher();
 });
 
 // check title and chane the respo-menu color
@@ -313,7 +328,6 @@ authPass.change(function () {
     checkPass.removeClass('error').removeClass('success');
     return;
   }
-  console.log(w + ' ' + d);
   if (w && d && val.length >= 8) {
     checkPass.removeClass('error').addClass('success');
   } else {
@@ -380,3 +394,4 @@ $('.turn-off-searchbar-respo').click(function () {
     respoSearchClickedReversed()
   }, .1);
 });
+

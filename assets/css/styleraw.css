@@ -238,7 +238,7 @@ body::-webkit-scrollbar {
     background-color: white;
     border-radius: 50%;
     margin-left: 17.5px;
-    font-family: Bold75;
+    font-weight: 600;
 }
 
 .login {
@@ -251,7 +251,7 @@ body::-webkit-scrollbar {
     margin-left: 17px;
     font-size: 12px;
     line-height: 18px;
-    font-family: Bold75;
+    font-weight: 600;
 }
 
 /* BURGER HEADER */
@@ -267,7 +267,7 @@ body::-webkit-scrollbar {
     top: 110px;
     left: 0;
     background-color: white;
-    z-index: 100;
+    z-index: 98;
     border-top: 1px solid #F2F4F7;
     flex-direction: column;
     font-size: 14px;
@@ -414,9 +414,11 @@ aside {
     border-radius: 10px;
     margin-right: 19px;
     flex-basis: 1;
+    display: flex;
+    /* position: relative; */
 }
 
-aside ul {
+.ctgr-ul {
     width: 100%;
     height: 100%;
     padding: 36px 31px 39px 30px;
@@ -427,10 +429,60 @@ aside ul {
     font: 14px/18px;
 }
 
+.toggle-drop-right {
+    position: absolute;
+    left: 277px;
+    top: 0;
+    width: 0;
+    background: white;
+    z-index: 97;
+    padding-top: 40px;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 10px;
+    transition: width .4s ease-in-out, padding-left .4s ease-in-out;
+}
+.toggle-drop-right.active {
+    width: calc(50% - 277px);
+    padding: 40px;
+    padding-left: 10px;
+    transition: padding .4s;
+}
+aside .toggle-drop-right.clicked {
+    width: calc(50% - 277px);
+    padding: 40px;
+    padding-left: 10px;
+    transition: padding .4s;
+}
+.toggle-drop-right-li {
+    position: relative;
+    margin-bottom: 16px;
+}
+.toggle-drop-right-ul-inside {
+    max-width: 0;
+    top: 4px;
+    position: absolute;
+    left: 140px;
+    overflow: hidden;
+}
+.toggle-drop-right-inside-li {
+    margin-bottom: 16px;
+}
+.active ~ .toggle-drop-right-ul-inside {
+    max-width: 200px;
+    transition: 1s;
+}
+.toggle-drop-right-li a {
+    display: block;
+    min-width: 100px;
+    overflow: hidden;
+}
+
 .ctgr-ul li {
     position: relative;
     font-size: 14px;
 }
+
 
 .ctgr-ul li a {
     font-size: inherit;
@@ -1613,7 +1665,6 @@ html body .footer-bottom p:nth-child(n) {
 .password-change {
     padding: 32px 20px 40px;
     flex-direction: column;
-    justify-content: space-between;
     margin-bottom: 40px;
 }
 
@@ -1623,7 +1674,7 @@ html body .footer-bottom p:nth-child(n) {
     width: 100%;
     max-width: 287px;
     height: 413px;
-    padding: 40px 20px 39px;
+    padding: 40px 20px;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -1635,6 +1686,7 @@ html body .footer-bottom p:nth-child(n) {
     height: 130px;
     object-fit: contain;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .profile-image {
@@ -1652,19 +1704,21 @@ html body .footer-bottom p:nth-child(n) {
     /* font-weight: 600; */
 }
 
+
 .profile-ul {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 144px;
 }
 
 .profile-nav-li {
     color: var(--u-color-000000);
     font-weight: 600;
     font-size: 14px;
-    line-height: 18px;
-    text-align: right;
+    line-height: unset;
+    text-align: left;
 }
 
 .profile-nav-li.profile-nav-li-active::before {
@@ -1680,6 +1734,8 @@ html body .footer-bottom p:nth-child(n) {
 
 .profile-nav-li a {
     position: relative;
+    display: block;
+    width: 100%;
 }
 
 .profile-nav-li a::after {
@@ -1689,7 +1745,7 @@ html body .footer-bottom p:nth-child(n) {
     height: 1px;
     background-color: var(--unactive-grey);
     position: absolute;
-    bottom: -25px;
+    bottom: -16px;
 }
 
 .profile-nav-li:last-child a::after {
@@ -1697,8 +1753,17 @@ html body .footer-bottom p:nth-child(n) {
     background-color: none;
 }
 
-.profile-ps-pc {
+.active-switcher {
     flex-grow: 1;
+}
+
+@media screen and (min-width: 800px) {
+    .profile-image a {
+        display: none;
+    }
+    .profile-nav-li a::after {
+        bottom: -21px;
+    }
 }
 
 /* personal info */
@@ -1710,6 +1775,7 @@ html body .footer-bottom p:nth-child(n) {
 .home-profile h1 {
     font-size: 24px;
     line-height: 32px;
+    margin-bottom: 40px;
 }
 
 .home-profile form {
@@ -1729,6 +1795,9 @@ html body .footer-bottom p:nth-child(n) {
     width: 48%;
     max-width: 380px;
     margin-bottom: 20px;
+}
+.form-div:last-child {
+    margin-bottom: 0;
 }
 
 .home-profile form label {
@@ -1771,6 +1840,7 @@ html body .footer-bottom p:nth-child(n) {
 .password-change {
     min-height: 487px;
     width: 100%;
+    position: relative;
 }
 
 .password-change .form-div {
@@ -1796,10 +1866,14 @@ html body .footer-bottom p:nth-child(n) {
 }
 
 .pass-change-succes-div {
-    display: flex;
+    display: none;
     flex-direction: column;
+    justify-items: center;
     align-items: center;
     width: 50%;
+}
+.pass-change-succes-div.active {
+    display: flex;
 }
 
 .succes-div-svg {
@@ -1835,10 +1909,14 @@ html body .footer-bottom p:nth-child(n) {
     .profile {
         margin-bottom: 30px;
         max-width: unset;
+        margin-right: 0;
     }
 
-    .profile-nav-li.profile-nav-li-active::before {
-        display: none;
+    .pass-change-succes-div.active {
+        display: none
+    }
+    .home-profile h1 {
+        margin-bottom: 30px;
     }
 }
 
@@ -1855,10 +1933,9 @@ html body .footer-bottom p:nth-child(n) {
         display: none;
     }
 
-    .profile-ps-pc {
+    .active-switcher{
         width: 100%;
     }
-
     .password-change {
         margin-bottom: 0;
     }
@@ -1890,7 +1967,19 @@ html body .footer-bottom p:nth-child(n) {
         right: 18px;
         display: flex;
     }
+    .home-profile input[type=submit] {
+        width: 100%;
+    }
 }
+
+/* historyOrder */
+
+.historyOrder {
+    background: white;
+    padding: 40px 30px;
+}
+
+
 
 /* PROFILE END */
 

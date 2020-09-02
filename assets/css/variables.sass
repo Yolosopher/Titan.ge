@@ -1,0 +1,66 @@
+@font-face 
+    font-family: HelvNeue
+    src: url(../fonts/75-Bold.ttf)
+@font-face
+    font-family: FiraBook
+    src: url(../fonts/FIRAGO-BOOK.TTF)
+@font-face
+    font-family: Helvetica Neue
+    src: url(../fonts/MyriadGEOMtavruliMedium.ttf)
+@font-face
+    font-family: FiraRegular
+    src: url(../fonts/FiraGO-Regular.ttf)
+@font-face
+    font-family: FiraBold
+    src: url(../fonts/FiraGO-Bold.ttf)
+@font-face
+    font-family: FiraMedium
+    src: url(../fonts/FIRAGO-MEDIUM2.TTF)
+
+
+$blue: #3690E6
+$brightblue: #2185E1
+$dark3: #18191A
+$dark2: #242526
+$dark2transp: #242526CC
+$dark1: #3A3B3C
+$grey: #B0B3B8
+$darkgrey: #B0B3B84D
+$background: #ebebeb
+$white: #FAFAFA
+
+$tablet-width: 800px
+
+@mixin tabletPlus()
+    @media screen and (min-width: $tablet-width)
+        @content
+
+@mixin px1126Plus()
+    @media screen and (min-width: 1126px)
+        @content
+@mixin sizePlus($width)
+    @media screen and (min-width: $width)
+        @content
+
+@mixin desktopPlus()
+    @media screen and (min-width: $desktop-width)
+        @content
+    
+@mixin centering()
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin flexing($justi, $align,)
+    display: flex
+    justify-content: $justi
+    align-items: $align
+@mixin flexingDir($dir, $justi, $align,)
+    display: flex
+    flex-direction: $dir
+    justify-content: $justi
+    align-items: $align
+@mixin font($size, $line-height)
+    font-size: $size
+    line-height: $line-height
+    

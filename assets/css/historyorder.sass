@@ -1,0 +1,158 @@
+@import variables
+
+.active-switcher
+    > div
+        display: none
+        &.active
+            display: block
+
+
+.historyOrder 
+    background: white
+    padding: 0
+    border-radius: 10px
+    padding: 40px 20px
+    @include tabletPlus()        
+        padding: 30px 15px
+        width: 100%
+    h1
+        margin-bottom: 30px
+        @include tabletPlus()
+            margin-bottom: 40px
+    ul
+        width: 100%
+        display: flex
+        flex-direction: column
+        margin-bottom: 40px
+        @include tabletPlus()
+            margin-bottom: 30px
+    li
+        @include flexingDir(column, initial, initial)
+        
+        margin-bottom: 16px
+        &:last-child
+            margin-bottom: 0
+
+.historyOrder-li
+    cursor: pointer
+    height: 55px
+    padding: 5px
+    border: 1px solid #E2E7ED
+    border-radius: 6px
+    overflow: hidden
+    transition: height .4s
+    @include tabletPlus()
+        padding: 10px
+    &.active
+        height: 255px
+        .historyOrder-content            
+            border-bottom: 1px solid #E2E7ED
+            margin-bottom: 24px
+            position: relative
+            @include tabletPlus()
+                border-bottom: none
+
+
+.active.historyOrder-li-dropdown  
+    @include tabletPlus()  
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            display: block
+            top: 0
+            height: 1px
+            width: calc((100% + 10px) / 100 * 82)
+            background: #E2E7ED
+        
+.historyOrder-dropdown-right
+    @include tabletPlus()
+        display: flex
+        flex-direction: column
+        font-weight: 900
+        flex: 1
+
+
+.historyOrder-left
+    font-family: Regular
+    display: flex
+    align-items: center
+
+.historyOrder-content 
+    @include flexing(space-between, center)
+    padding-bottom: 5px
+
+
+
+
+.historyOrder-number
+    height: 44px
+    width: 44px
+    @include centering()
+    margin-right: 20px
+    font-size: 18px
+    color: white
+    border-radius: 6px
+    background: $orange
+    @include tabletPlus()
+        height: 34px
+        width: 34px
+.historyOrder-id
+    font-size: 14px
+    @include tabletPlus()
+        font-size: 18px
+.historyOrder-date
+    font-family: Roman
+    font-size: 14px
+    
+.historyOrder-seemore
+    color: $orange
+    font-size: 12px
+    cursor: pointer
+    font-family: Bold75
+
+.historyOrder-li-dropdown
+    display: flex
+    flex: 1
+    @include tabletPlus()
+        padding: 30px 67px
+        align-items: center
+    img 
+        width: 60px
+        height: 60px
+        padding: 10px
+        object-fit: 
+        margin-right: 15px
+        @include tabletPlus()
+            width: 83px
+            height: 83px
+
+.historyOrder-name:any-link
+    margin-bottom: 16px
+    display: block
+    font-size: 14px
+    font-weight: 600
+
+.historyOrder-descriptions
+    font-family: Roman
+    font-size: 14px
+    @include tabletPlus()
+        @include flexingDir(row, space-between, center)
+        
+    > div
+        margin-bottom: 10px
+        @include tabletPlus()
+            margin-bottom: 16px
+        &:last-child
+            margin-bottom: 0
+        &:nth-last-child(2)
+            margin-bottom: 16px
+        span
+            color: $orange
+            font-family: Bold75
+
+.linkToProduct:any-link
+    color: $orange
+    font-family: Bold75
+    @include tabletPlus()
+        margin-bottom: 16px
