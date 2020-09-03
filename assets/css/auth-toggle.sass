@@ -1,5 +1,5 @@
 @import 'vars'
-
+@import variables
 
     
 
@@ -18,6 +18,8 @@
     flex-direction: column
     padding: 20px 0
     border-radius: 10px 0px 0px 10px
+    @include tabletPlus()
+        top: 30px
     .register
         @include font(Regular, 12px, 15px)
         color: black
