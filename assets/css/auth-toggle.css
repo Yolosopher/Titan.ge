@@ -275,11 +275,19 @@ label[for=auth-pass], label[for=regis-pass] {
 }
 
 .form-svg-div svg .a {
+  fill: #E2E7ED;
+}
+
+.form-svg-div svg.on .a {
+  fill: #171717;
+}
+
+.form-svg-div svg.on #lock {
   fill: #171717;
 }
 
 .form-svg-div #lock {
-  fill: #171717;
+  fill: #E2E7ED;
 }
 
 .auth-succ-or-error {

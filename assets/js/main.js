@@ -438,3 +438,16 @@ $('.turn-off-searchbar-respo').click(function () {
   }, .1);
 });
 
+function onBlur() {
+  if (this !== document.activeElement) {
+    $(this).closest('.auth-div').find('.form-svg-div').addClass('off');
+  } else {
+  }
+}
+
+$('input[type="password"], input[type="email"], input[type="tel"], input[type="text"]').focus(function () {
+  $('svg').removeClass('on');
+  let ab = $(this).closest('.auth-div').find('.form-svg-div').find('svg');
+  console.log(ab);
+  ab.addClass('on');
+});

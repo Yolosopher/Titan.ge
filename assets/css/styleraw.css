@@ -2750,3 +2750,8 @@ address {
 }
 
 /* burger-respo-fills END*/
+
+/* add */
+input.off .form-svg-div svg .a {
+    /* fill: #E2E7ED; */
+}
