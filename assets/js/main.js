@@ -53,11 +53,25 @@ const coverSlider = new Swiper('.home-main-container', {
 
 // burger menu
 $("#header-nav").click(function () {
-  // if 
+  if ($('.home-header').hasClass('on')) {
+    // toggleout
   // $('.home-header').toggleClass('on');
-  // $('.header-black-screen').toggleClass('on');
-  // $('html').toggleClass('overFlow');
-  $(this).toggleClass('on');
+    setTimeout(() => {
+      $('.home-header').toggleClass('on');
+      $('.header-black-screen').toggleClass('on');
+      $('html').toggleClass('overFlow');
+      $(this).toggleClass('on');
+    }, 700);
+  } else {
+    $('.home-header').toggleClass('on');
+    $('.header-black-screen').toggleClass('on');
+    $('html').toggleClass('overFlow');
+    $(this).toggleClass('on');
+  }
+
+
+
+
   clientWidth = window.innerWidth;
   if (clientWidth > 1000) {
     $("#burger-header").slideToggle(700, function() {

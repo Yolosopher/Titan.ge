@@ -96,6 +96,14 @@ body::-webkit-scrollbar {
 /* INDEX.HTML START */
 
 /* HEADER START */
+.header-inside-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 .header-black-screen.on {
     position: absolute;
     top: 0;
@@ -118,13 +126,21 @@ html.overFlow {
     z-index: 101;
 }
 .home-header.on {
-    position: absolute;
+    position: fixed;
     z-index: 102;
     width: 100%;
+    /* max-width: var(--container-size); */
+    /* right: calc((100vw - 1205px) / 2); */
     right: 0;
+}
+.home-header.on .header-inside-container {
+    max-width: var(--container-size);
+    ;
+    margin: 0 auto;
 }
 .home-header::before {
     content: '';
+    position: fixed;
     left: 0;
     width: 100%;
     position: absolute;
