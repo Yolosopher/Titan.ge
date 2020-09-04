@@ -399,22 +399,18 @@ html.overFlow {
     right: 0;
 }
 
-.second-level-li,
-.third-level-li {
-    display: block;
-    width: 100%;
+.second-level-li {
+    max-width: 180px;
     margin-bottom: 16px;
-
+    display: block;
 }
 
-.second-level-li a:hover,
-.third-level-li a:hover {
+.second-level-li a:hover {
     color: var(--orange);
     transition: color .4s
 }
 
-.second-level-li:last-child,
-.third-level-li:last-child {
+.second-level-li:last-child {
     margin-bottom: 0;
 }
 
@@ -424,26 +420,13 @@ html.overFlow {
     position: relative;
     flex: 1;
     transition: all 1s;
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 380px;
 }
 
-.third-level-ul {
-    max-width: 0;
-    top: 4px;
-    position: absolute;
-    left: 200px;
-    overflow: hidden;
-}
 
-.active~.third-level-ul {
-    max-width: 200px;
-    transition: 1s;
-}
 
-.third-level-li a {
-    display: block;
-    min-width: 200px;
-    height: 18px;
-}
 
 /* HEADER END */
 
@@ -490,6 +473,9 @@ aside {
     height: 100%;
     border-radius: 10px;
     transition: width .4s ease-in-out, padding-left .4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .toggle-drop-right.active {
@@ -509,30 +495,14 @@ aside .toggle-drop-right.clicked {
 .toggle-drop-right-li {
     position: relative;
     margin-bottom: 16px;
+    transition: color .2s;
+}
+.toggle-drop-right-li:hover {
+    color: var(--orange);
 }
 
-.toggle-drop-right-ul-inside {
-    max-width: 0;
-    top: 4px;
-    position: absolute;
-    left: 140px;
-    overflow: hidden;
-}
 
-.toggle-drop-right-inside-li {
-    margin-bottom: 16px;
-}
 
-.active~.toggle-drop-right-ul-inside {
-    max-width: 200px;
-    transition: 1s;
-}
-
-.toggle-drop-right-li a {
-    display: block;
-    min-width: 100px;
-    overflow: hidden;
-}
 
 .ctgr-ul li {
     position: relative;
@@ -549,7 +519,9 @@ aside .toggle-drop-right.clicked {
 .ctgr-ul li a:hover {
     color: #FF613B;
 }
-
+.ctgr-ul li a.clicked {
+    color: #FF613B;
+}
 .ctgr-ul li a::after {
     content: url(../images/angle-right.svg);
     position: absolute;
@@ -557,6 +529,12 @@ aside .toggle-drop-right.clicked {
 }
 
 .ctgr-ul li a:hover::after {
+    content: url(../images/angle-right-orange.svg);
+    position: absolute;
+    right: 0;
+    z-index: 3;
+}
+.ctgr-ul li a.clicked::after {
     content: url(../images/angle-right-orange.svg);
     position: absolute;
     right: 0;
@@ -1002,6 +980,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     text-align: center;
     display: inline-block;
     width: 100%;
+    transition: color .2s;
 }
 
 .footer-li a:any-link:hover {

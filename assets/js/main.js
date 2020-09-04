@@ -435,7 +435,6 @@ function onBlur() {
 $('input[type="password"], input[type="email"], input[type="tel"], input[type="text"]').focus(function () {
   $('svg').removeClass('on');
   let ab = $(this).closest('.auth-div').find('.form-svg-div').find('svg');
-  console.log(ab);
   ab.addClass('on');
 });
 
@@ -493,19 +492,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // main aside menu toggle
-$('.ctgr-ul li a').mouseenter(function () {
+$('.ctgr-ul li').mouseenter(function () {
   $('.toggle-drop-right').addClass('active');
 });
-$('.ctgr-ul li a').mouseleave(function () {
+$('.ctgr-ul li').mouseleave(function () {
   $('.toggle-drop-right').removeClass('active');
 });
-$('.ctgr-ul li a').click(function () {
+$('.ctgr-ul li').click(function () {
   if ($(this).hasClass('clicked')) {
-    $(this).removeClass('clicked');
+    $('.ctgr-ul li').removeClass('clicked');
+    $('.ctgr-ul li a').removeClass('clicked');
     $('.toggle-drop-right').removeClass('clicked');
   } else {
-    $('.ctgr-ul li a').removeClass('active');
+    $('.ctgr-ul li').removeClass('clicked');
+    $('.ctgr-ul li').find('a').removeClass('clicked');
     $(this).addClass('clicked');
+    $(this).find('a').addClass('clicked')
     $('.toggle-drop-right').addClass('clicked').addClass('active');
   }
+});
+
+$(document).on('click', function (obj) {
+  if (!obj.target.closest('aside')) {
+    $('.ctgr-ul li').removeClass('clicked');
+    $('.ctgr-ul li a').removeClass('clicked');
+    $('.toggle-drop-right').removeClass('clicked');
+  }
+  // $(this).find('.toggle-drop-right.clicked').removeClass('clicked');
 });
