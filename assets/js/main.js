@@ -19,10 +19,10 @@ const coverSlider = new Swiper('.home-main-container', {
     nextEl: '.coverSlideNext',
     prevEl: '.coverSlidePrev'
   },
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
 
 
