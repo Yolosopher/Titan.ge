@@ -19,43 +19,16 @@ const coverSlider = new Swiper('.home-main-container', {
     nextEl: '.coverSlideNext',
     prevEl: '.coverSlidePrev'
   },
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
 });
-
-// last check down 
-
-// $("#header-nav").click(function () {
-//   if ($('.home-header').hasClass('on')) {
-    
-//     setTimeout(() => {
-//       $('.home-header').removeClass('on');
-//       $('.header-black-screen').removeClass('on');
-//       $('html').removeClass('overFlow');    
-//     }, 700);
-//     $(this).removeClass('on');
-//   } else {
-//     let widthd = window.innerWidth;
-//     $('.home-header').toggleClass('on');
-//     if (widthd > 1225) {
-//       let left = (widthd - 1225) / 2;
-//       console.log(left);
-//       $('.home-header').animate('padding-left', `${left}px`);
-//       $('.home-header').animate('padding-right', `${left}px`);
-//     }
-//     $('.header-black-screen').toggleClass('on');
-//     $('html').toggleClass('overFlow');
-//     $(this).toggleClass('on');
-//   }
 
 
 // burger menu
 $("#header-nav").click(function () {
   if ($('.home-header').hasClass('on')) {
-    // toggleout
-  // $('.home-header').toggleClass('on');
     setTimeout(() => {
       $('.home-header').toggleClass('on');
       $('.header-black-screen').toggleClass('on');
@@ -312,6 +285,20 @@ $('.login').click(function () {
   clientHeight = window.innerHeight;
   clientWidth = window.innerWidth;
   authToggle(clientWidth);
+  if ($('.header-black-screen').hasClass('on')) {
+    $('.home-header').toggleClass('on');
+    $('.header-black-screen').toggleClass('on');
+    $('html').toggleClass('overFlow');
+    $('.header-nav').toggleClass('on');
+    clientWidth = window.innerWidth;
+    if (clientWidth > 1000) {
+      $("#burger-header").slideToggle(700, function () {
+        if ($(this).is(':visible')) {
+          $(this).css('display', 'flex')
+        }
+      });
+    }
+  }
 });
 
 $('.respo-login').click(function () {
