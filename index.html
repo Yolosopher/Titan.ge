@@ -964,57 +964,6 @@
   <script src="assets/js/jquery/jquery-3.2.1.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      $('.top-prod-add-btn').click(function (e) {
-        e.preventDefault();
-        if ($(this).find('div').text() === "დამატება") {
-          $(this).animate({
-            "width": "62px"
-          }, 400, "linear", function () {
-            setTimeout(() => {
-              $(this).find('div').text('დამატებულია');
-              $(this).animate({
-                "width": "100%"
-              }, 400)
-            }, 800);
-          });
-
-          let svgFirst = $(this).find('svg:first-child');
-
-          svgFirst.addClass('rotate').delay(800).queue(function (next) {
-            svgFirst.removeClass('rotate');
-            svgFirst.addClass('hidden');
-            svgFirst.next().removeClass('hidden').animate({
-              "right": "0"
-            }, 400, "linear");
-            next();
-          });
-        } else {
-          $(this).animate({
-            "width": "62px"
-          }, 400, "linear", function () {
-            setTimeout(() => {
-              $(this).find('div').text('დამატება');
-              $(this).animate({
-                "width": "100%"
-              }, 400)
-            }, 800);
-          });
-
-          let svgFirst = $(this).find('svg:nth-child(2)');
-
-          svgFirst.addClass('rotate').delay(800).queue(function (next) {
-            svgFirst.toggleClass('rotate');
-            svgFirst.toggleClass('hidden');
-            svgFirst.prev().toggleClass('hidden').animate({
-              "right": "0"
-            }, 800, "linear");
-            next();
-          });
-        }
-
-      });
-    });
     // main aside menu toggle
     $('.ctgr-ul li a').mouseenter(function () {
       $('.toggle-drop-right').addClass('active');
