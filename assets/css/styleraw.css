@@ -1395,7 +1395,7 @@ html body .footer-bottom p:nth-child(n) {
     margin-bottom: 13px;
 }
 
-.aboutus-main p {
+.aboutus-text-div {
     color: var(--active-grey);
     position: relative;
     z-index: 2;
@@ -1445,7 +1445,7 @@ html body .footer-bottom p:nth-child(n) {
         margin-bottom: 31px;
     }
 
-    .aboutus-main p {
+    .aboutus-text-div {
         margin-left: 0;
         width: 100%;
         padding: 0;
