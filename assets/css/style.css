@@ -358,6 +358,20 @@ label[for=auth-pass], label[for=regis-pass] {
   background: url(../images/exclamation-circle.svg) no-repeat center;
 }
 
+.mail-used-error {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+  font-size: 10px;
+  color: #FF613B;
+  font-family: Bold75;
+}
+
+.mail-used-error.active {
+  display: unset;
+}
+
 .form-inside-div:nth-child(1) {
   background: red;
 }

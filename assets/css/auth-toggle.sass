@@ -190,7 +190,16 @@ label
             padding: auto
             object-fit: contain
             background: url(../images/exclamation-circle.svg) no-repeat center
-
+.mail-used-error 
+    display: none
+    position: absolute
+    right: 0
+    bottom: 55px
+    font-size: 10px
+    color: $orange
+    font-family: Bold75
+    &.active
+        display: unset
 
 .form-inside-div
     &:nth-child(1)
