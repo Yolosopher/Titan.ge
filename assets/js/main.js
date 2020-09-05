@@ -492,12 +492,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // main aside menu toggle
-$('.ctgr-ul li').mouseenter(function () {
-  $('.toggle-drop-right').addClass('active');
-});
-$('.ctgr-ul li').mouseleave(function () {
-  $('.toggle-drop-right').removeClass('active');
-});
 $('.ctgr-ul li').click(function () {
   if ($(this).hasClass('clicked')) {
     $('.ctgr-ul li').removeClass('clicked');
@@ -508,7 +502,7 @@ $('.ctgr-ul li').click(function () {
     $('.ctgr-ul li').find('a').removeClass('clicked');
     $(this).addClass('clicked');
     $(this).find('a').addClass('clicked')
-    $('.toggle-drop-right').addClass('clicked').addClass('active');
+    $('.toggle-drop-right').addClass('clicked');
   }
 });
 
@@ -518,5 +512,4 @@ $(document).on('click', function (obj) {
     $('.ctgr-ul li a').removeClass('clicked');
     $('.toggle-drop-right').removeClass('clicked');
   }
-  // $(this).find('.toggle-drop-right.clicked').removeClass('clicked');
 });

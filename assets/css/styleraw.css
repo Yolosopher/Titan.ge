@@ -482,14 +482,14 @@ aside {
     width: calc(50% - 277px);
     padding: 40px;
     padding-left: 10px;
-    transition: padding .4s;
+    transition: width .4s;
 }
 
 aside .toggle-drop-right.clicked {
     width: calc(50% - 277px);
     padding: 40px;
     padding-left: 10px;
-    transition: padding .4s;
+    transition: width .4s;
 }
 
 .toggle-drop-right-li {
