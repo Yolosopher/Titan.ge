@@ -492,6 +492,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // main aside menu toggle
+$('.ctgr-ul li').mouseenter(function () {
+  $('.toggle-drop-right').addClass('active');
+});
+$('.ctgr-ul li').mouseleave(function () {
+  $('.toggle-drop-right').removeClass('active');
+});
 $('.ctgr-ul li').click(function () {
   if ($(this).hasClass('clicked')) {
     $('.ctgr-ul li').removeClass('clicked');
