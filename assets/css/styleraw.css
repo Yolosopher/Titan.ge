@@ -2328,7 +2328,7 @@ input[type=checkbox]:checked~.checkmark {
 }
 
 .agree-terms-div label {
-    font-family: Roma;
+    font-family: Bold75;
     font-weight: 900;
     color: black;
     font-size: 12px;
