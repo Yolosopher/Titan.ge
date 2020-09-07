@@ -1,0 +1,6 @@
+<svg id="Component_10_6" data-name="Component 10 – 6" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <g id="Group_11" data-name="Group 11" transform="translate(-137 -466)">
+    <rect id="Rectangle_234" data-name="Rectangle 234" width="22" height="22" transform="translate(137 466)" fill="rgba(255,255,255,0)"/>
+    <path id="pricetag-alt" d="M6.5,5.6a.9.9,0,1,0,.9.9A.9.9,0,0,0,6.5,5.6Zm13.239,5.2L11.207,2.288A.9.9,0,0,0,10.55,2H5.15a.9.9,0,0,0-.639.261L2.261,4.5A.9.9,0,0,0,2,5.143v5.4a.946.946,0,0,0,.261.639L10.8,19.739a.945.945,0,0,0,.639.261.9.9,0,0,0,.639-.261l7.659-7.663A.9.9,0,0,0,20,11.437.946.946,0,0,0,19.739,10.806Zm-8.3,7.033L3.8,10.185V5.512L5.51,3.8h4.662l7.65,7.645Z" transform="translate(137 466)" fill="#ff613b"/>
+  </g>
+</svg>

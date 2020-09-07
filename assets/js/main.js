@@ -47,7 +47,7 @@ $("#header-nav").click(function () {
 
   clientWidth = window.innerWidth;
   if (clientWidth > 1000) {
-    $("#burger-header").slideToggle(700, function() {
+    $("#burger-header").slideToggle(700, function () {
       if ($(this).is(':visible')) {
         $(this).css('display', 'flex')
       }
@@ -55,8 +55,8 @@ $("#header-nav").click(function () {
   }
 });
 
-$('.second-level-li > a').click(function(){
-  if($(this).hasClass('active')) {
+$('.second-level-li > a').click(function () {
+  if ($(this).hasClass('active')) {
     $('.second-level-li > a').removeClass('active');
 
   } else {
@@ -65,8 +65,8 @@ $('.second-level-li > a').click(function(){
   };
 });
 
-$('aside .ctgr-ul li a').click(function() {
-  if ($(this).hasClass('active')) {    
+$('aside .ctgr-ul li a').click(function () {
+  if ($(this).hasClass('active')) {
     $('.burger-header-right').removeClass('active');
   } else {
     $('.burger-header-right').toggleClass('active');
@@ -94,7 +94,7 @@ $('#burger-respo').click(function () {
       $(this).animate({
         "display": "flex",
         "left": `${105-clientWidth}px`,
-        "top": "30px"    
+        "top": "30px"
       }, 700);
       $('.auth-toggle-black-screen').removeClass('on');
     };
@@ -428,8 +428,7 @@ $('.turn-off-searchbar-respo').click(function () {
 function onBlur() {
   if (this !== document.activeElement) {
     $(this).closest('.auth-div').find('.form-svg-div').addClass('off');
-  } else {
-  }
+  } else {}
 }
 
 $('input[type="password"], input[type="email"], input[type="tel"], input[type="text"]').focus(function () {
@@ -438,56 +437,175 @@ $('input[type="password"], input[type="email"], input[type="tel"], input[type="t
   ab.addClass('on');
 });
 
+if (!$('.single-p-main')[0] && window.innerWidth <= 400 && !$('#product-add-btn').hasClass('added')) {
+  $('#product-add-btn').text('დამატება')
+}
 document.addEventListener('DOMContentLoaded', () => {
-  $('.top-prod-add-btn').click(function (e) {
-    e.preventDefault();
-    if ($(this).find('div').text() === "დამატება") {
-      $(this).animate({
-        "width": "62px"
-      }, 400, "linear", function () {
-        setTimeout(() => {
-          $(this).find('div').text('დამატებულია');
+  if (!$('.single-p-main')[0]) {
+    $('.top-prod-add-btn').click(function (e) {
+      e.preventDefault();
+      $(this).toggleClass('added');
+      if ($(this).hasClass('added')) {
+        $(this).animate({
+          "width": "62px"
+        }, 400, "linear", function () {
+          setTimeout(() => {
+            $(this).find('div').text('დამატებულია');
+            $(this).animate({
+              "width": "100%"
+            }, 400)
+          }, 800);
+        });
+
+        let svgFirst = $(this).find('svg:first-child');
+
+        svgFirst.addClass('rotate').delay(800).queue(function (next) {
+          svgFirst.removeClass('rotate');
+          svgFirst.addClass('hidden');
+          svgFirst.next().removeClass('hidden').animate({
+            "right": "0"
+          }, 400, "linear");
+          next();
+        });
+      } else {
+        $(this).animate({
+          "width": "62px"
+        }, 400, "linear", function () {
+          setTimeout(() => {
+            $(this).find('div').text('დამატება');
+            $(this).animate({
+              "width": "100%"
+            }, 400)
+          }, 800);
+        });
+
+        let svgFirst = $(this).find('svg:nth-child(2)');
+
+        svgFirst.addClass('rotate').delay(800).queue(function (next) {
+          svgFirst.toggleClass('rotate');
+          svgFirst.toggleClass('hidden');
+          svgFirst.prev().toggleClass('hidden').animate({
+            "right": "0"
+          }, 800, "linear");
+          next();
+        });
+      }
+
+    });
+
+
+  } else {
+    if (window.innerWidth > 400) {
+      $('.top-prod-add-btn').click(function (e) {
+        e.preventDefault();
+        $(this).toggleClass('added');
+        if ($(this).hasClass('added')) {
           $(this).animate({
-            "width": "100%"
-          }, 400)
-        }, 800);
-      });
+            "width": "62px"
+          }, 400, "linear", function () {
+            setTimeout(() => {
+              $(this).find('div').text('დამატებულია');
+              let calc50percent = Number($(this).parent().width()) / 2;
+              console.log(Number($(this).parent().width()) - 10);
+              $(this).animate({
+                "width": `${calc50percent - 10}px`
+              }, 400)
+            }, 800);
+          });
 
-      let svgFirst = $(this).find('svg:first-child');
+          let svgFirst = $(this).find('svg:first-child');
 
-      svgFirst.addClass('rotate').delay(800).queue(function (next) {
-        svgFirst.removeClass('rotate');
-        svgFirst.addClass('hidden');
-        svgFirst.next().removeClass('hidden').animate({
-          "right": "0"
-        }, 400, "linear");
-        next();
+          svgFirst.addClass('rotate').delay(800).queue(function (next) {
+            svgFirst.removeClass('rotate');
+            svgFirst.addClass('hidden');
+            svgFirst.next().removeClass('hidden').animate({
+              "right": "0"
+            }, 400, "linear");
+            next();
+          });
+        } else {
+          $(this).animate({
+            "width": "62px"
+          }, 400, "linear", function () {
+            setTimeout(() => {
+              $(this).find('div').text('კალათაში დამატება');
+              let calc50percent = Number($(this).parent().width()) / 2;
+              $(this).animate({
+                "width": `${calc50percent - 10}px`
+              }, 400)
+            }, 800);
+          });
+
+          let svgFirst = $(this).find('svg:nth-child(2)');
+
+          svgFirst.addClass('rotate').delay(800).queue(function (next) {
+            svgFirst.toggleClass('rotate');
+            svgFirst.toggleClass('hidden');
+            svgFirst.prev().toggleClass('hidden').animate({
+              "right": "0"
+            }, 800, "linear");
+            next();
+          });
+        }
+
       });
     } else {
-      $(this).animate({
-        "width": "62px"
-      }, 400, "linear", function () {
-        setTimeout(() => {
-          $(this).find('div').text('დამატება');
+      $('.top-prod-add-btn').click(function (e) {
+        e.preventDefault();
+        $(this).toggleClass('added');
+        if ($(this).hasClass('added')) {
           $(this).animate({
-            "width": "100%"
-          }, 400)
-        }, 800);
-      });
+            "width": "62px"
+          }, 400, "linear", function () {
+            setTimeout(() => {
+              $(this).find('div').text('დამატებულია');
+              let calc50percent = Number($(this).parent().width()) / 2;
+              console.log(Number($(this).parent().width()) - 10);
+              $(this).animate({
+                "width": `${calc50percent - 10}px`
+              }, 400)
+            }, 800);
+          });
 
-      let svgFirst = $(this).find('svg:nth-child(2)');
+          let svgFirst = $(this).find('svg:first-child');
 
-      svgFirst.addClass('rotate').delay(800).queue(function (next) {
-        svgFirst.toggleClass('rotate');
-        svgFirst.toggleClass('hidden');
-        svgFirst.prev().toggleClass('hidden').animate({
-          "right": "0"
-        }, 800, "linear");
-        next();
+          svgFirst.addClass('rotate').delay(800).queue(function (next) {
+            svgFirst.removeClass('rotate');
+            svgFirst.addClass('hidden');
+            svgFirst.next().removeClass('hidden').animate({
+              "right": "0"
+            }, 400, "linear");
+            next();
+          });
+        } else {
+          $(this).animate({
+            "width": "62px"
+          }, 400, "linear", function () {
+            setTimeout(() => {
+              $(this).find('div').text('დამატება');
+              let calc50percent = Number($(this).parent().width()) / 2;
+              $(this).animate({
+                "width": `${calc50percent - 10}px`
+              }, 400)
+            }, 800);
+          });
+
+          let svgFirst = $(this).find('svg:nth-child(2)');
+
+          svgFirst.addClass('rotate').delay(800).queue(function (next) {
+            svgFirst.toggleClass('rotate');
+            svgFirst.toggleClass('hidden');
+            svgFirst.prev().toggleClass('hidden').animate({
+              "right": "0"
+            }, 800, "linear");
+            next();
+          });
+        }
       });
     }
+  }
 
-  });
+
 });
 
 
@@ -513,26 +631,27 @@ $(document).on('click', function (obj) {
     $('.toggle-drop-right').removeClass('clicked');
   }
 });
+if ($('.card-main')[0]) {
+  // basket & delivery changing onClicks
+  $('.back-to-basket-btn').click(function () {
+    $('.basketNdelivery-basket').addClass('active');
+    $('.basketNdelivery-delivery').removeClass('active');
+    $('.basket-ul-outter').addClass('bask-deliv-active');
+    $('.delivery-form-outter').removeClass('bask-deliv-active');
+  });
+  $('.basket-ctrl-next-btn').click(function () {
+    $('.basketNdelivery-delivery').addClass('active');
+    $('.basketNdelivery-basket').removeClass('active');
+    $('.delivery-form-outter').addClass('bask-deliv-active');
+    $('.basket-ul-outter').removeClass('bask-deliv-active');
+  });
 
-// basket & delivery changing onClicks
-$('.back-to-basket-btn').click(function () {
-  $('.basketNdelivery-basket').addClass('active');
-  $('.basketNdelivery-delivery').removeClass('active');
-  $('.basket-ul-outter').addClass('bask-deliv-active');
-  $('.delivery-form-outter').removeClass('bask-deliv-active');
-});
-$('.basket-ctrl-next-btn').click(function () {
-  $('.basketNdelivery-delivery').addClass('active');
-  $('.basketNdelivery-basket').removeClass('active');
-  $('.delivery-form-outter').addClass('bask-deliv-active');
-  $('.basket-ul-outter').removeClass('bask-deliv-active');
-});
-
-// form styled selectMenu
-$('select').selectmenu({
-  change: function (ev, data) {
-    let selected = data.item.label;
-    let parentP = $(this).parent().find('p');
-    parentP.text(selected).addClass('active-p');
-  },
-});
+  // form styled selectMenu
+  $('select').selectmenu({
+    change: function (ev, data) {
+      let selected = data.item.label;
+      let parentP = $(this).parent().find('p');
+      parentP.text(selected).addClass('active-p');
+    },
+  });
+}
