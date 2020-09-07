@@ -2805,6 +2805,12 @@ input.off .form-svg-div svg .a {
     /* fill: #E2E7ED; */
 }
 
+.ui-widget.ui-widget-content {
+    border-radius: 10px;
+    position: relative;
+    left: 2px;
+}
+
 .ui-menu .ui-state-focus,
 .ui-menu .ui-state-active {
     margin: 0;
