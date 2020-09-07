@@ -437,8 +437,8 @@ $('input[type="password"], input[type="email"], input[type="tel"], input[type="t
   ab.addClass('on');
 });
 
-if (!$('.single-p-main')[0] && window.innerWidth <= 400 && !$('#product-add-btn').hasClass('added')) {
-  $('#product-add-btn').text('დამატება')
+if ($('.single-p-main')[0] && window.innerWidth <= 1000 && !$('#product-add-btn').hasClass('added')) {
+  $('#product-add-btn').find('div').text('დამატება')
 }
 document.addEventListener('DOMContentLoaded', () => {
   if (!$('.single-p-main')[0]) {
@@ -492,10 +492,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
     });
-
-
   } else {
-    if (window.innerWidth > 400) {
+    if (window.innerWidth > 1000) {
       $('.top-prod-add-btn').click(function (e) {
         e.preventDefault();
         $(this).toggleClass('added');
@@ -508,7 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
               let calc50percent = Number($(this).parent().width()) / 2;
               console.log(Number($(this).parent().width()) - 10);
               $(this).animate({
-                "width": `${calc50percent - 10}px`
+                "width": `100%`
               }, 400)
             }, 800);
           });

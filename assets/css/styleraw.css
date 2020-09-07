@@ -1607,13 +1607,15 @@ html body .footer-bottom p:nth-child(n) {
 }
 
 .product-amount-and-btn {
-    display: flex;
+    display: inline-grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column-gap: 20px;
     margin-bottom: 50px;
+    width: 100%;
 }
 
 .product-amount {
-    margin-right: 10px;
-    width: calc(50% - 10px);
+    min-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1648,11 +1650,8 @@ html body .footer-bottom p:nth-child(n) {
     font-size: 12px;
     font-weight: 600;
     line-height: 15px;
-    margin-left: 10px;
-    width: calc(50% - 10px);
-}
-.top-prod-add-btn.add-btn.added {
-
+    width: 100%;
+    margin: 0 auto
 }
 
 .product-description {
