@@ -2070,6 +2070,7 @@ html body .footer-bottom p:nth-child(n) {
     display: flex;
     color: var(--unactive-grey);
     margin-bottom: 13px;
+    font-weight: 100;
 }
 
 
@@ -2208,7 +2209,7 @@ html body .footer-bottom p:nth-child(n) {
     align-items: center;
 }
 
-.basket-control {
+.basket-control, .delivery-control {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2216,8 +2217,11 @@ html body .footer-bottom p:nth-child(n) {
     height: 54px;
     padding: 0 10px;
 }
-
-.basket-control .basket-ctrl-left {
+.delivery-control {
+    width: 100%;
+}
+.basket-control .basket-ctrl-left,
+.delivery-control .basket-ctrl-left {
     font-family: Bold75;
     font-size: 14px;
     line-height: 17px;
@@ -2241,7 +2245,8 @@ html body .footer-bottom p:nth-child(n) {
     color: var(--orange);
 }
 
-.basket-ctrl-right .basket-ctrl-next-btn {
+.basket-ctrl-right .basket-ctrl-next-btn,
+.delivery-next-btn:any-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2256,9 +2261,12 @@ html body .footer-bottom p:nth-child(n) {
     background: var(--orange);
 }
 
+
 .delivery-form-outter {
     display: none;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .basket-ul-outter {
@@ -2276,9 +2284,9 @@ html body .footer-bottom p:nth-child(n) {
 .delivery-form {
     display: flex;
     flex-direction: column;
-    width: 390px;
+    width: 100%;
+    max-width: 390px;
 }
-
 .delivery-form label {
     margin-top: 10px;
     margin-bottom: 12px;
@@ -2745,13 +2753,15 @@ address {
         height: 34px;
     }
 
-    .basket-control {
+    .basket-control, .delivery-control {
         position: relative;
         height: 100px;
         margin-top: 30px;
         align-items: flex-start;
     }
-
+    .delivery-control {
+        align-items: center;
+    }
     .basket-ctrl-right {
         height: unset;
     }
@@ -2763,6 +2773,11 @@ address {
         transform: translateX(50%);
         height: 54px;
         width: 100%;
+    }
+    .delivery-next-btn:any-link {
+        /* width: 100%; */
+        max-width: 165px;
+        height: 54px;
     }
 }
 

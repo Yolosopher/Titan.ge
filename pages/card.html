@@ -674,6 +674,11 @@
           </label>
         </div>
       </form>
+      <div class="delivery-control">
+        <a class="basket-ctrl-left back-to-basket-btn" href="javascript:void(0)">უკან დაბრუნება</a>
+
+        <a href="javascript:void(0)" class="delivery-next-btn">გადახდა</a>
+      </div>
     </div>
   </main>
   <!-- FOOTER -->
@@ -836,14 +841,14 @@
   <script src="../assets/js/main.js"></script>
   <script>
     // basket & delivery changing onClicks
-    $('.basketNdelivery-basket').click(function () {
-      $(this).addClass('active');
+    $('.back-to-basket-btn').click(function () {
+      $('.basketNdelivery-basket').addClass('active');
       $('.basketNdelivery-delivery').removeClass('active');
       $('.basket-ul-outter').addClass('bask-deliv-active');
       $('.delivery-form-outter').removeClass('bask-deliv-active');
     });
-    $('.basketNdelivery-delivery').click(function () {
-      $(this).addClass('active');
+    $('.basket-ctrl-next-btn').click(function () {
+      $('.basketNdelivery-delivery').addClass('active');
       $('.basketNdelivery-basket').removeClass('active');
       $('.delivery-form-outter').addClass('bask-deliv-active');
       $('.basket-ul-outter').removeClass('bask-deliv-active');
