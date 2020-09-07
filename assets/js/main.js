@@ -513,3 +513,26 @@ $(document).on('click', function (obj) {
     $('.toggle-drop-right').removeClass('clicked');
   }
 });
+
+// basket & delivery changing onClicks
+$('.back-to-basket-btn').click(function () {
+  $('.basketNdelivery-basket').addClass('active');
+  $('.basketNdelivery-delivery').removeClass('active');
+  $('.basket-ul-outter').addClass('bask-deliv-active');
+  $('.delivery-form-outter').removeClass('bask-deliv-active');
+});
+$('.basket-ctrl-next-btn').click(function () {
+  $('.basketNdelivery-delivery').addClass('active');
+  $('.basketNdelivery-basket').removeClass('active');
+  $('.delivery-form-outter').addClass('bask-deliv-active');
+  $('.basket-ul-outter').removeClass('bask-deliv-active');
+});
+
+// form styled selectMenu
+$('select').selectmenu({
+  change: function (ev, data) {
+    let selected = data.item.label;
+    let parentP = $(this).parent().find('p');
+    parentP.text(selected).addClass('active-p');
+  },
+});
