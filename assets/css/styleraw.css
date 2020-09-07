@@ -2633,7 +2633,9 @@ address {
     border-radius: 10px;
     width: 100%;
 }
-
+.type-comment:any-link {
+    font-family: Bold75;
+}
 /* CONTACT END */
 /* media for CONTACT and RULES */
 @media only screen and (max-width: 1000px) {
