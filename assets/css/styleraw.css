@@ -2804,3 +2804,8 @@ address {
 input.off .form-svg-div svg .a {
     /* fill: #E2E7ED; */
 }
+
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {
+    margin: 0;
+}
