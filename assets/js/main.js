@@ -431,7 +431,7 @@ function onBlur() {
   } else {}
 }
 
-$('input[type="password"], input[type="email"], input[type="tel"], input[type="text"]').focus(function () {
+function focOut() {
   let svgs = $('svg:visible');
   svgs = [...svgs];
   svgs = svgs.filter(svg => svg.closest('.auth-div'));
@@ -444,8 +444,15 @@ $('input[type="password"], input[type="email"], input[type="tel"], input[type="t
     return value.length === 0;
   });
   filteredAuthdivs.forEach(el => el.querySelector('.form-svg-div').querySelector('svg').classList.remove('on'));
+};
+
+$('input[type="password"], input[type="email"], input[type="tel"], input[type="text"]').focus(function () {
   let ab = $(this).closest('.auth-div').find('.form-svg-div').find('svg');
   ab.addClass('on');
+});
+
+$('input[type="password"], input[type="email"], input[type="tel"], input[type="text"]').focusout(function(){
+  focOut();
 });
 
 if ($('.single-p-main')[0] && window.innerWidth <= 1000 && !$('#product-add-btn').hasClass('added')) {
