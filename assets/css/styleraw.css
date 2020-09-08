@@ -1852,7 +1852,7 @@ html body .footer-bottom p:nth-child(n) {
 
 .active-switcher {
     flex-grow: 1;
-    width: 100%;
+    /* width: 100%; */
 }
 
 @media screen and (min-width: 800px) {
@@ -2094,6 +2094,7 @@ html body .footer-bottom p:nth-child(n) {
     padding: 40px 30px;
     background: white;
     border-radius: 10px;
+    position: relative;
 }
 
 .card-main-first-top {
@@ -2233,6 +2234,7 @@ html body .footer-bottom p:nth-child(n) {
     font-size: 24px;
     line-height: 28px;
     margin-right: 0;
+    min-width: unset;
 }
 
 .basket-li-right .price {
@@ -2338,6 +2340,38 @@ html body .footer-bottom p:nth-child(n) {
     font-weight: 600;
 }
 
+.type-comment-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+.type-comment {
+    font-family: Bold75;
+    color: var(--orange);
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.comment-edit {
+    fill: #E2E7ED;
+}
+.comment-edit.on {
+    fill: var(--active-grey);
+}
+@media screen and (min-width: 880px) {
+    .type-comment-container {
+        position: absolute;
+        align-items: flex-end;
+        max-width: 390px;
+        top: 42px;
+        right: 31px;
+    }
+    .type-comment {
+        margin-top: 0;
+    }
+}
 /* custom checkmark */
 
 
@@ -2676,9 +2710,7 @@ address {
     border-radius: 10px;
     width: 100%;
 }
-.type-comment:any-link {
-    font-family: Bold75;
-}
+
 /* CONTACT END */
 /* media for CONTACT and RULES */
 @media only screen and (max-width: 1000px) {
@@ -2731,9 +2763,6 @@ address {
         height: 100%;
     }
 
-    .type-comment {
-        display: none;
-    }
 
     .basket-li {
         padding: 0 20px;
