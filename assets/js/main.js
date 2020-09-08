@@ -432,7 +432,18 @@ function onBlur() {
 }
 
 $('input[type="password"], input[type="email"], input[type="tel"], input[type="text"]').focus(function () {
-  $('svg').removeClass('on');
+  let svgs = $('svg:visible');
+  svgs = [...svgs];
+  svgs = svgs.filter(svg => svg.closest('.auth-div'));
+  let authdivs = [];
+  svgs.forEach(element => {
+    authdivs = [...authdivs, element.closest('.auth-div')];
+  });
+  filteredAuthdivs = authdivs.filter(element => {
+    let value = element.querySelector('input').value;
+    return value.length === 0;
+  });
+  filteredAuthdivs.forEach(el => el.querySelector('.form-svg-div').querySelector('svg').classList.remove('on'));
   let ab = $(this).closest('.auth-div').find('.form-svg-div').find('svg');
   ab.addClass('on');
 });
