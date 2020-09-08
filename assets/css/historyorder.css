@@ -154,10 +154,10 @@
 }
 
 @media screen and (min-width: 800px) {
-  .active.historyOrder-li-dropdown {
+  .historyOrder-li.active .historyOrder-li-dropdown {
     position: relative;
   }
-  .active.historyOrder-li-dropdown::after {
+  .historyOrder-li.active .historyOrder-li-dropdown::after {
     content: '';
     position: absolute;
     display: block;
@@ -291,6 +291,7 @@
   margin-bottom: 16px;
   display: block;
   font-size: 14px;
+  font-family: Light;
   font-weight: normal;
 }
 
@@ -298,6 +299,7 @@
   margin-bottom: 16px;
   display: block;
   font-size: 14px;
+  font-family: Light;
   font-weight: normal;
 }
 
@@ -305,6 +307,7 @@
   margin-bottom: 16px;
   display: block;
   font-size: 14px;
+  font-family: Light;
   font-weight: normal;
 }
 

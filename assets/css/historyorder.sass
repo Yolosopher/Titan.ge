@@ -53,7 +53,11 @@
                 border-bottom: none
 
 
-.active.historyOrder-li-dropdown  
+// .historyOrder-li-dropdown  
+//     @include tabletPlus()  
+//         border-top: 1px solid #E2E7ED
+
+.historyOrder-li.active .historyOrder-li-dropdown  
     @include tabletPlus()  
         position: relative
         &::after
@@ -131,7 +135,7 @@
     margin-bottom: 16px
     display: block
     font-size: 14px
-    
+    font-family: Light
     font-weight: normal
 
 .historyOrder-descriptions

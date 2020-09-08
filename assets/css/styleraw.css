@@ -1806,17 +1806,27 @@ html body .footer-bottom p:nth-child(n) {
     font-size: 14px;
     line-height: unset;
     text-align: left;
+    position: relative;
 }
 
 .profile-nav-li.profile-nav-li-active::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: -10px;
     display: block;
     width: 4px;
     height: 12px;
     border-radius: 0px 3px 3px 0px;
     background-color: var(--orange);
+}
+
+@media screen and (min-width: 800px) {
+    .profile-nav-li {
+        position: unset;
+    }
+    .profile-nav-li.profile-nav-li-active::before {
+        left: 0;
+    }
 }
 
 .profile-nav-li a {
@@ -1842,6 +1852,7 @@ html body .footer-bottom p:nth-child(n) {
 
 .active-switcher {
     flex-grow: 1;
+    width: 100%;
 }
 
 @media screen and (min-width: 800px) {
