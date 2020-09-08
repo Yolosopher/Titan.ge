@@ -1104,12 +1104,13 @@ html body .footer-bottom p:nth-child(n) {
     right: -57px;
 }
 
+
 .svg-check-circle.hidden {
     position: absolute;
     z-index: -1;
     overflow: hidden;
     display: none;
-    /* transition: all 0.5s ease-in-out; */
+    transition: all 0.5s ease-in-out;
 }
 
 /* media queries */
