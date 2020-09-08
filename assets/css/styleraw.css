@@ -1973,6 +1973,7 @@ html body .footer-bottom p:nth-child(n) {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 .succes-div-svg .a {

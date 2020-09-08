@@ -604,6 +604,27 @@ input[type=submit] {
   src: url(../fonts/FIRAGO-MEDIUM2.TTF);
 }
 
+/* fonts */
+@font-face {
+  font-family: 'Light';
+  src: url("../fonts/45-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Roman';
+  src: url("../fonts/55-Roman.ttf");
+}
+
+@font-face {
+  font-family: 'Bold75';
+  src: url("../fonts/75-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url("../fonts/bpg-le-studio-04-caps-webfont.ttf");
+}
+
 .active-switcher > div {
   display: none;
 }
@@ -615,7 +636,7 @@ input[type=submit] {
 .historyOrder {
   background: white;
   padding: 0;
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 40px 20px;
 }
 
@@ -846,25 +867,26 @@ input[type=submit] {
   margin-bottom: 16px;
   display: block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 .historyOrder-name:-moz-any-link {
   margin-bottom: 16px;
   display: block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 .historyOrder-name:any-link {
   margin-bottom: 16px;
   display: block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 .historyOrder-descriptions {
-  font-family: Roman;
+  font-family: Light;
+  font-weight: normal;
   font-size: 14px;
 }
 

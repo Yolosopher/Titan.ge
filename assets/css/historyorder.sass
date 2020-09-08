@@ -1,5 +1,5 @@
 @import variables
-
+@import vars
 .active-switcher
     > div
         display: none
@@ -10,7 +10,7 @@
 .historyOrder 
     background: white
     padding: 0
-    border-radius: 10px
+    border-radius: 6px
     padding: 40px 20px
     @include tabletPlus()        
         padding: 30px 15px
@@ -131,10 +131,12 @@
     margin-bottom: 16px
     display: block
     font-size: 14px
-    font-weight: 600
+    
+    font-weight: normal
 
 .historyOrder-descriptions
-    font-family: Roman
+    font-family: Light
+    font-weight: normal
     font-size: 14px
     @include tabletPlus()
         @include flexingDir(row, space-between, center)

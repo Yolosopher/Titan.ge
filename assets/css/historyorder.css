@@ -60,7 +60,7 @@
 .historyOrder {
   background: white;
   padding: 0;
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 40px 20px;
 }
 
@@ -291,25 +291,26 @@
   margin-bottom: 16px;
   display: block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 .historyOrder-name:-moz-any-link {
   margin-bottom: 16px;
   display: block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 .historyOrder-name:any-link {
   margin-bottom: 16px;
   display: block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 .historyOrder-descriptions {
-  font-family: Roman;
+  font-family: Light;
+  font-weight: normal;
   font-size: 14px;
 }
 
