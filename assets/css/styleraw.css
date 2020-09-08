@@ -1895,7 +1895,6 @@ html body .footer-bottom p:nth-child(n) {
     font-size: 14px;
     line-height: 19px;
     font-family: Roman;
-    font-weight: 600;
 }
 
 .home-profile input {
@@ -1919,7 +1918,7 @@ html body .footer-bottom p:nth-child(n) {
     height: 54px;
     background: var(--orange);
     color: white;
-    font-family: Bold75;
+    font-family: Regular;
     display: flex;
     justify-content: center;
     align-items: center;
