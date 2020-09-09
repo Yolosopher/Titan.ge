@@ -2213,6 +2213,14 @@ html body .footer-bottom p:nth-child(n) {
 }
 .delivery-control {
     width: 100%;
+    position: absolute;
+    align-items: center;
+    right: 0;
+    bottom: 0;
+}
+input.delivery-next-btn[type=submit] {
+    margin-top: 0;
+    width: 170px;
 }
 .basket-control .basket-ctrl-left,
 .delivery-control .basket-ctrl-left {
@@ -2261,6 +2269,7 @@ html body .footer-bottom p:nth-child(n) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .basket-ul-outter {
@@ -2280,6 +2289,7 @@ html body .footer-bottom p:nth-child(n) {
     flex-direction: column;
     width: 100%;
     max-width: 390px;
+    padding-bottom: 94px;
 }
 .delivery-form label {
     margin-top: 10px;
