@@ -442,22 +442,15 @@ function focOut() {
     let svgs = $("svg:visible");
     svgs = [...svgs];
     svgs = svgs.filter((svg) => svg.closest(".auth-div"));
-    let authdivs = [];
-    svgs.forEach((element) => {
-        authdivs = [...authdivs, element.closest(".auth-div")];
+    svgs.forEach(element => {
+        let inp = element.closest(".auth-div").querySelectorAll('input')[0];
+        if (inp && inp.value == 0) {            
+            element.classList.remove('on');
+        }
     });
-    filteredAuthdivs = authdivs.filter((element) => {
-        let value = element.querySelector("input").value;
-        return value.length === 0;
-    });
-    // filteredAuthdivs.forEach((el) => el.querySelector(".form-svg-div").querySelector("svg").classList.remove("on"));
+};
 
-    jQuery.each(filteredAuthdivs, function( i, val ) {
-        let filSvg = val.querySelector('.form-svg-div').querySelector('svg');
-        console.log(filSvg)
-       
-      });
-}
+
 
 $(
     'input[type="password"], input[type="email"], input[type="tel"], input[type="text"]'
@@ -482,9 +475,6 @@ if (
 
 // button added styling
 
-function newBtnAnimation() {
-
-};
 $('.new-style-btn').click(function(e){
     e.preventDefault();
     $(this).removeClass('added-constant');
@@ -503,280 +493,6 @@ $('.new-style-btn').click(function(e){
     
 })
 
-// function btnAnimationWhole(animSpeed) {
-//     if (!$(".single-p-main")[0]) {
-//         $(".top-prod-add-btn").click(function (e) {
-//             e.preventDefault();
-//             $(this).toggleClass("added");
-
-//             if ($(this).hasClass("added")) {
-//                 $(this).animate(
-//                     {
-//                         width: "62px",
-//                     },
-//                     animSpeed,
-//                     "linear",
-//                     function () {
-//                         setTimeout(() => {
-//                             $(this).find("div").text("დამატებულია");
-//                             $(this).animate(
-//                                 {
-//                                     width: "100%",
-//                                 },
-//                                 animSpeed
-//                             );
-//                         }, 2 * animSpeed);
-//                     }
-//                 );
-
-//                 let svgFirst = $(this).find("svg:first-child");
-
-//                 svgFirst
-//                     .addClass("rotate")
-//                     .delay(2 * animSpeed)
-//                     .queue(function (next) {
-//                         svgFirst.removeClass("rotate");
-//                         svgFirst.addClass("hidden");
-//                         svgFirst.next().removeClass("hidden").animate(
-//                             {
-//                                 right: "0",
-//                             },
-//                             animSpeed,
-//                             "linear"
-//                         );
-//                         next();
-//                     });
-//             } else {
-//                 $(this).animate(
-//                     {
-//                         width: "62px",
-//                     },
-//                     animSpeed,
-//                     "linear",
-//                     function () {
-//                         setTimeout(() => {
-//                             $(this).find("div").text("დამატება");
-//                             $(this).animate(
-//                                 {
-//                                     width: "100%",
-//                                 },
-//                                 animSpeed
-//                             );
-//                         }, 2 * animSpeed);
-//                     }
-//                 );
-
-//                 let svgFirst = $(this).find("svg:nth-child(2)");
-
-//                 svgFirst
-//                     .addClass("rotate")
-//                     .delay(2 * animSpeed)
-//                     .queue(function (next) {
-//                         svgFirst.toggleClass("rotate");
-//                         svgFirst.toggleClass("hidden");
-//                         svgFirst
-//                             .prev()
-//                             .toggleClass("hidden")
-//                             .animate(
-//                                 {
-//                                     right: "0",
-//                                 },
-//                                 2 * animSpeed,
-//                                 "linear"
-//                             );
-//                         next();
-//                     });
-//             }
-//         });
-//     } else {
-//         if (window.innerWidth > 1000) {
-//             $(".top-prod-add-btn").click(function (e) {
-//                 e.preventDefault();
-//                 $(this).toggleClass("added");
-//                 if ($(this).hasClass("added")) {
-//                     $(this).animate(
-//                         {
-//                             width: "62px",
-//                         },
-//                         animSpeed,
-//                         "linear",
-//                         function () {
-//                             setTimeout(() => {
-//                                 $(this).find("div").text("დამატებულია");
-//                                 let calc50percent =
-//                                     Number($(this).parent().width()) / 2;
-//                                 console.log(
-//                                     Number($(this).parent().width()) - 10
-//                                 );
-//                                 $(this).animate(
-//                                     {
-//                                         width: `100%`,
-//                                     },
-//                                     animSpeed
-//                                 );
-//                             }, 2 * animSpeed);
-//                         }
-//                     );
-
-//                     let svgFirst = $(this).find("svg:first-child");
-
-//                     svgFirst
-//                         .addClass("rotate")
-//                         .delay(2 * animSpeed)
-//                         .queue(function (next) {
-//                             svgFirst.removeClass("rotate");
-//                             svgFirst.addClass("hidden");
-//                             svgFirst.next().removeClass("hidden").animate(
-//                                 {
-//                                     right: "0",
-//                                 },
-//                                 animSpeed,
-//                                 "linear"
-//                             );
-//                             next();
-//                         });
-//                 } else {
-//                     $(this).animate(
-//                         {
-//                             width: "62px",
-//                         },
-//                         animSpeed,
-//                         "linear",
-//                         function () {
-//                             setTimeout(() => {
-//                                 $(this).find("div").text("კალათაში დამატება");
-//                                 let calc50percent =
-//                                     Number($(this).parent().width()) / 2;
-//                                 $(this).animate(
-//                                     {
-//                                         width: `${calc50percent - 10}px`,
-//                                     },
-//                                     animSpeed
-//                                 );
-//                             }, 2 * animSpeed);
-//                         }
-//                     );
-
-//                     let svgFirst = $(this).find("svg:nth-child(2)");
-
-//                     svgFirst
-//                         .addClass("rotate")
-//                         .delay(2 * animSpeed)
-//                         .queue(function (next) {
-//                             svgFirst.toggleClass("rotate");
-//                             svgFirst.toggleClass("hidden");
-//                             svgFirst
-//                                 .prev()
-//                                 .toggleClass("hidden")
-//                                 .animate(
-//                                     {
-//                                         right: "0",
-//                                     },
-//                                     2 * animSpeed,
-//                                     "linear"
-//                                 );
-//                             next();
-//                         });
-//                 }
-//             });
-//         } else {
-//             $(".top-prod-add-btn").click(function (e) {
-//                 e.preventDefault();
-//                 $(this).toggleClass("added");
-//                 if ($(this).hasClass("added")) {
-//                     $(this).animate(
-//                         {
-//                             width: "62px",
-//                         },
-//                         animSpeed,
-//                         "linear",
-//                         function () {
-//                             setTimeout(() => {
-//                                 $(this).find("div").text("დამატებულია");
-//                                 let calc50percent =
-//                                     Number($(this).parent().width()) / 2;
-//                                 console.log(
-//                                     Number($(this).parent().width()) - 10
-//                                 );
-//                                 $(this).animate(
-//                                     {
-//                                         width: `${calc50percent - 10}px`,
-//                                     },
-//                                     animSpeed
-//                                 );
-//                             }, 2 * animSpeed);
-//                         }
-//                     );
-
-//                     let svgFirst = $(this).find("svg:first-child");
-
-//                     svgFirst
-//                         .addClass("rotate")
-//                         .delay(2 * animSpeed)
-//                         .queue(function (next) {
-//                             svgFirst.removeClass("rotate");
-//                             svgFirst.addClass("hidden");
-//                             svgFirst.next().removeClass("hidden").animate(
-//                                 {
-//                                     right: "0",
-//                                 },
-//                                 animSpeed,
-//                                 "linear"
-//                             );
-//                             next();
-//                         });
-//                 } else {
-//                     $(this).animate(
-//                         {
-//                             width: "62px",
-//                         },
-//                         animSpeed,
-//                         "linear",
-//                         function () {
-//                             setTimeout(() => {
-//                                 $(this).find("div").text("დამატება");
-//                                 let calc50percent =
-//                                     Number($(this).parent().width()) / 2;
-//                                 $(this).animate(
-//                                     {
-//                                         width: `${calc50percent - 10}px`,
-//                                     },
-//                                     animSpeed
-//                                 );
-//                             }, 2 * animSpeed);
-//                         }
-//                     );
-
-//                     let svgFirst = $(this).find("svg:nth-child(2)");
-
-//                     svgFirst
-//                         .addClass("rotate")
-//                         .delay(2 * animSpeed)
-//                         .queue(function (next) {
-//                             svgFirst.toggleClass("rotate");
-//                             svgFirst.toggleClass("hidden");
-//                             svgFirst
-//                                 .prev()
-//                                 .toggleClass("hidden")
-//                                 .animate(
-//                                     {
-//                                         right: "0",
-//                                     },
-//                                     2 * animSpeed,
-//                                     "linear"
-//                                 );
-//                             next();
-//                         });
-//                 }
-//             });
-//         }
-//     }
-// }
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     btnAnimationWhole(400);
-    
-// });
 
 // main aside menu toggle
 $(".ctgr-ul li").click(function () {
@@ -818,6 +534,7 @@ if ($(".card-main")[0]) {
     // form styled selectMenu
     $("select").selectmenu({
         change: function (ev, data) {
+            $('.region-svg').css("fill","#171717");
             let selected = data.item.label;
             let parentP = $(this).parent().find("p");
             parentP.text(selected).addClass("active-p");

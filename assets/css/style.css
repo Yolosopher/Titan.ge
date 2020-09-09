@@ -1634,4 +1634,8 @@ svg.rotate {
     opacity: 1;
   }
 }
+
+.select-svg-div svg {
+  fill: #E2E7ED;
+}
 /*# sourceMappingURL=style.css.map */
