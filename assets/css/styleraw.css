@@ -319,10 +319,6 @@ html.overFlow {
     overflow: hidden;
 }
 
-.burger-header>div {
-    /* max-width: var(--container-size); */
-}
-
 .overflow-hidden {
     overflow: hidden;
 }
@@ -778,6 +774,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
 }
 
 
+
 .slider-arrows {
     position: absolute;
     top: 56px;
@@ -1219,7 +1216,7 @@ html body .footer-bottom p:nth-child(n) {
 .pm-products-ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    gap: 5px;
 }
 
 @media only screen and (max-width: 685px) {
@@ -2828,10 +2825,6 @@ address {
 
 /* burger-respo-fills END*/
 
-/* add */
-input.off .form-svg-div svg .a {
-    /* fill: #E2E7ED; */
-}
 
 .ui-widget.ui-widget-content {
     border-radius: 10px;
