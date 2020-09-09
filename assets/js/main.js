@@ -450,12 +450,13 @@ function focOut() {
         let value = element.querySelector("input").value;
         return value.length === 0;
     });
-    filteredAuthdivs.forEach((el) =>
-        el
-            .querySelector(".form-svg-div")
-            .querySelector("svg")
-            .classList.remove("on")
-    );
+    // filteredAuthdivs.forEach((el) => el.querySelector(".form-svg-div").querySelector("svg").classList.remove("on"));
+
+    jQuery.each(filteredAuthdivs, function( i, val ) {
+        let filSvg = val.querySelector('.form-svg-div').querySelector('svg');
+        console.log(filSvg)
+       
+      });
 }
 
 $(
