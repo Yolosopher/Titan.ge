@@ -274,8 +274,16 @@ label[for=auth-pass], label[for=regis-pass] {
   display: none;
 }
 
+.form-svg-div svg {
+  fill: #E2E7ED;
+}
+
 .form-svg-div svg .a {
   fill: #E2E7ED;
+}
+
+.form-svg-div svg.on {
+  fill: #171717;
 }
 
 .form-svg-div svg.on .a {

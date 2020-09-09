@@ -275,8 +275,16 @@ label[for=auth-pass], label[for=regis-pass] {
   display: none;
 }
 
+.form-svg-div svg {
+  fill: #E2E7ED;
+}
+
 .form-svg-div svg .a {
   fill: #E2E7ED;
+}
+
+.form-svg-div svg.on {
+  fill: #171717;
 }
 
 .form-svg-div svg.on .a {
@@ -515,23 +523,6 @@ input[type=submit] {
   color: white;
   font-weight: 600;
   cursor: pointer;
-}
-
-input[type=submit].send-comment {
-  background: none;
-  height: unset;
-  width: unset;
-  border-radius: unset;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: normal;
-  border: none;
-  outline: none;
-  color: #D0D0D0;
-  cursor: pointer;
-  position: relative;
-  margin-top: unset;
-  margin-right: 35px;
 }
 
 .res-pas-form {

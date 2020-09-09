@@ -2303,10 +2303,10 @@ html body .footer-bottom p:nth-child(n) {
     margin-top: 30px;
     margin-bottom: 20px;
 }
-.comment-edit {
+.form-svg-div svg {
     fill: #E2E7ED;
 }
-.comment-edit.on {
+.form-svg-div svg.on {
     fill: var(--active-grey);
 }
 @media screen and (min-width: 880px) {
