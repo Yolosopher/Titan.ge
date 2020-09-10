@@ -595,10 +595,8 @@ aside .toggle-drop-right.clicked {
 }
 
 .coverPagination {
-    /* display: none; */
     position: absolute;
     display: flex;
-    width: 55px;
     justify-content: space-between;
     margin: 0 auto;
     z-index: 3;
@@ -614,7 +612,12 @@ aside .toggle-drop-right.clicked {
 html body .swiper-pagination-bullet {
     width: 13px;
     height: 13px;
+    border-radius: 4px;
+    margin-right: 8px;
     background-color: #FEC0B0;
+}
+html body .swiper-pagination-bullet:last-child {
+    margin-right: 0;
 }
 
 html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -1329,7 +1332,7 @@ html body .footer-bottom p:nth-child(n) {
     z-index: 2;
     font-family: Roman;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 22px;
     background: white;
     width: 75%;
     border-radius: 10px;
@@ -1341,7 +1344,12 @@ html body .footer-bottom p:nth-child(n) {
     overflow: hidden;
     max-width: 797px;
 }
-
+.aboutus-text-div p {
+    margin-bottom: 22px;
+}
+.aboutus-text-div p:last-child {
+    margin-bottom: 0;
+}
 .aboutus-main article {
     position: relative;
     /* overflow: hidden; */
@@ -1560,6 +1568,11 @@ html body .footer-bottom p:nth-child(n) {
     margin-bottom: 50px;
     width: 100%;
 }
+@media screen and (max-width: 580px) {
+    .single-p-main .product-amount-and-btn {
+        grid-column-gap: 5px;
+    }
+}
 
 .product-amount {
     min-width: 100%;
@@ -1605,7 +1618,7 @@ html body .footer-bottom p:nth-child(n) {
     font-family: Light;
     font-weight: 600;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 22px;
 }
 
 /* single product MEDIA */
@@ -2547,8 +2560,13 @@ select {
 
 .rules-main p {
     font-size: 14px;
+    line-height: 22px;
     font-family: Roman;
     padding: 0 72px;
+    margin-bottom: 22px;
+}
+.rules-main p:last-child {
+    margin-bottom: 0;
 }
 
 .rules-main .pm-category-titles.card {
@@ -2766,6 +2784,9 @@ address {
         height: unset;
         flex-direction: column;
         padding: 0 20px;
+    }
+    .home-main {
+        height: 180px;
     }
     .contact-info {
         padding-left: 0

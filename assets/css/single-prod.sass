@@ -1,0 +1,166 @@
+@import variables
+@import vars
+    
+/* new style btn */
+.new-style-btn:any-link 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    height: 50px
+    border-radius: 10px
+    background-color: var(--orange)
+    padding-right: 20px
+    color: white
+    font-size: 12px
+    line-height: 15px
+    align-self: center
+    font-family: Regular
+    font-weight: bold
+    overflow: hidden
+    
+    .new-btn-svg-container
+        overflow: hidden
+        padding: 0 10px
+        min-width: 42px
+        max-width: 42px
+        margin-right: 2px
+        height: 100%
+        position: relative
+        display: flex
+        align-items: center
+        @include sizePlus(580px)
+            margin-right: 10px
+            min-width: 62px
+            max-width: 62px
+            padding: 0 20px
+        
+            
+    div
+        font-size: 10px
+        line-height: 12px  
+        @include sizePlus(580px)
+            font-size: 12px     
+    .new-style-btn-added
+        display: none
+    svg
+        min-width: 22px
+        min-height: 22px
+        position: absolute
+
+    .svg-shopping-cart-new
+        opacity: 1
+        transform: translateX(0) rotate(0)
+    .svg-check-circle-new
+        transform: translateX(225%) rotate(-35deg)
+        opacity: 0
+    &.removed
+        animation: 2000ms btnSmallGrowReset580
+        @include sizePlus(580px)
+            animation: 2000ms btnSmallGrowReset
+        .svg-shopping-cart-new
+            opacity: 1
+            transform: translateX(0) rotate(0)
+            animation: 1200ms appear
+        .svg-check-circle-new
+            order: -1
+            transform: translateX(225%) rotate(-35deg)
+            opacity: 1
+            animation: 1200ms vanish
+
+    &.added
+        animation: 2000ms btnSmallGrow580
+        @include sizePlus(580px)
+            animation: 2000ms btnSmallGrow
+        
+        .svg-shopping-cart-new
+            opacity: 0
+            transform: translateX(225%) rotate(-35deg)
+            animation: 1200ms vanish
+        .svg-check-circle-new
+            order: -1
+            transform: translateX(0) rotate(0)
+            opacity: 1
+            animation: 1200ms appear
+
+        .new-style-btn-add
+            display: none
+        .new-style-btn-added
+            display: block
+
+    &.added-constant
+        .svg-shopping-cart-new
+            opacity: 0
+            transform: translateX(225%) rotate(-35deg)
+        .svg-check-circle-new
+            order: -1
+            transform: translateX(0) rotate(0)
+            opacity: 1
+
+        .new-style-btn-add
+            display: none
+        .new-style-btn-added
+            display: block
+
+
+@keyframes btnSmallGrow
+    0%
+        max-width: 100%
+    33%
+        max-width: 62px
+    67%
+        max-width: 62px
+    100%
+        max-width: 100%
+@keyframes btnSmallGrowReset
+    0%
+        max-width: 100%
+    33%
+        max-width: 62px
+    67%
+        max-width: 62px
+    100%
+        max-width: 100%
+   
+@keyframes btnSmallGrow580
+    0%
+        max-width: 100%
+    33%
+        max-width: 42px
+    67%
+        max-width: 42px
+    100%
+        max-width: 100%
+@keyframes btnSmallGrowReset580
+    0%
+        max-width: 100%
+    33%
+        max-width: 42px
+    67%
+        max-width: 42px
+    100%
+        max-width: 100%
+   
+@keyframes vanish
+    0%
+        transform: translateX(0) rotate(0)
+    33.3%
+        transform: translateX(0) rotate(-35deg)
+    66.6%
+        transform: translateX(225%) rotate(-35deg)
+        opacity: 1
+    100%
+        transform: translateX(225%) rotate(-35deg)
+        opacity: 0
+
+@keyframes appear
+    0%
+        order: -1
+        opacity: 0
+    50%
+        order: -1
+        opacity: 0
+    100%
+        order: -1
+        opacity: 1
+
