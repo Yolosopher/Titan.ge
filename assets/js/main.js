@@ -1,6 +1,7 @@
 const topProductsSlider = new Swiper(".top-prod-slider", {
     slidesPerView: "auto",
     direction: "horizontal",
+    spaceBetween: 15,
     navigation: {
         nextEl: ".top-prod-slider-next",
         prevEl: ".top-prod-slider-prev",

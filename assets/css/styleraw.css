@@ -698,6 +698,14 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     padding: 10px;
     border: 1px solid transparent;
 }
+@media screen and (max-width: 580px) {
+    .top-prod-li {
+        min-width: 165px;
+        max-width: 165px;
+        height: 316px;
+        padding: 0;
+    }
+}
 
 .top-prod-li-inside {
     display: flex;
@@ -1089,6 +1097,8 @@ html body .footer-bottom p:nth-child(n) {
     .top-prod-img-a {
         width: 165px;
         height: 165px;
+        margin-bottom: 0;
+        padding-bottom: 16px;
     }
 
     /* footer responsive */
@@ -1661,7 +1671,9 @@ html body .footer-bottom p:nth-child(n) {
         max-width: 255px;
         opacity: .5;
     }
-
+    .prices {
+        margin-bottom: 15px;
+    }
     .prices.product-prices {
         margin-top: 10px;
         margin-bottom: 31px;

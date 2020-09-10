@@ -985,7 +985,13 @@ input[type=submit] {
 }
 
 .home-main.container {
-  margin-bottom: 90px;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1000px) {
+  .home-main.container {
+    margin-bottom: 90px;
+  }
 }
 
 nav.respo-nav-outside.container {
