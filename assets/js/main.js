@@ -6,6 +6,16 @@ const topProductsSlider = new Swiper(".top-prod-slider", {
         nextEl: ".top-prod-slider-next",
         prevEl: ".top-prod-slider-prev",
     },
+    breakpoints: {
+        0: {
+            /* when window >=0px - webflow mobile landscape/portriat */
+            spaceBetween: 20,
+        },
+        580: {
+            /* when window >= 767px - webflow tablet */ 
+            spaceBetween: 0,
+        },
+    },
 });
 
 const coverSlider = new Swiper(".home-main-container", {
