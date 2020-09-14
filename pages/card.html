@@ -626,7 +626,8 @@
             </svg>
           </div>
           <p>აირჩიეთ უბანი</p>
-          <select name="district" id="district">
+          <select name="district" id="district" required >
+            <option disabled selected value="">აირჩიეთ უბანი</option>
             <option value="didube">დიდუბე</option>
             <option value="saburtalo">საბურთალო</option>
             <option value="vake">ვაკე</option>
@@ -644,7 +645,7 @@
                 transform="translate(-3.5 -1.943)" />
             </svg>
           </div>
-          <input type="text" name="address" id="address" placeholder="ზუსტი მისამართი" />
+          <input type="text" name="address" id="address" placeholder="ზუსტი მისამართი" required />
         </div>
 
         <label for="tel">ტელ. ნომერი</label>
@@ -656,7 +657,7 @@
                 transform="translate(-5 -2)" />
             </svg>
           </div>
-          <input type="text" name="tel" id="tel" placeholder="ნომერი" />
+          <input type="text" name="tel" id="tel" placeholder="ნომერი" required />
         </div>
         <label for="auth-comment">კომენტარის დაწერა</label>
         <div class="auth-div for-comment form-inside-div">
@@ -673,7 +674,7 @@
         </div>
         <div class="agree-terms-div">
           <label for="agree-terms-chkbx">
-            <input type="checkbox" name="agree-terms-chkbx" id="agree-terms-chkbx" />
+            <input type="checkbox" name="agree-terms-chkbx" id="agree-terms-chkbx" required />
             <span>
               ვეთანხმები <span class="orange">წესებსა და პირობებს</span>
             </span>

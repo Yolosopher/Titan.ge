@@ -167,6 +167,42 @@ const swiper4 = new Swiper(".product-image-slider-outer", {
     },
 });
 
+
+// insert after function
+function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+// pagination three dots inserter
+function threeDotsInserter() {
+    if ($(".page-numbers li:nth-child(6)")[0]) {
+        if ($(".page-numbers-three-dots")[0]) {
+            $(".fourth").removeClass("fourth");
+
+            let copy3Dots = document
+                .querySelector(".page-numbers-three-dots")
+                .cloneNode(true);
+
+            $(".page-numbers-outter li:nth-child(4)").addClass("fourth");
+
+            let fourth = document.querySelector(".fourth");
+            console.log(newDiv);
+
+            insertAfter(fourth, newDiv);
+        } else {
+            let newDiv = document.createElement("div");
+            let newSpan = document.createElement("span");
+            let copy1 = newSpan.cloneNode(true);
+            let copy2 = copy1.cloneNode(true);
+            newDiv.classList.add("page-numbers-three-dots");
+            newDiv.appendChild(newSpan);
+            newDiv.appendChild(copy1);
+            newDiv.appendChild(copy2);
+            $(".page-numbers-outter li:nth-child(4)").addClass("fourth");
+            let fourth = document.querySelector(".fourth");
+            insertAfter(fourth, newDiv);
+        }
+    }
+}
 window.addEventListener("DOMContentLoaded", (event) => {
     // single-product.html first-image active
     let firstImg = document.querySelector(".pr-i-s-img");
@@ -186,6 +222,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
             }
         });
     });
+
+    threeDotsInserter();
 });
 
 // profile.html profile-nav-li-active
@@ -551,4 +589,4 @@ if ($(".card-main")[0]) {
             parentP.text(selected).addClass("active-p");
         },
     });
-}
+};
