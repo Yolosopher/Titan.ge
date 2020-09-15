@@ -2741,12 +2741,10 @@ address {
 
 .contact-map {
     padding-left: 5px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.contact-map iframe {
-    border-radius: 10px;
-    width: 100%;
-}
 
 /* CONTACT END */
 /* media for CONTACT and RULES */
@@ -2795,10 +2793,6 @@ address {
         order: -1;
         margin-bottom: 50px;
         height: 170px;
-    }
-
-    .contact-map iframe {
-        height: 100%;
     }
 
 

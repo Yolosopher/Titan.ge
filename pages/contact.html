@@ -691,17 +691,7 @@
             </ul>
           </div>
         </div>
-        <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.245055548542!2d44.7935866157964!3d41.73680688222267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404472bbf0c0d429%3A0x42ec0f887b755181!2s84%20Tsotne%20Dadiani%20St%2C%20T&#39;bilisi!5e0!3m2!1sen!2sge!4v1596057805558!5m2!1sen!2sge"
-            width="600"
-            height="450"
-            frameborder="0"
-            style="border: 0;"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
+        <div class="contact-map" id="contact-map">
         </div>
       </div>
     </main>
@@ -883,6 +873,21 @@
         </a>
       </div>
     </nav>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4qXcpIcY9F-0osv8rC6voWz1fBtk06P4"></script>
+    <script>
+      let map;
+
+      function initMap(lat, lng) {
+        let chords = {lat: lat, lng: lng};
+        map = new google.maps.Map(document.getElementById("contact-map"), {
+        center: chords,
+        zoom: 15,
+        });
+        var marker = new google.maps.Marker({position: chords, map: map});
+      }
+      // {lat: 41.7338423, lng: 44.7947154};
+      initMap(41.7338423, 44.7947154);
+    </script>
     <script src="../assets/js/swiper/swiper.min.js"></script>
     <script src="../assets/js/jquery/jquery-3.2.1.min.js"></script>
     <script src="../assets/js/main.js"></script>
