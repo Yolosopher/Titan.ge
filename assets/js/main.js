@@ -526,8 +526,9 @@ if (
 
 $('.new-style-btn').click(function(e){
     e.preventDefault();
-    $(this).removeClass('added-constant');
-    if ($(this).hasClass('added')){
+    
+    if ($(this).hasClass('added') || $(this).hasClass('added-constant')) {
+        $(this).removeClass('added-constant');
         $(this).css('animation-name', 'lines');
         $(this).css('animation-name', '');
         $(this).addClass('removed');
