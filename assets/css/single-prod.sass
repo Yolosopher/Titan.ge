@@ -1,100 +1,6 @@
-@import auth-toggle
-@import reset-password
-@import vars
 @import variables
-@import historyorder
-
-// correctings
-#burger-header-clone
-    overflow: auto
-    border-radius: 10px
-    border-top-left-radius: 0
-    border-bottom-left-radius: 0
-    z-index: 100
-    height: calc(100vh - 160px)
-    border-radius: 0px 10px 10px 0px
-    top: 30px
-.founded
-    li
-        a
-            &::after
-                display: none
-
-.home-main.container
-    margin-bottom: 30px
-    @include sizePlus(1000px)    
-        margin-bottom: 90px
-
-nav.respo-nav-outside.container
-    position: fixed
-    bottom: 0
-    left: 0
-    height: 100px
-    width: 100%
-    background: $fa
-    z-index: 99
-
-html
-    &.overflown
-        overflow: hidden
-
-svg.rotate
-    transform: rotate(-30deg)
-    transition: 600ms 
-
-.respo-nav-inside
-    .srch-on
-        &:not(:first-child):not(.clicked)
-            display: none
-    .srchbar-respo
-        form
-            display: none
-            button
-                border: none
-                outline: non
-                background: none
-                &:focus
-                    outline: none
-                    border: none
-                    
-
-        &.clicked
-            display: flex
-            flex: 1
-            margin-left: 34px
-            > svg
-                display: none
-            form
-                width: 100%
-                display: flex
-                align-items: center
-
-.turn-off-searchbar-respo
-    position: absolute
-    right: 13px
-    transform: rotate(135deg)
-    z-index: 999
-    cursor: pointer
-
-.searchbar-respo-form-input
-    outline: none
-    border: none
-    padding-left: 15px
-    padding-right: 25px
-    font-size: 12px
-    line-height: 15px
-    font-family: Roman
-    width: 100%
-    &::placeholder
-        color: #D0D0D0
-
-
-@media screen and (max-width: 450px)
-    #product-add-btn
-        div
-            // margin-right: 0
-            margin-left: 0
-
+@import vars
+    
 /* new style btn */
 .new-style-btn:any-link 
     display: flex
@@ -112,20 +18,29 @@ svg.rotate
     font-family: Regular
     font-weight: bold
     overflow: hidden
-    &
+    
     .new-btn-svg-container
         overflow: hidden
-        padding: 0 20px
-        min-width: 62px
-        max-width: 62px
-        margin-right: 10px
+        padding: 0 10px
+        min-width: 42px
+        max-width: 42px
+        margin-right: 2px
         height: 100%
         position: relative
         display: flex
         align-items: center
+        @include sizePlus(580px)
+            margin-right: 10px
+            min-width: 62px
+            max-width: 62px
+            padding: 0 20px
+        
+            
     div
-        font-size: 12px
-        line-height: 12px        
+        font-size: 10px
+        line-height: 12px  
+        @include sizePlus(580px)
+            font-size: 12px     
     .new-style-btn-added
         display: none
     svg
@@ -140,7 +55,9 @@ svg.rotate
         transform: translateX(225%) rotate(-35deg)
         opacity: 0
     &.removed
-        animation: 2000ms btnSmallGrowReset
+        animation: 2000ms btnSmallGrowReset580
+        @include sizePlus(580px)
+            animation: 2000ms btnSmallGrowReset
         .svg-shopping-cart-new
             opacity: 1
             transform: translateX(0) rotate(0)
@@ -152,7 +69,10 @@ svg.rotate
             animation: 1200ms vanish
 
     &.added
-        animation: 2000ms btnSmallGrow
+        animation: 2000ms btnSmallGrow580
+        @include sizePlus(580px)
+            animation: 2000ms btnSmallGrow
+        
         .svg-shopping-cart-new
             opacity: 0
             transform: translateX(225%) rotate(-35deg)
@@ -182,6 +102,7 @@ svg.rotate
         .new-style-btn-added
             display: block
 
+
 @keyframes btnSmallGrow
     0%
         max-width: 100%
@@ -200,7 +121,26 @@ svg.rotate
         max-width: 62px
     100%
         max-width: 100%
-       
+   
+@keyframes btnSmallGrow580
+    0%
+        max-width: 100%
+    33%
+        max-width: 42px
+    67%
+        max-width: 42px
+    100%
+        max-width: 100%
+@keyframes btnSmallGrowReset580
+    0%
+        max-width: 100%
+    33%
+        max-width: 42px
+    67%
+        max-width: 42px
+    100%
+        max-width: 100%
+   
 @keyframes vanish
     0%
         transform: translateX(0) rotate(0)
@@ -224,8 +164,3 @@ svg.rotate
         order: -1
         opacity: 1
 
-
-
-
-.select-svg-div svg 
-    fill: #E2E7ED

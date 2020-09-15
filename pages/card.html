@@ -16,7 +16,7 @@
       }
     }
 
-    @media only screen and (max-width: 410px) {
+    @media only screen and (max-width: 580px) {
 
       html body main.container,
       html body section.container,
@@ -619,14 +619,15 @@
         <label for="disctrict">უბანი</label>
         <div class="auth-div select-div form-inside-div">
           <div class="select-svg-div">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+            <svg class="region-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
               <path
                 d="M19.236,2.773a2.6,2.6,0,0,0-2.7-.639L3.8,6.39a2.609,2.609,0,0,0-.108,4.921l4.716,1.8h0a.837.837,0,0,1,.477.468l1.8,4.724a2.583,2.583,0,0,0,2.439,1.691h.063a2.592,2.592,0,0,0,2.421-1.8L19.866,5.445A2.6,2.6,0,0,0,19.236,2.773ZM18.2,4.878,13.9,17.636a.792.792,0,0,1-.756.558.828.828,0,0,1-.783-.522l-1.8-4.724a2.619,2.619,0,0,0-1.5-1.512l-4.725-1.8A.81.81,0,0,1,3.8,8.855.792.792,0,0,1,4.358,8.1L17.121,3.844A.819.819,0,0,1,18.2,4.878Z"
                 transform="translate(-2.002 -1.994)" />
             </svg>
           </div>
           <p>აირჩიეთ უბანი</p>
-          <select name="district" id="district">
+          <select name="district" id="district" required >
+            <option disabled selected value="">აირჩიეთ უბანი</option>
             <option value="didube">დიდუბე</option>
             <option value="saburtalo">საბურთალო</option>
             <option value="vake">ვაკე</option>
@@ -644,21 +645,19 @@
                 transform="translate(-3.5 -1.943)" />
             </svg>
           </div>
-          <input type="text" name="address" id="address" placeholder="ზუსტი მისამართი" />
+          <input type="text" name="address" id="address" placeholder="ზუსტი მისამართი" required />
         </div>
 
         <label for="tel">ტელ. ნომერი</label>
         <div class="auth-div form-inside-div">
           <div class="form-svg-div">
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="18" viewBox="0 0 13 18">
-              <defs>
-              </defs>
               <path class="a"
                 d="M12.159,14.861l-.139-.108a.715.715,0,0,0-.167-.081l-.167-.072a.948.948,0,0,0-.845.243,1.031,1.031,0,0,0-.195.3.88.88,0,0,0,.2.979.95.95,0,0,0,1.009.2,1.36,1.36,0,0,0,.306-.2.88.88,0,0,0,.195-.981A.9.9,0,0,0,12.159,14.861ZM15.214,2H7.786A2.744,2.744,0,0,0,5,4.7V17.3A2.744,2.744,0,0,0,7.786,20h7.429A2.744,2.744,0,0,0,18,17.3V4.7A2.744,2.744,0,0,0,15.214,2Zm.929,15.3a.915.915,0,0,1-.929.9H7.786a.915.915,0,0,1-.929-.9V4.7a.915.915,0,0,1,.929-.9h7.429a.915.915,0,0,1,.929.9Z"
                 transform="translate(-5 -2)" />
             </svg>
           </div>
-          <input type="text" name="tel" id="tel" placeholder="ნომერი" />
+          <input type="text" name="tel" id="tel" placeholder="ნომერი" required />
         </div>
         <label for="auth-comment">კომენტარის დაწერა</label>
         <div class="auth-div for-comment form-inside-div">
@@ -670,24 +669,24 @@
                 transform="translate(-2.002 -1.999)" />
             </svg>
           </div>
-          <input type="text" name="auth-comment" id="auth-comment" placeholder="კომენტარი" >
+          <input type="text" name="auth-comment" id="auth-comment" placeholder="კომენტარი" />
           <div class="auth-succ-or-error"></div>
         </div>
         <div class="agree-terms-div">
           <label for="agree-terms-chkbx">
-            <input type="checkbox" name="agree-terms-chkbx" id="agree-terms-chkbx" />
+            <input type="checkbox" name="agree-terms-chkbx" id="agree-terms-chkbx" required />
             <span>
               ვეთანხმები <span class="orange">წესებსა და პირობებს</span>
             </span>
             <span class="checkmark"></span>
           </label>
         </div>
+        <div class="delivery-control">
+          <a class="basket-ctrl-left back-to-basket-btn" href="javascript:void(0)">უკან დაბრუნება</a>
+          <input type="submit" class="delivery-next-btn" value="გადახდა" />
+        </div>
       </form>
-      <div class="delivery-control">
-        <a class="basket-ctrl-left back-to-basket-btn" href="javascript:void(0)">უკან დაბრუნება</a>
 
-        <a href="javascript:void(0)" class="delivery-next-btn">გადახდა</a>
-      </div>
     </div>
   </main>
   <!-- FOOTER -->

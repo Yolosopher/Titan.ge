@@ -45,6 +45,9 @@
         padding: 10px
     &.active
         height: 255px
+        img 
+            transform: translateY(-15%)
+            
         .historyOrder-content            
             border-bottom: 1px solid #E2E7ED
             margin-bottom: 24px
@@ -124,18 +127,20 @@
     img 
         width: 60px
         height: 60px
-        padding: 10px
-        object-fit: 
+        object-fit: cover
         margin-right: 15px
         @include tabletPlus()
+            padding: 10px
             width: 83px
             height: 83px
+            transform: none
 
 .historyOrder-name:any-link
     margin-bottom: 16px
     display: block
     font-size: 14px
-    font-family: Light
+    line-height: 18px
+    font-family:Regular
     font-weight: normal
 
 .historyOrder-descriptions
