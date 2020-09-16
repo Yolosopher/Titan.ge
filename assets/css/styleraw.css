@@ -378,18 +378,18 @@ html.overFlow {
     transition: color .4s;
 }
 
-.burger-header-left li a:hover {
+.burger-header-left li a:hover, .burger-header-left li a.active {
     color: var(--orange);
 
 }
 
-.burger-header-left li a::after {
+.burger-header-left li a::after, .burger-header-left li a.active::after {
     content: url(../images/angle-right.svg);
     position: absolute;
     right: 0;
 }
 
-.burger-header-left li a:hover::after {
+.burger-header-left li a:hover::after, .burger-header-left li a.active:hover::after {
     content: url(../images/angle-right-orange.svg);
     position: absolute;
     right: 0;

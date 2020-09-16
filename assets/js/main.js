@@ -12,7 +12,7 @@ const topProductsSlider = new Swiper(".top-prod-slider", {
             spaceBetween: 20,
         },
         580: {
-            /* when window >= 767px - webflow tablet */ 
+            /* when window >= 767px - webflow tablet */
             spaceBetween: 0,
         },
     },
@@ -71,15 +71,25 @@ $(".second-level-li > a").click(function () {
     }
 });
 
-$("aside .ctgr-ul li a").click(function () {
-    if ($(this).hasClass("active")) {
-        $(".burger-header-right").removeClass("active");
-    } else {
-        $(".burger-header-right").toggleClass("active");
-    }
+// $("aside .ctgr-ul li a").click(function () {
+//     if ($(this).hasClass("active")) {
+//         $(this).removeClass('active');
+//     } else {
+//         // new
+//         $(this).addClass("active");
+//         $('.toggle-drop-right').html('');
+//         let thiss = $(this).next();
+//         thiss = thiss[0];
+//         thiss = thiss.cloneNode(true);
+//         thiss = thiss.children;
+//         let burgerRight = document.querySelector('.toggle-drop-right');
+//         for (li of thiss) {
+//             burgerRight.appendChild(li)
+//         }
 
-    $(this).toggleClass("active");
-});
+//     }
+
+// });
 
 // burger menu when clientWidth < 1000
 $("#burger-respo").click(function () {
@@ -166,7 +176,6 @@ const swiper4 = new Swiper(".product-image-slider-outer", {
         prevEl: ".sg-prev",
     },
 });
-
 
 // insert after function
 function insertAfter(referenceNode, newNode) {
@@ -491,15 +500,13 @@ function focOut() {
     let svgs = $("svg:visible");
     svgs = [...svgs];
     svgs = svgs.filter((svg) => svg.closest(".auth-div"));
-    svgs.forEach(element => {
-        let inp = element.closest(".auth-div").querySelectorAll('input')[0];
-        if (inp && inp.value == 0) {            
-            element.classList.remove('on');
+    svgs.forEach((element) => {
+        let inp = element.closest(".auth-div").querySelectorAll("input")[0];
+        if (inp && inp.value == 0) {
+            element.classList.remove("on");
         }
     });
-};
-
-
+}
 
 $(
     'input[type="password"], input[type="email"], input[type="tel"], input[type="text"]'
@@ -524,24 +531,22 @@ if (
 
 // button added styling
 
-$('.new-style-btn').click(function(e){
+$(".new-style-btn").click(function (e) {
     e.preventDefault();
-    $(this).removeClass('added-constant');
-    if ($(this).hasClass('added')){
-        $(this).css('animation-name', 'lines');
-        $(this).css('animation-name', '');
-        $(this).addClass('removed');
-        $(this).removeClass('added');
+    $(this).removeClass("added-constant");
+    if ($(this).hasClass("added")) {
+        $(this).css("animation-name", "lines");
+        $(this).css("animation-name", "");
+        $(this).addClass("removed");
+        $(this).removeClass("added");
         setTimeout(() => {
-            $(this).removeClass('removed');
+            $(this).removeClass("removed");
         }, 2000);
     } else {
-        $(this).toggleClass('added');
-        $(this).removeClass('removed');
-    }    
-    
-})
-
+        $(this).toggleClass("added");
+        $(this).removeClass("removed");
+    }
+});
 
 // main aside menu toggle
 $(".ctgr-ul li").click(function () {
@@ -555,6 +560,17 @@ $(".ctgr-ul li").click(function () {
         $(this).addClass("clicked");
         $(this).find("a").addClass("clicked");
         $(".toggle-drop-right").addClass("clicked");
+
+        //here // new
+        $(".toggle-drop-right").html("");
+        let thiss = $(this).find('.aside-subcategory');
+        thiss = thiss[0];
+        thiss = thiss.cloneNode(true);
+        thiss = thiss.children;
+        let toggleDropRight = document.querySelector(".toggle-drop-right");
+        for (li of thiss) {
+            toggleDropRight.appendChild(li);
+        }
     }
 });
 
@@ -583,10 +599,32 @@ if ($(".card-main")[0]) {
     // form styled selectMenu
     $("select").selectmenu({
         change: function (ev, data) {
-            $('.region-svg').css("fill","#171717");
+            $(".region-svg").css("fill", "#171717");
             let selected = data.item.label;
             let parentP = $(this).parent().find("p");
             parentP.text(selected).addClass("active-p");
         },
     });
-};
+}
+
+// function burgerRightUlContentChanger() {
+
+// }
+
+$(".burger-header-left>li>a").on("click", function () {
+    if ($(this).hasClass("active")) {
+        return;
+    } else {
+        $(".burger-header-left>li>a").removeClass("active");
+        $(this).addClass("active");
+        $(".burger-header-right").html("");
+        let thiss = $(this).next();
+        thiss = thiss[0];
+        thiss = thiss.cloneNode(true);
+        thiss = thiss.children;
+        let burgerRight = document.querySelector(".burger-header-right");
+        for (li of thiss) {
+            burgerRight.appendChild(li);
+        }
+    }
+});

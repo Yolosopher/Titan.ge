@@ -1690,4 +1690,12 @@ svg.rotate {
 .select-svg-div svg {
   fill: #E2E7ED;
 }
+
+.subcategory-hidden {
+  display: none;
+}
+
+.aside-subcategory {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
