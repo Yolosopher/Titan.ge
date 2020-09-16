@@ -549,7 +549,7 @@ $(".new-style-btn").click(function (e) {
 });
 
 // main aside menu toggle
-$(".ctgr-ul li").click(function () {
+$("aside .ctgr-ul li").click(function () {
     if ($(this).hasClass("clicked")) {
         $(".ctgr-ul li").removeClass("clicked");
         $(".ctgr-ul li a").removeClass("clicked");
