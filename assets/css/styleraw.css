@@ -1989,7 +1989,7 @@ html body .footer-bottom p:nth-child(n) {
     display: flex;
 }
 
-.succes-div-svg {
+.succes-div-svg, .failed-div-svg {
     background: rgba(82, 255, 59, 0.1);
     width: 130px;
     height: 130px;
@@ -1998,6 +1998,9 @@ html body .footer-bottom p:nth-child(n) {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+}
+.failed-div-svg {
+    background: rgba(255, 97, 59, 0.1);
 }
 
 .succes-div-svg .a {

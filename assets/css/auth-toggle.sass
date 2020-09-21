@@ -131,16 +131,6 @@ label
     &.none
         display: none
 
-// .passreset-form.sent > *
-//     opacity: 0       
-// .passreset-form.sent
-//     position: relative
-//     .passreset-sent-div
-//         margin-top: 
-//         opacity: 1
-
-// .passreset-sent-div
-//     // @include vertCentering(column, center)
 
         
 
@@ -231,7 +221,26 @@ label
             font-family: Bold75
             color: $orange
             font-weight: 900
-        
+.basket-empty-div  
+    position: relative 
+    display: none
+    align-items: center
+    flex-direction: column
+    height: 192px
+    width: 155px
+    margin: 0 auto
+    .failed-div-svg
+        @include vertCentering(column, center)
+        opacity: 1
+    p
+        @include font(Roman, 14px, 20px)
+        text-align: center
+        width: 100%
+        max-width: 246px
+        span
+            font-family: Bold75
+            color: $orange
+            font-weight: 900
 
 // adds in styleraw
 .footer-bottom

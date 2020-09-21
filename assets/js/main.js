@@ -233,6 +233,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     threeDotsInserter();
+
+    setTimeout(() => {
+        if(!document.querySelector('.basket-li')) {
+            $('.basket-ul-outter').css('display', 'none');
+            $('.basket-empty-div').css('display', 'flex')
+        }
+    }, 1);
 });
 
 // profile.html profile-nav-li-active

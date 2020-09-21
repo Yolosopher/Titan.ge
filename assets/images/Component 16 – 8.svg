@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70.711" height="70.711" viewBox="0 0 70.711 70.711">
+  <g id="Component_16_8" data-name="Component 16 – 8" transform="translate(35.355) rotate(45)">
+    <rect id="Rectangle_257" data-name="Rectangle 257" width="50" height="50" fill="rgba(255,255,255,0)"/>
+    <path id="plus-circle" d="M25,2A23,23,0,1,0,48,25,23,23,0,0,0,25,2Zm0,41.4A18.4,18.4,0,1,1,43.4,25,18.4,18.4,0,0,1,25,43.4Zm9.2-20.7H27.3V15.8a2.3,2.3,0,1,0-4.6,0v6.9H15.8a2.3,2.3,0,1,0,0,4.6h6.9v6.9a2.3,2.3,0,0,0,4.6,0V27.3h6.9a2.3,2.3,0,0,0,0-4.6Z" transform="translate(0 0)" fill="#ff613b"/>
+  </g>
+</svg>
