@@ -289,6 +289,15 @@ html.overFlow {
     height: inherit;
     background-color: var(--purple);
 }
+.myPage {
+    display: none;
+}
+.login.active .login-authorization {
+    display: none;
+}
+.login.active .myPage {
+    display: unset;
+}
 
 .login div {
     margin-left: 17px;

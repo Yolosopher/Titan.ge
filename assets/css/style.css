@@ -380,6 +380,10 @@ label[for=auth-pass], label[for=regis-pass] {
   display: unset;
 }
 
+.form-inside-div.Error {
+  border: 1px solid #FF613B;
+}
+
 .form-inside-div:nth-child(1) {
   background: red;
 }
