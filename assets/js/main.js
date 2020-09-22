@@ -593,8 +593,10 @@ $("aside .ctgr-ul li").click(function () {
         $(".toggle-drop-right").html("");
         let thiss = $(this).find('.aside-subcategory');
         thiss = thiss[0];
+        console.log(thiss);
         thiss = thiss.cloneNode(true);
         thiss = thiss.children;
+        thiss = [...thiss];
         let toggleDropRight = document.querySelector(".toggle-drop-right");
         for (li of thiss) {
             toggleDropRight.appendChild(li);
@@ -639,7 +641,7 @@ if ($(".card-main")[0]) {
 
 // }
 
-$(".burger-header-left>li>a").on("click", function () {
+$(".burger-header-left>li>a").click(function () {
     if ($(this).hasClass("active")) {
         return;
     } else {
@@ -650,10 +652,12 @@ $(".burger-header-left>li>a").on("click", function () {
         thiss = thiss[0];
         thiss = thiss.cloneNode(true);
         thiss = thiss.children;
+        thiss = [...thiss];
         let burgerRight = document.querySelector(".burger-header-right");
-        for (li of thiss) {
+        for (let li of thiss) {
             burgerRight.appendChild(li);
-        }
+            console.log(li);
+        };
     }
 });
 
