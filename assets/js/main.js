@@ -367,7 +367,7 @@ function goToProfileFromRespo() {
     }, 0.1);
 }
 // login.click()
-$(".login").click(function () {
+$(".show-login").click(function () {
     if($('.login').hasClass('active')){
         goToProfileFromDesktop();
     } else {
@@ -655,4 +655,8 @@ $(".burger-header-left>li>a").on("click", function () {
             burgerRight.appendChild(li);
         }
     }
+});
+
+$('.historyOrder-li').click(function() {
+    $(this).toggleClass('active');
 });
