@@ -593,7 +593,6 @@ $("aside .ctgr-ul li").click(function () {
         $(".toggle-drop-right").html("");
         let thiss = $(this).find('.aside-subcategory');
         thiss = thiss[0];
-        console.log(thiss);
         thiss = thiss.cloneNode(true);
         thiss = thiss.children;
         thiss = [...thiss];
@@ -656,7 +655,6 @@ $(".burger-header-left>li>a").click(function () {
         let burgerRight = document.querySelector(".burger-header-right");
         for (let li of thiss) {
             burgerRight.appendChild(li);
-            console.log(li);
         };
     }
 });
