@@ -25,26 +25,26 @@
         flex-direction: column
         margin-bottom: 40px
         @include tabletPlus()
-            margin-bottom: 30px
-    li
-        @include flexingDir(column, initial, initial)
-        
-        margin-bottom: 16px
-        &:last-child
-            margin-bottom: 0
+        margin-bottom: 30px  
+
 
 .historyOrder-li
     cursor: pointer
-    height: 55px
+    max-height: 55px
     padding: 5px
     border: 1px solid #E2E7ED
     border-radius: 6px
     overflow: hidden
-    transition: height .4s
+    transition: max-height -200ms 300ms ease-out
+    @include flexingDir(column, initial, initial)
+    margin-bottom: 16px
     @include tabletPlus()
         padding: 10px
+    &:last-child
+        margin-bottom: 0
     &.active
-        height: 255px
+        max-height: 9999px
+        transition: max-height 300ms ease-in
         img 
             transform: translateY(-15%)
             

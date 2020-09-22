@@ -659,6 +659,6 @@ $(".burger-header-left>li>a").click(function () {
     }
 });
 
-$('.historyOrder-li').click(function() {
-    $(this).toggleClass('active');
+$('.historyOrder-content').click(function() {
+    $(this).parent().toggleClass('active');
 });
