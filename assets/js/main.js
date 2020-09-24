@@ -71,27 +71,8 @@ $(".second-level-li > a").click(function () {
     }
 });
 
-// $("aside .ctgr-ul li a").click(function () {
-//     if ($(this).hasClass("active")) {
-//         $(this).removeClass('active');
-//     } else {
-//         // new
-//         $(this).addClass("active");
-//         $('.toggle-drop-right').html('');
-//         let thiss = $(this).next();
-//         thiss = thiss[0];
-//         thiss = thiss.cloneNode(true);
-//         thiss = thiss.children;
-//         let burgerRight = document.querySelector('.toggle-drop-right');
-//         for (li of thiss) {
-//             burgerRight.appendChild(li)
-//         }
 
-//     }
 
-// });
-
-// burger menu when clientWidth < 1000
 $("#burger-respo").click(function () {
     $(this).toggleClass("respo-active");
     $(".auth-toggle-black-screen").addClass("on");
