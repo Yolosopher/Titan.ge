@@ -56,9 +56,6 @@
                 border-bottom: none
 
 
-// .historyOrder-li-dropdown  
-//     @include tabletPlus()  
-//         border-top: 1px solid #E2E7ED
 
 .historyOrder-li.active .historyOrder-li-dropdown  
     @include tabletPlus()  
@@ -118,12 +115,18 @@
     cursor: pointer
     font-family: Bold75
 
+
 .historyOrder-li-dropdown
     display: flex
     flex: 1
+    margin-bottom: 40px
     @include tabletPlus()
-        padding: 30px 67px
+        padding: 30px 7px
         align-items: center
+        margin-bottom: 0
+    @include sizePlus(1100px)
+        padding: 30px 67px
+    
     img 
         width: 60px
         height: 60px

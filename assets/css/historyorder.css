@@ -261,14 +261,22 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin-bottom: 40px;
 }
 
 @media screen and (min-width: 800px) {
   .historyOrder-li-dropdown {
-    padding: 30px 67px;
+    padding: 30px 7px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .historyOrder-li-dropdown {
+    padding: 30px 67px;
   }
 }
 
