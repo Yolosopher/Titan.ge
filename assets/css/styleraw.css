@@ -275,13 +275,12 @@ html.overFlow {
     justify-content: center;
     color: var(--orange);
     font-size: 14px;
-    line-height: 17px;
-    width: 21px;
-    height: 21px;
+    line-height: 14px;
     background-color: white;
     border-radius: 50%;
     margin-left: 17.5px;
     font-weight: 600;
+    padding: 3.5px 6.6px;
 }
 
 .login {
@@ -461,9 +460,9 @@ aside {
     padding: 36px 31px 39px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     color: var(--active-grey);
     font: 14px/18px;
+    row-gap: 13px;
 }
 
 .toggle-drop-right {
@@ -768,6 +767,8 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     line-height: 24px;
     margin-bottom: 15px;
     min-height: 46px;
+    max-height: 72px;
+    overflow: hidden;
 }
 
 .tp-img-h2-id {
@@ -3013,4 +3014,22 @@ address {
     margin: 0;
 }
 
+.ui-widget.ui-widget-content::-webkit-scrollbar {
+    width: 3px;
+    height: 90%;
+    position: relative;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+.ui-widget.ui-widget-content::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 100px;
+    border-right: 4px transparent solid;
 
+}
+
+.ui-widget.ui-widget-content::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.2); 
+    border-radius: 100px;
+    margin-right: 30px;
+}

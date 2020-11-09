@@ -771,7 +771,7 @@ input[type=submit] {
   max-height: 55px;
   padding: 5px;
   border: 1px solid #E2E7ED;
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
   -webkit-transition: max-height -200ms 300ms ease-out;
   transition: max-height -200ms 300ms ease-out;
@@ -1760,5 +1760,46 @@ svg.rotate {
 
 #passreset-form.sent .suc-or-fail-content {
   opacity: 1;
+}
+
+.shop-notification-number {
+  font-family: helvneue;
+}
+
+.basketNdelivery-basket-both {
+  cursor: default;
+}
+
+.product-amount-and-btn .new-style-btn {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .top-prod-img-h2 h2 {
+    max-height: 120px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .top-prod-img-h2 h2 {
+    max-height: 63px;
+  }
+  .new-style-btn-added {
+    -webkit-transition: margin-left 0.6s -0.6s;
+    transition: margin-left 0.6s -0.6s;
+  }
+  .new-style-btn-add,
+  .new-style-btn-added {
+    font-size: 10px !important;
+  }
+}
+
+input[type=password] {
+  font-size: 10px !important;
+}
+
+li.toggle-drop-right-li a {
+  white-space: nowrap;
 }
 /*# sourceMappingURL=style.css.map */
