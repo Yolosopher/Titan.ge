@@ -645,7 +645,8 @@
                 transform="translate(-3.5 -1.943)" />
             </svg>
           </div>
-          <input type="text" name="address" id="address" placeholder="ზუსტი მისამართი" required />
+          <!-- დაბლა ინფუთს დავამატე პატერნ ატრიბუტი -->
+          <input type="text" pattern="[a-zA-Z0-9_].{8,}" name="address" id="address" placeholder="ზუსტი მისამართი" required />
         </div>
 
         <label for="tel">ტელ. ნომერი</label>
@@ -657,7 +658,8 @@
                 transform="translate(-5 -2)" />
             </svg>
           </div>
-          <input type="text" name="tel" id="tel" placeholder="ნომერი" required />
+          <!-- დაბლა ინფუთს დავამატე პატერნ ატრიბუტი -->
+          <input pattern="(5)\d{8}" type="tel" name="tel" id="tel" placeholder="5********" required />
         </div>
         <label for="auth-comment">კომენტარის დაწერა</label>
         <div class="auth-div for-comment form-inside-div">
@@ -669,7 +671,8 @@
                 transform="translate(-2.002 -1.999)" />
             </svg>
           </div>
-          <input type="text" name="auth-comment" id="auth-comment" placeholder="კომენტარი" />
+          <!-- დაბლა ინფუთს დავამატე პატერნ ატრიბუტი -->
+          <input pattern="[a-zA-Z0-9_].{8,}" type="text" name="auth-comment" id="auth-comment" placeholder="კომენტარი" />
           <div class="auth-succ-or-error"></div>
         </div>
         <div class="agree-terms-div">

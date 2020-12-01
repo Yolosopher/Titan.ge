@@ -245,9 +245,16 @@ svg.rotate
     .suc-or-fail-content
         opacity: 0
         transition: opacity 1s 300ms ease-in-out
+        height: 0
+        width: 0
+        overflow: hidden
+        z-index: -10
     &.sent
         .suc-or-fail-content
             opacity: 1
+            height: unset
+            width: unset
+            z-index: 1
 .shop-notification-number
     font-family: helvneue
 

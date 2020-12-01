@@ -885,7 +885,7 @@ html body .swiper-pagination-bullet.swiper-pagination-bullet-active {
     margin-bottom: 40px;
 }
 
-.delivery-right p {
+.delivery-right .delivery-right-textdiv, .delivery-right p {
     font-size: 14px;
     line-height: 22px;
     font-family: Light;
@@ -1089,6 +1089,10 @@ html body .footer-bottom p:nth-child(n) {
         display: none;
     }
 
+    .home-top-production {
+        height: unset;
+        padding-bottom: 30px;
+    }
     .home-top-production h1 {
         font-size: 18px;
         line-height: 27px;
@@ -1411,6 +1415,7 @@ html body .footer-bottom p:nth-child(n) {
 }
 
 .aboutus-main img {
+    border-radius: 10px;
     object-fit: contain;
     position: absolute;
     width: 50%;
@@ -1670,6 +1675,30 @@ html body .footer-bottom p:nth-child(n) {
     font-weight: 600;
     font-size: 14px;
     line-height: 22px;
+}
+.product-description * {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.product-description li {
+    list-style: initial;
+    list-style-position: inside;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.textdiv * {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.textdiv li {
+    list-style: initial;
+    list-style-position: inside;
 }
 
 /* single product MEDIA */
@@ -1974,7 +2003,7 @@ html body .footer-bottom p:nth-child(n) {
     flex-flow: column nowrap;
 }
 
-#currentPass {
+input[type=password] {
     font-family: Regular;
 }
 
@@ -2695,7 +2724,7 @@ select {
     min-height: calc(100vh - 346px);
 }
 
-.rules-main h1 {
+.rules-main h1, .aboutus-main h1 {
     font-size: 24px;
     line-height: 32px;
     color: black;
@@ -2748,15 +2777,20 @@ select {
 }
 
 .contact-info-ul>* {
-    display: flex;
-    align-items: center;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 49px auto;
+}
+.contact-info-ul>*:first-child {
+    justify-items: center;
 }
 .contact-info-ul>*::before{
     margin-right: 25px;
 }
 
-.contact-info-ul>*>* {
+.contact-info-ul>*>*:not(:first-child) {
     display: flex;
+    justify-content: flex-start;
 }
 
 .contact-info-ul>* {
@@ -2809,6 +2843,9 @@ address {
 
 .working-hours::before {
     content: url(../images/clock.svg);
+    height: 24px !important;
+    width: 24px !important;
+    display: block;
 }
 
 .contact-makefriendswithus {
@@ -2830,16 +2867,17 @@ address {
     padding-left: 5px;
 }
 
-.contact-map iframe {
+.contact-map iframe, .contact-map #map2 {
     border-radius: 10px;
     width: 100%;
+    height: 100%;
 }
 
 /* CONTACT END */
 /* media for CONTACT and RULES */
 @media only screen and (max-width: 1000px) {
     .home-main {
-        margin-top: 10px;
+        margin-top: 30px;
     }
 
     .products-main.container {
@@ -2851,7 +2889,7 @@ address {
         padding: 30px 0;
     }
 
-    .rules-main h1 {
+    .rules-main h1, .aboutus-main h1 {
         font-size: 18px;
     }
 
@@ -2921,6 +2959,7 @@ address {
     .basket-li-right .product-amount.card {
         width: 130px;
         padding: 0 12px;
+        height: 34px;
     }
 }
 

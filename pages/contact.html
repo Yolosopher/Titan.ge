@@ -615,7 +615,7 @@
         <div class="contact-info">
           <ul class="contact-info-ul">
             <li class="contact-info-address">
-              <address>საქართველო, თბილისი, ცოტნე დადიანის 84</address>
+              <address>ქ. რუსთავი 16-ე მიკრო რაიონი,კავშირგაბმულობის შენობის მიმდებარე ტერიტორია ან ქ.რუსთავი 11-ე მიკრო რაიონის მიმდებარე ტერიტორია</address>
             </li>
             <li class="contact-info-email">
               <a href="mailto:example@gmail.com">
@@ -692,16 +692,8 @@
           </div>
         </div>
         <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.245055548542!2d44.7935866157964!3d41.73680688222267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404472bbf0c0d429%3A0x42ec0f887b755181!2s84%20Tsotne%20Dadiani%20St%2C%20T&#39;bilisi!5e0!3m2!1sen!2sge!4v1596057805558!5m2!1sen!2sge"
-            width="600"
-            height="450"
-            frameborder="0"
-            style="border: 0;"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
+          <!-- iframe-ის ნაცვლად ქვემოთა დივი -->
+          <div id="map2"></div>
         </div>
       </div>
     </main>
@@ -883,8 +875,13 @@
         </a>
       </div>
     </nav>
+    <script>
+      let longgg = 43.7213373;
+      let lattt = 42.0196193;
+    </script>
     <script src="../assets/js/swiper/swiper.min.js"></script>
     <script src="../assets/js/jquery/jquery-3.2.1.min.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4qXcpIcY9F-0osv8rC6voWz1fBtk06P4&amp;callback=initMap"></script>
   </body>
 </html>
