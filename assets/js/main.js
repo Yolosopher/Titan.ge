@@ -148,13 +148,25 @@ $(".increment").click(function () {
 
 // single-product-page slider
 const swiper4 = new Swiper(".product-image-slider-outer", {
+	init: false,
 	spaceBetween: 20,
 	slidesPerView: "auto",
 	navigation: {
 		nextEl: ".sg-next",
 		prevEl: ".sg-prev",
-	},
+	},	
 });
+swiper4.on('init', function () {
+	if (!swiper4.slides[1]) {
+		swiper4.params.spaceBetween = 0;
+		swiper4.params.slidesPerView = 1;
+		swiper4.update()
+	}
+});
+
+if ($('.product-image-slider-outer')[0]) {
+	swiper4.init();
+}
 
 // insert after function
 function insertAfter(referenceNode, newNode) {
@@ -659,32 +671,7 @@ function DelServ() {
 	$(".burger-header-top li:nth-child(4) a").attr("href", hmpgNew);
 }
 
-// start init map
-function initMap() {
-	// The location of location
-	var location = { lat: 42.0196193, lng: 43.7213373 };
-	// options
-	const opts = {
-		zoom: 16,
-		zoomControl: true,
-		zoomControlOptions: {
-			position: google.maps.ControlPosition.LEFT_CENTER,
-		},
-		mapTypeControl: true,
-		mapTypeControlOptions: {
-			style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-		},
-		controlSize: 26,
-		streetViewControl: true,
-		fullscreenControl: true,
 
-		center: location,
-	};
-	// The map, centered at location
-	var map2 = new google.maps.Map(document.getElementById("map2"), opts);
-	var marker = new google.maps.Marker({ position: location, map: map2 });
-}
-// end init map
 
 
 const checkInputCorrectness = (e) => {

@@ -2,7 +2,7 @@
 @import vars
     
 /* new style btn */
-.new-style-btn:any-link 
+.new-style-btn
     display: flex
     justify-content: space-between
     align-items: center
@@ -164,3 +164,7 @@
         order: -1
         opacity: 1
 
+
+@media screen and (max-width: 420px) 
+    .new-style-btn:any-link
+        justify-content: flex-start
